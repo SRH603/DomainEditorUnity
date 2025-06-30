@@ -11,7 +11,7 @@ public class LevelBar : MonoBehaviour
 
     public bool selected;
     public int idx = -1;
-    public string id;
+    public string id, packId;
     public int difficulty = -1;
     public string LevelName, LevelRating;
     public TextMeshProUGUI Score; // ���еȼ�
@@ -36,6 +36,7 @@ public class LevelBar : MonoBehaviour
     public GameObject ConditionPanel, ConditionBuyButton;
     public Condition trackCondition = new Condition();
     public Condition chartCondition = new Condition();
+    public Condition packCondition = new Condition();
     public TMP_Text ConditionText;
     public Image coverImage;
     public Image mainBar;
@@ -49,8 +50,22 @@ public class LevelBar : MonoBehaviour
     
     public void ConditionClick()
     {
-        bool DisplayBuy = trackCondition.type == ConditionType.Currency;
-        ConditionBuyButton.SetActive(DisplayBuy && !trackUnlocked);
+        bool displayBuyTrack = trackCondition.type == ConditionType.Currency;
+        bool displayBuyPack = packCondition.type == ConditionType.Currency;
+        bool displayBuyChart = chartCondition.type == ConditionType.Currency;
+        if (!packUnlocked)
+        {
+            ConditionBuyButton.SetActive(displayBuyPack);
+        }
+        else if (!trackUnlocked)
+        {
+            ConditionBuyButton.SetActive(displayBuyTrack);
+        }
+        else if (!chartUnlocked)
+        {
+            ConditionBuyButton.SetActive(displayBuyChart);
+        }
+        
         ConditionPanel.SetActive(true);
         ConditionText.text = unlockCondition;
     }

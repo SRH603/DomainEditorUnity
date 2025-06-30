@@ -8,6 +8,7 @@ using System.Reflection;
 
 public class Hold : NoteEntity
 {
+    public GameObject baseMesh;
     [System.Serializable]
     public class HoldColliderData
     {

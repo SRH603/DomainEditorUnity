@@ -19,7 +19,9 @@ public class SceneSwitcher : MonoBehaviour
         if (!string.IsNullOrEmpty(sceneName))
         {
             // 切换场景
-            SceneManager.LoadScene(sceneName);
+            SceneLoader.LoadSceneWithLoading(sceneName);
+
+            //SceneManager.LoadScene(sceneName);
         }
         else
         {

@@ -188,16 +188,30 @@ public class SongSelect : MonoBehaviour
 
     public void BuyTrack()
     {
-        if (selectedLevel.GetComponent<LevelBar>().trackCondition.type == ConditionType.Currency)
+        if (selectedLevel.GetComponent<LevelBar>().packCondition.type == ConditionType.Currency)
+        {
+            if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().packCondition.amount)
+            {
+                AddEcho(-selectedLevel.GetComponent<LevelBar>().packCondition.amount);
+                UnlockPack(selectedLevel.GetComponent<LevelBar>().packId);
+            }
+            Init();
+        }
+        else if (selectedLevel.GetComponent<LevelBar>().trackCondition.type == ConditionType.Currency)
         {
             if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().trackCondition.amount)
             {
                 AddEcho(-selectedLevel.GetComponent<LevelBar>().trackCondition.amount);
                 UnlockTrack(selectedLevel.GetComponent<LevelBar>().id);
             }
-            else
+            Init();
+        }
+        else if (selectedLevel.GetComponent<LevelBar>().chartCondition.type == ConditionType.Currency)
+        {
+            if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().chartCondition.amount)
             {
-                
+                AddEcho(-selectedLevel.GetComponent<LevelBar>().chartCondition.amount);
+                UnlockChart(selectedLevel.GetComponent<LevelBar>().id, currentDifficultyIndex);
             }
             Init();
         }
@@ -606,6 +620,10 @@ public class SongSelect : MonoBehaviour
             {
                 clonedObject.GetComponent<LevelBar>().chartCondition = song.charts[currentDifficultyIndex].condition;
             }
+            if (GetPack(song.packId).condition != null)
+            {
+                clonedObject.GetComponent<LevelBar>().packCondition = GetPack(song.packId).condition;
+            }
             
             
             clonedObject.GetComponent<LevelBar>().artist = song.artist;
@@ -614,6 +632,7 @@ public class SongSelect : MonoBehaviour
             clonedObject.GetComponent<LevelBar>().duration = song.duration;
             clonedObject.GetComponent<LevelBar>().optimism = song.charts[currentDifficultyIndex].GetOptimism();
             clonedObject.GetComponent<LevelBar>().id = song.id;
+            clonedObject.GetComponent<LevelBar>().packId = song.packId;
             
             clonedObject.GetComponent<LevelBar>().coverImage.sprite = song.previewIllustration;
             //太卡了，还是自己裁剪

@@ -34,7 +34,7 @@ public class OnPlaying : MonoBehaviour
         generateLevel = GetComponent<GenerateLevel>();
         playingData = GetComponent<PlayingData>();
         
-        offset = GetComponent<ReadChart>().gameData.info.offset + PlayerPrefs.GetFloat("offset",0);
+        offset = GetComponent<ReadChart>().gameData.info.offset + PlayerPrefs.GetFloat("audioOffset",0);
 
         double generatingtime = 0;
 

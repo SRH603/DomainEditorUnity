@@ -29,6 +29,9 @@ public class GenerateLevel : MonoBehaviour
         trackData = readChart.trackData;
         LoadBPMList();
         GenerateJudgmentLines();
+        float appearDistance = PlayerPrefs.GetFloat("appearDistance", 1f);
+        RenderSettings.fogStartDistance = appearDistance * 20f;
+        RenderSettings.fogEndDistance = appearDistance * 40f;
         GetComponent<OnPlaying>().offsetTime = gameData.info.offset;
         GetComponent<OnPlaying>().LoadLevel();
         // 获取当前对象的Renderer组件
@@ -119,10 +122,13 @@ public class GenerateLevel : MonoBehaviour
 
             }
         }
-        NotesHighLighter();
+        if (PlayerPrefs.GetInt("highlightSimulNotes", 1) == 1)
+            NotesHighLighter();
     }
     void GenerateNotes(JudgmentLine judgmentLine, Transform lineTransform, JudgmentLineData lineData)
     {
+        float flowSpeed = PlayerPrefs.GetFloat("flowSpeed", 1f);
+        float noteSize = PlayerPrefs.GetFloat("noteSize", 1f);
         foreach (var note in judgmentLine.notes)
         {
             if (note == null)
@@ -140,8 +146,8 @@ public class GenerateLevel : MonoBehaviour
                 }
 
                 double beatTime = GameUtilities.FractionToDecimal(note.data[0].hitBeat); // 计算note的击打时间（转换为拍数）
-
-                double xPosition = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTime) * note.speed; // 计算note的z坐标（假设NoteFlowSpeed是已知的）
+                
+                double xPosition = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTime) * note.speed * flowSpeed; // 计算note的z坐标（假设NoteFlowSpeed是已知的）
                 Vector3 noteLocalPosition = new Vector3((float)xPosition, (float)note.data[0].position, 0); // 使用局部坐标实例化note预制体，并设置其位置和父物体
 
 
@@ -149,8 +155,9 @@ public class GenerateLevel : MonoBehaviour
                 {
 
                     GameObject noteInstance = Instantiate(TapPrefab, Vector3.zero, Quaternion.identity, lineTransform.GetComponent<JudgeLineManage>().NoteHolder); // 先实例化note，位置设为Vector3.zero
+                    noteInstance.GetComponent<Tap>().Mesh.transform.localScale = new Vector3(1, noteSize, 1);
                     noteInstance.GetComponent<Tap>().HitBeat = beatTime;
-                    noteInstance.GetComponent<Tap>().Speed = note.speed;
+                    noteInstance.GetComponent<Tap>().Speed = note.speed * flowSpeed;
                     if (FractionToDecimal(note.appearBeat) == -1)
                         noteInstance.GetComponent<Tap>().AppearTime = -1;
                     else
@@ -165,8 +172,9 @@ public class GenerateLevel : MonoBehaviour
                 {
 
                     GameObject noteInstance = Instantiate(DragPrefab, Vector3.zero, Quaternion.identity, lineTransform.GetComponent<JudgeLineManage>().NoteHolder); // 先实例化note，位置设为Vector3.zero
+                    noteInstance.GetComponent<Drag>().Mesh.transform.localScale = new Vector3(1, noteSize, 1);
                     noteInstance.GetComponent<Drag>().HitBeat = beatTime;
-                    noteInstance.GetComponent<Drag>().Speed = note.speed;
+                    noteInstance.GetComponent<Drag>().Speed = note.speed * flowSpeed;
                     if (FractionToDecimal(note.appearBeat) == -1)
                         noteInstance.GetComponent<Drag>().AppearTime = -1;
                     else
@@ -191,12 +199,13 @@ public class GenerateLevel : MonoBehaviour
                 double beatTimeParent = FractionToDecimal(note.data[0].hitBeat); // 计算note的击打时间（转换为拍数）
 
                 // 计算note的z坐标（假设NoteFlowSpeed是已知的）
-                double xPositionFather = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTimeParent) * note.speed;
+                double xPositionFather = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTimeParent) * note.speed * flowSpeed;
                 // 实例化note预制体，并设置其位置和父物体
                 Vector3 noteLocalPositionParent = new Vector3((float)xPositionFather, (float)note.data[0].position, 0); // 使用局部坐标
 
                 // 先实例化note，位置设为Vector3.zero
                 GameObject noteInstanceParent = Instantiate(HoldPrefab, Vector3.zero, Quaternion.identity, lineTransform.GetComponent<JudgeLineManage>().NoteHolder);
+                noteInstanceParent.GetComponent<Hold>().baseMesh.transform.localScale = new Vector3(1, noteSize, 1);
                 // 然后设置note的局部位置
                 noteInstanceParent.transform.localPosition = noteLocalPositionParent;
                 // 确保note的局部旋转为0（相对于判定线）
@@ -204,7 +213,7 @@ public class GenerateLevel : MonoBehaviour
                 // 将生成的note添加到对应判定线的数据中
                 lineData.Notes.Add(noteInstanceParent);
                 noteInstanceParent.GetComponent<Hold>().HitBeat = beatTimeParent;
-                noteInstanceParent.GetComponent<Hold>().Speed = note.speed;
+                noteInstanceParent.GetComponent<Hold>().Speed = note.speed * flowSpeed;
                 if (FractionToDecimal(note.appearBeat) == -1)
                     noteInstanceParent.GetComponent<Hold>().AppearTime = -1;
                 else
@@ -221,7 +230,7 @@ public class GenerateLevel : MonoBehaviour
                     double beatTime = FractionToDecimal(data.hitBeat);
 
                     // 计算note的z坐标（假设NoteFlowSpeed是已知的）
-                    double xPosition = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTime) * note.speed;
+                    double xPosition = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTime) * note.speed * flowSpeed;
                     // 实例化note预制体，并设置其位置和父物体
                     Vector3 noteLocalPosition = new Vector3((float)xPosition, (float)data.position, 0); // 使用局部坐标
 
@@ -242,11 +251,11 @@ public class GenerateLevel : MonoBehaviour
                 }
                 for (int i = 0; i <= note.data.Count - 2; i++)
                 {
-                    float PLGWidth = 0.8f;
+                    float PLGWidth = 0.8f * noteSize;
                     float thick = 0.05f;
                     Vector3[] PLGvertices = new Vector3[8];
 
-                    float PLGLength = (float)((float)(CalculateIntegratedSpeed(judgmentLine.speed, 0, noteInstanceParent.GetComponent<Hold>().HoldComponents[i + 1].transform.GetComponent<HoldLocationPool>().HitTime) - CalculateIntegratedSpeed(judgmentLine.speed, 0, noteInstanceParent.GetComponent<Hold>().HoldComponents[i].transform.GetComponent<HoldLocationPool>().HitTime)) * note.speed);
+                    float PLGLength = (float)((float)(CalculateIntegratedSpeed(judgmentLine.speed, 0, noteInstanceParent.GetComponent<Hold>().HoldComponents[i + 1].transform.GetComponent<HoldLocationPool>().HitTime) - CalculateIntegratedSpeed(judgmentLine.speed, 0, noteInstanceParent.GetComponent<Hold>().HoldComponents[i].transform.GetComponent<HoldLocationPool>().HitTime)) * note.speed * flowSpeed);
                     float PLGDisplacement = noteInstanceParent.GetComponent<Hold>().HoldComponents[i + 1].transform.GetComponent<HoldLocationPool>().HitPosition - noteInstanceParent.GetComponent<Hold>().HoldComponents[i].transform.GetComponent<HoldLocationPool>().HitPosition;
                     noteInstanceParent.GetComponent<Hold>().HoldComponents[i].transform.GetComponent<HoldLocationPool>().EndPosition = noteInstanceParent.GetComponent<Hold>().HoldComponents[i + 1].transform.GetComponent<HoldLocationPool>().HitPosition;
                     noteInstanceParent.GetComponent<Hold>().HoldComponents[i].transform.GetComponent<HoldLocationPool>().EndTime = noteInstanceParent.GetComponent<Hold>().HoldComponents[i + 1].transform.GetComponent<HoldLocationPool>().HitTime;

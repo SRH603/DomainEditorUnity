@@ -6,7 +6,7 @@ public class ReadChart : MonoBehaviour
     [HideInInspector] public GameData gameData;
     [HideInInspector] public TrackData trackData;
     [HideInInspector] public GenerateLevel generateLevel;
-    public AudioSource audioSource;
+    public AudioSource audioSource, hitSounds;
 
     void Start()
     {
@@ -22,6 +22,8 @@ public class ReadChart : MonoBehaviour
             AudioClip musicClip = trackData.track;
             audioSource.clip = musicClip;
 
+            audioSource.volume = PlayerPrefs.GetFloat("musicVolume", 1f);
+            hitSounds.volume = PlayerPrefs.GetFloat("hitSoundVolume", 1f);
             generateLevel.Generate(this);
 
             Debug.Log(trackData.title + " " + gameData.info.rating);            

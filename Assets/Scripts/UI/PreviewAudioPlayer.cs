@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -19,6 +20,7 @@ public class PreviewAudioPlayer : MonoBehaviour
     public AudioClip CurrentClip => src.clip;   // 当前正在播放的 Clip
     public bool     IsPlaying   => src.isPlaying;
 
+    public float maxVolume;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class PreviewAudioPlayer : MonoBehaviour
         src.playOnAwake = false;
         src.loop        = false;
         src.outputAudioMixerGroup = mixerGroup;
+    }
+
+    public void Start()
+    {
+        maxVolume = PlayerPrefs.GetFloat("musicVolume", 1f);
     }
 
     /// <summary>播放传入的 AudioClip 指定片段</summary>
@@ -109,10 +116,10 @@ public class PreviewAudioPlayer : MonoBehaviour
         while (t < dur)
         {
             t += Time.unscaledDeltaTime;
-            src.volume = Mathf.Lerp(from, to, t / dur);
+            src.volume = Mathf.Lerp(from, to, t / dur) * maxVolume;
             yield return null;
         }
-        src.volume = to;
+        src.volume = to * maxVolume;
         done?.Invoke();
     }
 }
