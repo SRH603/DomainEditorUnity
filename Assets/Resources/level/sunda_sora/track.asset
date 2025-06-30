@@ -23,8 +23,8 @@ MonoBehaviour:
   bpm: 220
   background: default
   songInfo: nothing
-  audioPreviewStart: 12
-  audioPreviewEnd: 24
+  audioPreviewStart: 1
+  audioPreviewEnd: 10
   version: 
   charts:
   - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}

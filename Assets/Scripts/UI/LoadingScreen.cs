@@ -19,7 +19,7 @@ public class LoadingScreen : MonoBehaviour
     void Start()
     {
         ShowRandomTip();
-        StartCoroutine(LoadSceneAsync(SceneLoader.targetScene));
+        //StartCoroutine(LoadSceneAsync(SceneLoader.targetScene));
     }
 
     void ShowRandomTip()

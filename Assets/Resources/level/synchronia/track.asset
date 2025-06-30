@@ -16,15 +16,15 @@ MonoBehaviour:
   id: synchronia
   title: Synchronia
   artist: Athmyx
-  illustration: {fileID: 2800000, guid: 82eb5027b6f50441fa3cccee569ded26, type: 3}
-  previewIllustration: {fileID: 2800000, guid: 82eb5027b6f50441fa3cccee569ded26, type: 3}
+  illustration: {fileID: 2800000, guid: f7e709fbc918a4854b7fca205fb4b26c, type: 3}
+  previewIllustration: {fileID: 2800000, guid: f7e709fbc918a4854b7fca205fb4b26c, type: 3}
   track: {fileID: 8300000, guid: c26503e220f8548669ebc6b38ccc058c, type: 3}
   illustrator: "BD\u75C7\u5019\u7FA4"
   bpm: 220
   background: default
   songInfo: nothing
-  audioPreviewStart: 12
-  audioPreviewEnd: 24
+  audioPreviewStart: 33
+  audioPreviewEnd: 51
   version: 
   charts:
   - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
