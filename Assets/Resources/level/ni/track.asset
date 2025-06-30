@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
+  m_Name: track
+  m_EditorClassIdentifier: 
+  idx: 1
+  id: ni
+  title: Ni
+  artist: Tak
+  illustration: {fileID: 2800000, guid: a88c38edbe21e4c38960e3a3729363ca, type: 3}
+  previewIllustration: {fileID: 2800000, guid: a88c38edbe21e4c38960e3a3729363ca, type: 3}
+  track: {fileID: 8300000, guid: 9971a5c58177e4c418eea788d59e494b, type: 3}
+  illustrator: "BD\u75C7\u5019\u7FA4"
+  bpm: 220
+  background: default
+  songInfo: nothing
+  audioPreviewStart: 12
+  audioPreviewEnd: 24
+  version: 
+  charts:
+  - {fileID: 11400000, guid: f3d05d4e68b8043e2b5685707905442d, type: 2}
+  - {fileID: 11400000, guid: f44ffd5ac5a3741bda112bd3ab439889, type: 2}
+  - {fileID: 11400000, guid: a0ee928b50e0646cdbb6645d0de4a4ed, type: 2}

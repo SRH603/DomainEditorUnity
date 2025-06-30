@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Alan\\Unity\\Domain Echoing2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10C89688-BC26-8DD7-6616-9438ADC711C2}|Assembly-CSharp.csproj|D:\\Alan\\Unity\\Domain Echoing2\\assets\\scripts\\select\\songselect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10C89688-BC26-8DD7-6616-9438ADC711C2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\select\\songselect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10C89688-BC26-8DD7-6616-9438ADC711C2}|Assembly-CSharp.csproj|d:\\alan\\unity\\domain echoing2\\assets\\scripts\\select\\loadarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10C89688-BC26-8DD7-6616-9438ADC711C2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\select\\loadarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1814EC7-74EB-4E61-ADCC-6DB70F8594F2}|Assembly-CSharp-Editor.csproj|d:\\alan\\unity\\domain echoing2\\assets\\editor\\scripts\\musiceditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1814EC7-74EB-4E61-ADCC-6DB70F8594F2}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\editor\\scripts\\musiceditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\Songselect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\LoadArchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MusicEditorWindow.cs",
+              "DocumentMoniker": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Editor\\Scripts\\MusicEditorWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Editor\\Scripts\\MusicEditorWindow.cs",
+              "ToolTip": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Editor\\Scripts\\MusicEditorWindow.cs",
+              "RelativeToolTip": "Assets\\Editor\\Scripts\\MusicEditorWindow.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAswKYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T03:19:24.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoadArchive.cs",
+              "DocumentMoniker": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Select\\LoadArchive.cs",
+              "ToolTip": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Select\\LoadArchive.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAAAE0AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T03:12:52.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Songselect.cs",
+              "DocumentMoniker": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Scripts\\Select\\Songselect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Select\\Songselect.cs",
+              "ToolTip": "D:\\Alan\\Unity\\Domain Echoing2\\Assets\\Scripts\\Select\\Songselect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Select\\Songselect.cs",
+              "ViewState": "AQIAAP4AAAAAAAAAAAAAAMgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T19:29:38.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoadArchive.cs",
+              "DocumentMoniker": "D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "RelativeDocumentMoniker": "..\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "ToolTip": "D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "RelativeToolTip": "..\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\LoadArchive.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAcwEwAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T19:26:38.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Songselect.cs",
+              "DocumentMoniker": "D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\Songselect.cs",
+              "RelativeDocumentMoniker": "..\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\Songselect.cs",
+              "ToolTip": "D:\\Alan\\Unity\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\Songselect.cs",
+              "RelativeToolTip": "..\\NewRhythmGame - Optimizing 2nd\\Assets\\Scripts\\Select\\Songselect.cs",
+              "ViewState": "AQIAAFMBAAAAAAAAAAAAAFoBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T19:08:27.457Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

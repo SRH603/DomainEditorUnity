@@ -1,0 +1,5811 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c002cfa63c352b44e9f0fc5e85382c72, type: 3}
+  m_Name: 0
+  m_EditorClassIdentifier: 
+  info:
+    designer: Athmyx
+    bpm: 60 - 470.52
+    rating: 4.9
+    offset: 0.061
+    version: 1
+  content:
+    bpmList:
+    - startBeat: {x: 0, y: 0, z: 0}
+      bpm: 227
+    - startBeat: {x: 4, y: 0, z: 0}
+      bpm: 312
+    - startBeat: {x: 7, y: 0, z: 0}
+      bpm: 227
+    - startBeat: {x: 9, y: 0, z: 0}
+      bpm: 60
+    - startBeat: {x: 13, y: 0, z: 0}
+      bpm: 227
+    - startBeat: {x: 14, y: 0, z: 0}
+      bpm: 470.52
+    - startBeat: {x: 15, y: 0, z: 0}
+      bpm: 227
+    judgmentLines:
+    - flowSpeed: 111
+      notes:
+      - type: 0
+        speed: 1
+        appearBeat: {x: 2, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 2, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 17, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 3, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 18, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 4, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 18, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 5, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 19, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 6, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 19, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 19, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 20, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 20, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 20, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 20, y: 4, z: 2}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 21, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 21, y: 1, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 21, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 21, y: 4, z: 2}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 22, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 22, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 22, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 22, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 23, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 23, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 23, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 23, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 24, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 24, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 24, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 24, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 25, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 25, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 25, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 25, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 26, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 26, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 26, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 26, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 27, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 27, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 27, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 27, y: 4, z: 2}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 28, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 28, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 28, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 28, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 29, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 29, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 29, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 29, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 30, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 30, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 30, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 30, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 31, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 31, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 31, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 31, y: 4, z: 2}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 32, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 32, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 32, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 32, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 33, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 33, y: 1, z: 0}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 33, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 33, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 34, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 34, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 34, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 34, y: 4, z: 2}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 35, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 35, y: 1, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 35, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 35, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 36, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 36, y: 4, z: 0}
+          position: -4
+      - type: 0
+        speed: 1
+        appearBeat: {x: 36, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 36, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 37, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 37, y: 4, z: 0}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 37, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 37, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 38, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 38, y: 4, z: 0}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 38, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 38, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 39, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 39, y: 1, z: 0}
+          position: -3.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 39, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 39, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 40, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 40, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 41, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 41, y: 4, z: 0}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 41, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 41, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 42, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 42, y: 4, z: 0}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 42, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 42, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 43, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 43, y: 4, z: 0}
+          position: -3.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 43, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 43, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 44, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 44, y: 4, z: 0}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 44, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 44, y: 4, z: 2}
+          position: 2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 45, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 45, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 45, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 45, y: 4, z: 2}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 46, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 46, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 46, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 46, y: 4, z: 2}
+          position: 1.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 47, y: 1, z: 0}
+          position: -0
+        - hitBeat: {x: 47, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 40, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 40, y: 4, z: 2}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 82, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 82, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 83, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 83, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 83, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 83, y: 4, z: 2}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 84, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 84, y: 4, z: 1}
+          position: -1
+        - hitBeat: {x: 84, y: 2, z: 1}
+          position: -2
+        - hitBeat: {x: 85, y: 1, z: 0}
+          position: -3.5
+        - hitBeat: {x: 85, y: 2, z: 1}
+          position: -4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 82, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 82, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 83, y: 4, z: 2}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 85, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 85, y: 4, z: 3}
+          position: -1
+        - hitBeat: {x: 86, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 86, y: 4, z: 2}
+          position: -3.5
+        - hitBeat: {x: 87, y: 4, z: 0}
+          position: -4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 87, y: 4, z: 0}
+          position: 1
+        - hitBeat: {x: 87, y: 4, z: 1}
+          position: -1
+        - hitBeat: {x: 87, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 88, y: 4, z: 0}
+          position: -3.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 88, y: 4, z: 0}
+          position: 1
+        - hitBeat: {x: 88, y: 4, z: 1}
+          position: -1
+        - hitBeat: {x: 88, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 89, y: 4, z: 0}
+          position: -3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 84, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 84, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 85, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 85, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 87, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 87, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 88, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 88, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 84, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 84, y: 4, z: 2}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 85, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 85, y: 1, z: 0}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 87, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 87, y: 4, z: 2}
+          position: 2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 86, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 86, y: 1, z: 0}
+          position: 4
+      - type: 0
+        speed: 1
+        appearBeat: {x: 86, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 86, y: 4, z: 2}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 88, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 88, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 89, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 89, y: 4, z: 1}
+          position: 1
+        - hitBeat: {x: 89, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 90, y: 4, z: 0}
+          position: 3.5
+        - hitBeat: {x: 90, y: 4, z: 2}
+          position: 4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 90, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 90, y: 4, z: 3}
+          position: 1
+        - hitBeat: {x: 91, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 91, y: 4, z: 2}
+          position: 3.5
+        - hitBeat: {x: 92, y: 4, z: 0}
+          position: 4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 92, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 92, y: 4, z: 1}
+          position: 1
+        - hitBeat: {x: 92, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 93, y: 4, z: 0}
+          position: 3.5
+        - hitBeat: {x: 93, y: 4, z: 2}
+          position: 4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 93, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 93, y: 4, z: 3}
+          position: 1
+        - hitBeat: {x: 94, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 94, y: 4, z: 2}
+          position: 3.5
+        - hitBeat: {x: 95, y: 4, z: 0}
+          position: 4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 95, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 95, y: 4, z: 1}
+          position: 1
+        - hitBeat: {x: 95, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 96, y: 1, z: 0}
+          position: 3.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 96, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 96, y: 4, z: 1}
+          position: 1
+        - hitBeat: {x: 96, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 97, y: 4, z: 0}
+          position: 3.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 89, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 89, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 90, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 90, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 92, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 92, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 93, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 93, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 95, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 95, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 96, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 96, y: 1, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 89, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 89, y: 4, z: 2}
+          position: -3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 90, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 90, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 91, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 91, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 91, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 91, y: 4, z: 2}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 92, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 92, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 93, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 93, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 94, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 94, y: 4, z: 0}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 94, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 94, y: 4, z: 3}
+          position: -3.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 95, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 95, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 96, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 96, y: 4, z: 2}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 97, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 97, y: 4, z: 1}
+          position: -1.5
+        - hitBeat: {x: 97, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 98, y: 4, z: 0}
+          position: -3.5
+        - hitBeat: {x: 98, y: 4, z: 2}
+          position: -4
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 98, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 98, y: 4, z: 3}
+          position: 1.5
+        - hitBeat: {x: 99, y: 4, z: 0}
+          position: 2.5
+        - hitBeat: {x: 99, y: 4, z: 2}
+          position: 3.5
+        - hitBeat: {x: 100, y: 4, z: 0}
+          position: 4
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 100, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 100, y: 4, z: 1}
+          position: -1.5
+        - hitBeat: {x: 100, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 101, y: 1, z: 0}
+          position: -3.5
+        - hitBeat: {x: 101, y: 4, z: 2}
+          position: -4
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 101, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 101, y: 4, z: 3}
+          position: 1.5
+        - hitBeat: {x: 102, y: 4, z: 0}
+          position: 2.5
+        - hitBeat: {x: 102, y: 4, z: 2}
+          position: 3.5
+        - hitBeat: {x: 103, y: 4, z: 0}
+          position: 4
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 103, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 104, y: 4, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 104, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 105, y: 4, z: 0}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 105, y: 4, z: 0}
+          position: -3
+        - hitBeat: {x: 106, y: 4, z: 2}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 106, y: 4, z: 2}
+          position: 3
+        - hitBeat: {x: 108, y: 1, z: 0}
+          position: 3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 108, y: 4, z: 0}
+          position: -3
+        - hitBeat: {x: 109, y: 1, z: 0}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 109, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 110, y: 1, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 110, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 110, y: 4, z: 2}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 110, y: 4, z: 2}
+          position: -3
+        - hitBeat: {x: 111, y: 1, z: 0}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 111, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 112, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 112, y: 4, z: 0}
+          position: 1.5
+        - hitBeat: {x: 112, y: 4, z: 2}
+          position: 1.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 112, y: 4, z: 2}
+          position: -0.5
+        - hitBeat: {x: 113, y: 1, z: 0}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 111, y: 4, z: 0}
+          position: 2.5
+        - hitBeat: {x: 111, y: 4, z: 2}
+          position: 2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 113, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 113, y: 4, z: 1}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 117, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 117, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 97, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 97, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 98, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 98, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 100, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 100, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 101, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 101, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 103, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 103, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 104, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 104, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 105, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 105, y: 4, z: 0}
+          position: -3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 106, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 106, y: 4, z: 2}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 108, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 108, y: 1, z: 0}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 109, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 109, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 119, y: 4, z: 0}
+          position: -1.5
+        - hitBeat: {x: 119, y: 4, z: 2}
+          position: -1.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 120, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 121, y: 1, z: 0}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 124, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 125, y: 4, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 126, y: 4, z: 0}
+          position: 1
+        - hitBeat: {x: 126, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 127, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 127, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 131, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 131, y: 4, z: 2}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 133, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 134, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 129, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 129, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 133, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 133, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 135, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 135, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 138, y: 1, z: 0}
+          position: -0
+        - hitBeat: {x: 138, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 139, y: 4, z: 0}
+          position: -0.5
+        - hitBeat: {x: 139, y: 4, z: 2}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 142, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 142, y: 4, z: 3}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 143, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 143, y: 4, z: 3}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 143, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 143, y: 1, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 142, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 142, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 172, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 172, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 176, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 176, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 162, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 162, y: 4, z: 1}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 162, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 162, y: 4, z: 3}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 164, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 164, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 164, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 164, y: 4, z: 3}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 165, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 165, y: 4, z: 3}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 169, y: 1, z: 0}
+          position: 0
+        - hitBeat: {x: 171, y: 1, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 178, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 178, y: 4, z: 1}
+          position: 0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 178, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 178, y: 4, z: 2}
+          position: 1.3333333730697632
+      - type: 0
+        speed: 1
+        appearBeat: {x: 179, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 179, y: 4, z: 0}
+          position: -0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 179, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 179, y: 4, z: 1}
+          position: -1.3333333730697632
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 181, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 182, y: 4, z: 0}
+          position: 2
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 4}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 4}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 6}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 6}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 185, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 185, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 185, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 185, y: 4, z: 3}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 189, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 189, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 189, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 189, y: 4, z: 3}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 187, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 187, y: 4, z: 2}
+          position: -0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 187, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 187, y: 4, z: 3}
+          position: 0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 191, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 191, y: 4, z: 1}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 191, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 191, y: 4, z: 3}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 194, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 194, y: 1, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 194, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 194, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 198, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 198, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 198, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 198, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 196, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 196, y: 4, z: 2}
+          position: -0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 201, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 201, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 203, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 203, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 203, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 203, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 203, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 203, y: 4, z: 2}
+          position: -0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 204, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 204, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 204, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 204, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 204, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 204, y: 4, z: 2}
+          position: 0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 204, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 204, y: 4, z: 3}
+          position: -0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 205, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 205, y: 4, z: 0}
+          position: 1.3333333730697632
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 205, y: 1, z: 0}
+          position: 1.3333333730697632
+        - hitBeat: {x: 205, y: 2, z: 1}
+          position: 1.3333333730697632
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 205, y: 2, z: 1}
+          position: -1.3333333730697632
+        - hitBeat: {x: 206, y: 1, z: 0}
+          position: -1.3333333730697632
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 206, y: 1, z: 0}
+          position: 0.6666666865348816
+        - hitBeat: {x: 206, y: 2, z: 1}
+          position: 0.6666666865348816
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 207, y: 1, z: 0}
+          position: 2
+        - hitBeat: {x: 207, y: 2, z: 1}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 206, y: 2, z: 1}
+          position: -2.3333332538604736
+        - hitBeat: {x: 207, y: 1, z: 0}
+          position: -2.3333332538604736
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 207, y: 2, z: 1}
+          position: -1
+        - hitBeat: {x: 208, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 208, y: 1, z: 0}
+          position: 0.3333333432674408
+        - hitBeat: {x: 208, y: 2, z: 1}
+          position: 0.3333333432674408
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 208, y: 2, z: 1}
+          position: -1.6666666269302368
+        - hitBeat: {x: 209, y: 1, z: 0}
+          position: -1.6666666269302368
+      - type: 0
+        speed: 1
+        appearBeat: {x: 218, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 218, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 220, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 220, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 222, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 222, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 224, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 224, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 228, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 228, y: 4, z: 3}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 233, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 233, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 233, y: 6, z: 1}
+        data:
+        - hitBeat: {x: 233, y: 6, z: 1}
+          position: 0.3333333432674408
+      - type: 1
+        speed: 1
+        appearBeat: {x: 233, y: 6, z: 2}
+        data:
+        - hitBeat: {x: 233, y: 6, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 237, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 237, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 238, y: 6, z: 3}
+        data:
+        - hitBeat: {x: 238, y: 6, z: 3}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 240, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 240, y: 4, z: 0}
+          position: 1.3333333730697632
+      - type: 0
+        speed: 1
+        appearBeat: {x: 241, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 241, y: 4, z: 2}
+          position: -2.6666667461395264
+      - type: 0
+        speed: 1
+        appearBeat: {x: 243, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 243, y: 1, z: 0}
+          position: 0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 244, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 244, y: 4, z: 2}
+          position: -1.6666666269302368
+      - type: 0
+        speed: 1
+        appearBeat: {x: 246, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 246, y: 1, z: 0}
+          position: 1.6666666269302368
+      - type: 0
+        speed: 1
+        appearBeat: {x: 247, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 247, y: 4, z: 2}
+          position: -2.6666667461395264
+      - type: 0
+        speed: 1
+        appearBeat: {x: 249, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 249, y: 4, z: 0}
+          position: 1
+      - type: 1
+        speed: 1
+        appearBeat: {x: 237, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 237, y: 4, z: 1}
+          position: 1.3333333730697632
+      - type: 1
+        speed: 1
+        appearBeat: {x: 238, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 238, y: 4, z: 3}
+          position: -1.6666666269302368
+      - type: 1
+        speed: 1
+        appearBeat: {x: 240, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 240, y: 4, z: 1}
+          position: 1.6666666269302368
+      - type: 1
+        speed: 1
+        appearBeat: {x: 241, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 241, y: 4, z: 3}
+          position: -3
+      - type: 1
+        speed: 1
+        appearBeat: {x: 243, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 243, y: 4, z: 1}
+          position: 1
+      - type: 1
+        speed: 1
+        appearBeat: {x: 244, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 244, y: 4, z: 3}
+          position: -2
+      - type: 1
+        speed: 1
+        appearBeat: {x: 246, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 246, y: 4, z: 1}
+          position: 2
+      - type: 1
+        speed: 1
+        appearBeat: {x: 247, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 247, y: 4, z: 3}
+          position: -3.3333332538604736
+      - type: 1
+        speed: 1
+        appearBeat: {x: 249, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 249, y: 4, z: 1}
+          position: 1.6666666269302368
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.002144363
+          value: -0.99955034
+          inSlope: -0.14167173
+          outSlope: -0.14167173
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 14.122461
+          value: -3
+          inSlope: -0.070835866
+          outSlope: -0.00604296
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.15243344
+        - serializedVersion: 3
+          time: 47
+          value: -3
+          inSlope: 0.0030128404
+          outSlope: -0.52929795
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.10289895
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47.2
+          value: -10
+          inSlope: -17.499725
+          outSlope: -0.013730494
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21083626
+        - serializedVersion: 3
+          time: 80
+          value: -10
+          inSlope: 0.0021482557
+          outSlope: 7
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.11808791
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 80.75
+          value: -3
+          inSlope: 9.333333
+          outSlope: 0.5206477
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.14968657
+        - serializedVersion: 3
+          time: 86.91849
+          value: -1.5822029
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 97
+          value: -2.5507379
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 127
+          value: -2.550738
+          inSlope: Infinity
+          outSlope: 0.0012598685
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 1
+        - serializedVersion: 3
+          time: 128
+          value: -1
+          inSlope: -0.0014268209
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 1
+          outWeight: 0
+        - serializedVersion: 3
+          time: 169
+          value: -2
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 173
+          value: -2.5
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: -17
+          inSlope: 0.19377552
+          outSlope: 0.19377552
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 29.405455
+          value: -11.301943
+          inSlope: 0.19377552
+          outSlope: 0.19377552
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81
+          value: -11.244951
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 90.005424
+          value: -13.884087
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: -2.445282
+          value: 5.3667603
+          inSlope: -14.308121
+          outSlope: -14.308121
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 6.022924
+          value: -115.797356
+          inSlope: -7.0833216
+          outSlope: -7.0833216
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: -110
+          inSlope: 0.023471452
+          outSlope: 0.023471452
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47.022263
+          value: -180
+          inSlope: -1572.1372
+          outSlope: -11.231671
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.13548356
+        - serializedVersion: 3
+          time: 64.87399
+          value: 54.136765
+          inSlope: Infinity
+          outSlope: 2.4310806
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 79.277954
+          value: 55.722473
+          inSlope: 0.016059382
+          outSlope: 0.016059382
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 80.75
+          value: -110
+          inSlope: 0
+          outSlope: -0.7967464
+          tangentMode: 1
+          weightedMode: 2
+          inWeight: 0
+          outWeight: 0.42676818
+        - serializedVersion: 3
+          time: 95.64594
+          value: -109.659706
+          inSlope: 0.6144471
+          outSlope: 0.6144471
+          tangentMode: 1
+          weightedMode: 3
+          inWeight: 0.2484258
+          outWeight: 0.9555427
+        - serializedVersion: 3
+          time: 97
+          value: -83.86464
+          inSlope: 0.22309478
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 1
+          inWeight: 0.098629646
+          outWeight: 0
+        - serializedVersion: 3
+          time: 112.99682
+          value: -90
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: -90
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -90
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.12373352
+          value: 0.03262329
+          inSlope: 0.0008556156
+          outSlope: 0.0008556156
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 13.16068
+          value: 0.043777905
+          inSlope: 0.059094362
+          outSlope: 0.059094362
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 15.889187
+          value: 0.36392212
+          inSlope: 0.3449784
+          outSlope: 0.3449784
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 17
+          value: 1
+          inSlope: 0.28049788
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 109
+          value: 1
+          inSlope: -0.125
+          outSlope: 0.00048646567
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 1
+        - serializedVersion: 3
+          time: 113
+          value: 0
+          inSlope: -0.125
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: 0.125
+          outSlope: 0.125
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 1
+          inSlope: 0.25
+          outSlope: 0.25
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 5
+        end: 5
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+      - start: 5
+        end: 7
+        startBeat: {x: 17, y: 0, z: 0}
+        endBeat: {x: 47, y: 0, z: 0}
+      - start: 7
+        end: 10
+        startBeat: {x: 81, y: 0, z: 0}
+        endBeat: {x: 105, y: 0, z: 0}
+      - start: 10
+        end: 14
+        startBeat: {x: 105, y: 0, z: 0}
+        endBeat: {x: 109, y: 2, z: 1}
+      - start: 14
+        end: 200
+        startBeat: {x: 109, y: 0, z: 0}
+        endBeat: {x: 113, y: 0, z: 0}
+      - start: 200
+        end: 114514
+        startBeat: {x: 113, y: 0, z: 0}
+        endBeat: {x: 113, y: 2, z: 1}
+      - start: 114514
+        end: 11
+        startBeat: {x: 113, y: 2, z: 1}
+        endBeat: {x: 114, y: 0, z: 0}
+      - start: 114514
+        end: 11
+        startBeat: {x: 113, y: 2, z: 1}
+        endBeat: {x: 114, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 49, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 49, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 50, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 51, y: 4, z: 0}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 52, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 52, y: 4, z: 2}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 53, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 54, y: 4, z: 0}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 55, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 55, y: 4, z: 1}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 56, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 56, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 56, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 56, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 57, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 57, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 57, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 57, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 58, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 58, y: 4, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 58, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 59, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 60, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 60, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 60, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 60, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 61, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 61, y: 4, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 61, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 62, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 63, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 63, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 63, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 63, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 65, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 65, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 66, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 67, y: 4, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 69, y: 4, z: 2}
+          position: 0.5
+        - hitBeat: {x: 70, y: 4, z: 0}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 68, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 68, y: 4, z: 2}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 64, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 64, y: 4, z: 1}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 72, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 72, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 72, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 72, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 71, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 71, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 71, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 71, y: 4, z: 2}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 73, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 73, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 74, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 75, y: 4, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 76, y: 1, z: 0}
+          position: 0.5
+        - hitBeat: {x: 76, y: 4, z: 2}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 77, y: 4, z: 2}
+          position: 0.5
+        - hitBeat: {x: 78, y: 4, z: 0}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 80, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 80, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 80, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 80, y: 1, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 79, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 79, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 106, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 106, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 107, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 107, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 107, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 107, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 65, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 65, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 66, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 66, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 68, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 68, y: 1, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 69, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 69, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 73, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 73, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 74, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 74, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 76, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 76, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 77, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 77, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 117, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 118, y: 4, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 119, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 120, y: 4, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 126, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 127, y: 1, z: 0}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 121, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 122, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 123, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 124, y: 1, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 125, y: 4, z: 2}
+          position: 0
+        - hitBeat: {x: 126, y: 1, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 127, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 128, y: 1, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 130, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 131, y: 4, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 129, y: 4, z: 2}
+          position: -0.5
+        - hitBeat: {x: 130, y: 1, z: 0}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 131, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 132, y: 4, z: 0}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 132, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 133, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 135, y: 4, z: 2}
+          position: -0
+        - hitBeat: {x: 136, y: 4, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 137, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 138, y: 4, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 139, y: 4, z: 2}
+          position: 0.5
+        - hitBeat: {x: 140, y: 1, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 142, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 142, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 172, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 172, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 176, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 176, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 177, y: 4, z: 2}
+          position: 0
+        - hitBeat: {x: 178, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 160, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 160, y: 4, z: 1}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 161, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 161, y: 4, z: 1}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 160, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 160, y: 4, z: 3}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 161, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 161, y: 4, z: 3}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 163, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 163, y: 4, z: 1}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 164, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 164, y: 4, z: 1}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 165, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 165, y: 4, z: 1}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 166, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 166, y: 4, z: 1}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 166, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 166, y: 4, z: 3}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 167, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 167, y: 4, z: 1}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 167, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 167, y: 4, z: 3}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 181, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 181, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 180, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 180, y: 4, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 6}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 6}
+          position: -0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 4}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 4}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 186, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 186, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 186, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 186, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 190, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 190, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 190, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 190, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 193, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 193, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 195, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 195, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 196, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 196, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 197, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 197, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 198, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 198, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 199, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 199, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 200, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 200, y: 4, z: 3}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 210, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 210, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 211, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 211, y: 1, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 212, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 212, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 213, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 213, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 214, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 214, y: 4, z: 0}
+          position: -0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 209, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 209, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 215, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 215, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 216, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 216, y: 1, z: 0}
+          position: 1.6666666269302368
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.23143768
+          value: 16.294678
+          inSlope: -0.24111716
+          outSlope: -0.24111716
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: 5.017975
+          inSlope: -1.5818661
+          outSlope: -12.010152
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.0015904852
+          outWeight: 0.05829239
+        - serializedVersion: 3
+          time: 48
+          value: 1
+          inSlope: -0.3772584
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.23974991
+          outWeight: 0.16515899
+        - serializedVersion: 3
+          time: 81
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81.5
+          value: -0.5
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: -3.5
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 127
+          value: -3.5
+          inSlope: Infinity
+          outSlope: 0.0000004892617
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.92504406
+        - serializedVersion: 3
+          time: 128
+          value: -2
+          inSlope: -0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 1
+          outWeight: 0
+        - serializedVersion: 3
+          time: 173
+          value: -3.5
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81
+          value: 1
+          inSlope: Infinity
+          outSlope: 0
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81.5
+          value: 0.75
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -18
+          outSlope: -18
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -17
+          inSlope: -8.887323
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 103
+          value: -13.88
+          inSlope: 0.030588234
+          outSlope: 0.030588234
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 35
+          outSlope: 35
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 35
+          inSlope: 17.47281
+          outSlope: 0.001997562
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.07495481
+        - serializedVersion: 3
+          time: 65
+          value: 35
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81
+          value: 60
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -1.134104
+          outSlope: -1.134104
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: -53.302887
+          inSlope: -19.32265
+          outSlope: -93.666885
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.012417461
+          outWeight: 0.07066727
+        - serializedVersion: 3
+          time: 48
+          value: -90
+          inSlope: -0.326105
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 1
+          inWeight: 1
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: -90
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 58.257294
+          value: 0
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81
+          value: 1
+          inSlope: Infinity
+          outSlope: 0
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81.5
+          value: 0
+          inSlope: -0.014694113
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 105
+          value: 1
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 113
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 7
+        end: 11
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+      - start: 11
+        end: 14
+        startBeat: {x: 159, y: 2, z: 1}
+        endBeat: {x: 160, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 49, y: 1, z: 0}
+          position: -2
+        - hitBeat: {x: 49, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 50, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 51, y: 4, z: 0}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 52, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 52, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 53, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 54, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 55, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 55, y: 4, z: 0}
+          position: -2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 55, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 55, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 56, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 56, y: 4, z: 1}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 57, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 57, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 58, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 58, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 59, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 59, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 59, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 59, y: 4, z: 2}
+          position: -1.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 60, y: 1, z: 0}
+          position: 0.5
+        - hitBeat: {x: 60, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 61, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 61, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 62, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 62, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 62, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 62, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 64, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 64, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 64, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 64, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 63, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 63, y: 4, z: 1}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 65, y: 4, z: 0}
+          position: -1.5
+        - hitBeat: {x: 65, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 66, y: 4, z: 2}
+          position: -1.5
+        - hitBeat: {x: 67, y: 4, z: 0}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 68, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 68, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 69, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 70, y: 4, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 71, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 71, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 71, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 71, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 72, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 72, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 72, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 72, y: 4, z: 2}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 73, y: 1, z: 0}
+          position: -1.5
+        - hitBeat: {x: 73, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 74, y: 4, z: 2}
+          position: -1.5
+        - hitBeat: {x: 75, y: 1, z: 0}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 76, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 76, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 77, y: 4, z: 2}
+          position: -2
+        - hitBeat: {x: 78, y: 1, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 79, y: 1, z: 0}
+          position: 0.5
+        - hitBeat: {x: 79, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 79, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 79, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 80, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 80, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 77, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 77, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 76, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 76, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 74, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 74, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 73, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 73, y: 4, z: 0}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 69, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 69, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 68, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 68, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 66, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 66, y: 4, z: 2}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 65, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 65, y: 1, z: 0}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 108, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 108, y: 1, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 108, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 108, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 106, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 106, y: 4, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 105, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 105, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 105, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 105, y: 1, z: 0}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 118, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 118, y: 4, z: 2}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 120, y: 4, z: 0}
+          position: -1.5
+        - hitBeat: {x: 120, y: 4, z: 2}
+          position: -1.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 122, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 122, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 123, y: 1, z: 0}
+          position: -3
+        - hitBeat: {x: 123, y: 4, z: 2}
+          position: -3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 124, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 124, y: 4, z: 2}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 128, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 128, y: 4, z: 2}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 134, y: 1, z: 0}
+          position: 1
+        - hitBeat: {x: 134, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 136, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 136, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 140, y: 1, z: 0}
+          position: -0.5
+        - hitBeat: {x: 140, y: 4, z: 2}
+          position: -0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 141, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 141, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 137, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 137, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 140, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 140, y: 1, z: 0}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 141, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 141, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 143, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 143, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 172, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 172, y: 1, z: 0}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 176, y: 4, z: 2}
+          position: 0
+        - hitBeat: {x: 177, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 177, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 177, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 162, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 162, y: 4, z: 0}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 162, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 162, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 163, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 163, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 164, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 164, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 165, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 165, y: 4, z: 2}
+          position: 0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 166, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 166, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 166, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 166, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 167, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 167, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 167, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 167, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 180, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 180, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 181, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 181, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 2}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 183, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 183, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 186, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 186, y: 4, z: 1}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 186, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 186, y: 4, z: 3}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 190, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 190, y: 4, z: 3}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 190, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 190, y: 4, z: 1}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 192, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 192, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 194, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 194, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 196, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 196, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 197, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 197, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 198, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 198, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 199, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 199, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 200, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 200, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 202, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 202, y: 4, z: 1}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 209, y: 4, z: 0}
+          position: 3
+        - hitBeat: {x: 209, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 210, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 210, y: 4, z: 3}
+          position: -0.3333333432674408
+        - hitBeat: {x: 211, y: 4, z: 0}
+          position: 3
+        - hitBeat: {x: 211, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 212, y: 1, z: 0}
+          position: -0
+        - hitBeat: {x: 212, y: 4, z: 2}
+          position: -0.3333333432674408
+        - hitBeat: {x: 213, y: 4, z: 3}
+          position: -0.6666666865348816
+        - hitBeat: {x: 214, y: 1, z: 0}
+          position: 3
+        - hitBeat: {x: 214, y: 4, z: 3}
+          position: -1
+        - hitBeat: {x: 215, y: 4, z: 0}
+          position: 3
+        - hitBeat: {x: 215, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 216, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 216, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 216, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 209, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 209, y: 1, z: 0}
+          position: 3
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.60173416
+          value: -29.259306
+          inSlope: 0.5012969
+          outSlope: 0.5012969
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: -6
+          inSlope: 3.2925744
+          outSlope: 12.255378
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.002797634
+          outWeight: 0.02615738
+        - serializedVersion: 3
+          time: 48
+          value: -2
+          inSlope: 0.115826145
+          outSlope: 0.0021338956
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.18745804
+          outWeight: 0.034307655
+        - serializedVersion: 3
+          time: 81
+          value: -2
+          inSlope: Infinity
+          outSlope: 0
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.036686752
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81.5
+          value: -0.5
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 100
+          value: 3.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 127
+          value: 3.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 128
+          value: 2
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 173
+          value: 3.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81
+          value: 0.5
+          inSlope: Infinity
+          outSlope: 0
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81.5
+          value: 0.75
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -17
+          outSlope: -17
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -17
+          inSlope: -17
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 100
+          value: -13.88
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 35
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 65
+          value: 35
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81
+          value: 60
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 100
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -2.9787233
+          outSlope: -2.9787233
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 47
+          value: -140
+          inSlope: 23.51064
+          outSlope: 158.11632
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.05430603
+        - serializedVersion: 3
+          time: 48
+          value: -90
+          inSlope: 1.8104949
+          outSlope: 1.8104949
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.32509613
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 81
+          value: 1
+          inSlope: Infinity
+          outSlope: 0
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 81.5
+          value: 0
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 103
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 105
+          value: 1
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 113
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 7
+        end: 10
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+      - start: 11
+        end: 14
+        startBeat: {x: 159, y: 2, z: 1}
+        endBeat: {x: 160, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 80, y: 4, z: 2}
+          position: -3
+        - hitBeat: {x: 82, y: 4, z: 0}
+          position: 2.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 98, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 98, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 99, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 99, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 99, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 99, y: 4, z: 2}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 100, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 100, y: 1, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 100, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 100, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 101, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 101, y: 4, z: 0}
+          position: -3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 101, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 101, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 102, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 102, y: 4, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 102, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 102, y: 4, z: 2}
+          position: 3
+      - type: 0
+        speed: 1
+        appearBeat: {x: 103, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 103, y: 1, z: 0}
+          position: -1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 103, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 103, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 104, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 104, y: 1, z: 0}
+          position: 1.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 104, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 104, y: 4, z: 2}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 118, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 119, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 121, y: 4, z: 0}
+          position: 1
+        - hitBeat: {x: 121, y: 4, z: 2}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 122, y: 4, z: 2}
+          position: -2.5
+        - hitBeat: {x: 123, y: 1, z: 0}
+          position: -2.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 125, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 125, y: 4, z: 2}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 128, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 129, y: 4, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 130, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 130, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 132, y: 4, z: 0}
+          position: 0.5
+        - hitBeat: {x: 132, y: 4, z: 2}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 134, y: 4, z: 2}
+          position: 0
+        - hitBeat: {x: 135, y: 1, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 136, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 137, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 138, y: 4, z: 2}
+          position: -1
+        - hitBeat: {x: 139, y: 1, z: 0}
+          position: -1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 140, y: 4, z: 2}
+          position: 1
+        - hitBeat: {x: 141, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 140, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 140, y: 4, z: 2}
+          position: 1
+      - type: 1
+        speed: 1
+        appearBeat: {x: 144, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 144, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 148, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 148, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 149, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 149, y: 4, z: 2}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 151, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 151, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 152, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 152, y: 4, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 153, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 153, y: 4, z: 2}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 155, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 155, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 156, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 156, y: 1, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 158, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 158, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 172, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 172, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 177, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 177, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 160, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 160, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 160, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 160, y: 4, z: 2}
+          position: -0.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 161, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 161, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 161, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 161, y: 4, z: 2}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 163, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 163, y: 4, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 163, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 163, y: 4, z: 3}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 165, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 165, y: 4, z: 0}
+          position: 0.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 168, y: 4, z: 0}
+          position: -0
+        - hitBeat: {x: 168, y: 4, z: 1}
+          position: 2
+        - hitBeat: {x: 168, y: 4, z: 2}
+          position: 3
+        - hitBeat: {x: 168, y: 4, z: 3}
+          position: 4
+        - hitBeat: {x: 169, y: 4, z: 0}
+          position: 4.5
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 168, y: 4, z: 0}
+          position: 0
+        - hitBeat: {x: 168, y: 4, z: 1}
+          position: -2
+        - hitBeat: {x: 168, y: 4, z: 2}
+          position: -3
+        - hitBeat: {x: 168, y: 4, z: 3}
+          position: -4
+        - hitBeat: {x: 169, y: 4, z: 0}
+          position: -4.5
+      - type: 0
+        speed: 1
+        appearBeat: {x: 168, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 168, y: 4, z: 0}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 180, y: 4, z: 2}
+          position: 0
+        - hitBeat: {x: 181, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 182, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 182, y: 4, z: 0}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 2}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 185, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 185, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 185, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 185, y: 4, z: 1}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 189, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 189, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 189, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 189, y: 4, z: 1}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 187, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 187, y: 4, z: 0}
+          position: -0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 187, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 187, y: 4, z: 1}
+          position: 0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 191, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 191, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 191, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 191, y: 4, z: 2}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 195, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 195, y: 4, z: 0}
+          position: -1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 195, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 195, y: 1, z: 0}
+          position: 1
+      - type: 0
+        speed: 1
+        appearBeat: {x: 197, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 197, y: 4, z: 2}
+          position: 0.6666666865348816
+      - type: 0
+        speed: 1
+        appearBeat: {x: 200, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 200, y: 4, z: 3}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 217, y: 4, z: 0}
+          position: -1
+        - hitBeat: {x: 218, y: 4, z: 0}
+          position: 3
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 219, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 220, y: 4, z: 0}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 221, y: 4, z: 0}
+          position: -3
+        - hitBeat: {x: 222, y: 4, z: 0}
+          position: 1
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 223, y: 4, z: 0}
+          position: -4
+        - hitBeat: {x: 224, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 228, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 228, y: 4, z: 2}
+          position: -1.6666666269302368
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0.08000004
+          outSlope: 0.08000004
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1.08
+          inSlope: 0.039821737
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 92
+          value: 0
+          inSlope: -0.011868132
+          outSlope: -0.011868132
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -0.8
+          outSlope: -0.8
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -0.8
+          inSlope: -0.3843597
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 93
+          value: -1.4993478
+          inSlope: Infinity
+          outSlope: 0.03128061
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 98.33612
+          value: 2.550738
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 127
+          value: 2.550738
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 128
+          value: 1
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 169
+          value: 2
+          inSlope: 0
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 173
+          value: 2.5
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 1
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -15
+          outSlope: -15
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -15
+          inSlope: -15
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 93
+          value: -13.88409
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 60
+          outSlope: 60
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 60
+          inSlope: 60
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 83.35593
+          value: -90
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -280
+          outSlope: -280
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -280
+          inSlope: -280
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 95.111694
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -197
+          outSlope: -197
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -197
+          inSlope: -94.010544
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 92.92523
+          value: -90
+          inSlope: 1.1639894
+          outSlope: 1.1639894
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0.0052083335
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 96
+          value: 0
+          inSlope: Infinity
+          outSlope: 0.00086990703
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 1
+        - serializedVersion: 3
+          time: 97
+          value: 1
+          inSlope: 1
+          outSlope: Infinity
+          tangentMode: 97
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        - serializedVersion: 3
+          time: 113
+          value: 0
+          inSlope: Infinity
+          outSlope: Infinity
+          tangentMode: 103
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 0
+        end: 10
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+      - start: 11
+        end: 14
+        startBeat: {x: 159, y: 2, z: 1}
+        endBeat: {x: 160, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 177, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 177, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 180, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 180, y: 4, z: 2}
+          position: -1
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 7}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 7}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 3}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 3}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 184, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 184, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 188, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 188, y: 4, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 193, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 193, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 200, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 200, y: 4, z: 0}
+          position: -0
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -1.9
+          outSlope: -1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -1.9
+          inSlope: -1.9
+          outSlope: -1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -13.88
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -53
+          outSlope: -53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -53
+          inSlope: -53
+          outSlope: -53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -90
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: Infinity
+          outSlope: 0.0028409092
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 1
+          inSlope: 0.25
+          outSlope: 0.25
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 0
+        end: 14
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 0
+        speed: 1
+        appearBeat: {x: 177, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 177, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 179, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 179, y: 4, z: 2}
+          position: -0.6666666865348816
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 180, y: 4, z: 0}
+          position: -2
+        - hitBeat: {x: 180, y: 4, z: 2}
+          position: 2
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 1}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 1}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 1}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 1}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 184, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 184, y: 4, z: 1}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 188, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 188, y: 4, z: 1}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 192, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 192, y: 4, z: 2}
+          position: 0
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1.9
+          outSlope: 1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1.9
+          inSlope: 1.9
+          outSlope: 1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -13.88
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 53
+          outSlope: 53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 53
+          inSlope: 53
+          outSlope: 53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -90
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: Infinity
+          outSlope: 0.0028409092
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 1
+          inSlope: 0.25
+          outSlope: 0.25
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 0
+        end: 14
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 0
+        speed: 1
+        appearBeat: {x: 176, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 176, y: 1, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 178, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 178, y: 4, z: 3}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 181, y: 1, z: 0}
+          position: 2
+        - hitBeat: {x: 181, y: 4, z: 2}
+          position: -2
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 5}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 5}
+          position: -0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 5}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 5}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 184, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 184, y: 4, z: 2}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 188, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 188, y: 4, z: 2}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 193, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 193, y: 1, z: 0}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 201, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 201, y: 4, z: 2}
+          position: 0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 229, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 229, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 229, y: 4, z: 3}
+          position: 2
+        - hitBeat: {x: 230, y: 4, z: 1}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 230, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 231, y: 4, z: 0}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 231, y: 4, z: 1}
+          position: 2
+        - hitBeat: {x: 231, y: 4, z: 3}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 232, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 232, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 229, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 229, y: 1, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 229, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 229, y: 4, z: 3}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 230, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 230, y: 4, z: 2}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 231, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 231, y: 4, z: 1}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 232, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 232, y: 4, z: 0}
+          position: 2
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -1.9
+          outSlope: -1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -1.9
+          inSlope: -1.9
+          outSlope: -1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -13.88
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 53
+          outSlope: 53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 53
+          inSlope: 53
+          outSlope: 53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -90
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: Infinity
+          outSlope: 0.0028409092
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 1
+          inSlope: 0.25
+          outSlope: 0.25
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 0
+        end: 14
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}
+    - flowSpeed: 1
+      notes:
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 176, y: 1, z: 0}
+          position: -2
+        - hitBeat: {x: 176, y: 4, z: 2}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 178, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 178, y: 4, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 179, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 179, y: 4, z: 3}
+          position: 0.3333333432674408
+      - type: 0
+        speed: 1
+        appearBeat: {x: 181, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 181, y: 4, z: 2}
+          position: 1
+      - type: 1
+        speed: 1
+        appearBeat: {x: 182, y: 8, z: 3}
+        data:
+        - hitBeat: {x: 182, y: 8, z: 3}
+          position: 0
+      - type: 1
+        speed: 1
+        appearBeat: {x: 183, y: 8, z: 7}
+        data:
+        - hitBeat: {x: 183, y: 8, z: 7}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 184, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 184, y: 4, z: 3}
+          position: -0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 188, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 188, y: 4, z: 3}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 192, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 192, y: 1, z: 0}
+          position: 0
+      - type: 0
+        speed: 1
+        appearBeat: {x: 202, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 202, y: 4, z: 1}
+          position: -0
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 225, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 225, y: 4, z: 2}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 225, y: 4, z: 3}
+          position: 2
+        - hitBeat: {x: 226, y: 4, z: 1}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 227, y: 4, z: 1}
+          position: 2
+        - hitBeat: {x: 227, y: 4, z: 3}
+          position: -2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 228, y: 4, z: 0}
+          position: 2
+        - hitBeat: {x: 228, y: 4, z: 2}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 225, y: 1, z: 0}
+        data:
+        - hitBeat: {x: 225, y: 1, z: 0}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 225, y: 4, z: 3}
+        data:
+        - hitBeat: {x: 225, y: 4, z: 3}
+          position: 2
+      - type: 2
+        speed: 1
+        appearBeat: {x: -1, y: 0, z: 0}
+        data:
+        - hitBeat: {x: 226, y: 4, z: 2}
+          position: 2
+        - hitBeat: {x: 227, y: 4, z: 0}
+          position: -2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 226, y: 4, z: 2}
+        data:
+        - hitBeat: {x: 226, y: 4, z: 2}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 227, y: 4, z: 1}
+        data:
+        - hitBeat: {x: 227, y: 4, z: 1}
+          position: 2
+      - type: 0
+        speed: 1
+        appearBeat: {x: 228, y: 4, z: 0}
+        data:
+        - hitBeat: {x: 228, y: 4, z: 0}
+          position: 2
+      positionX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1.9
+          outSlope: 1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1.9
+          inSlope: 1.9
+          outSlope: 1.9
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -1
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      positionZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -13.88
+          inSlope: -13.88
+          outSlope: -13.88
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationX:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -53
+          outSlope: -53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -53
+          inSlope: -53
+          outSlope: -53
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationY:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: -90
+          inSlope: -90
+          outSlope: -90
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      rotationZ:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: Infinity
+          outSlope: 0.0028409092
+          tangentMode: 7
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 1
+          inSlope: 0.25
+          outSlope: 0.25
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      transparency:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 173
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 177
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      speed:
+      - start: 0
+        end: 14
+        startBeat: {x: 0, y: 0, z: 0}
+        endBeat: {x: 1, y: 0, z: 0}

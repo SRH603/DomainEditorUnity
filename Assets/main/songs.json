@@ -1,0 +1,46 @@
+{
+  "packs": [
+    {
+      "id": "chapter1",
+      "section": "mainstory",
+      "custom_banner": true,
+      "cutout_pack_image": false,
+      "plus_character": 1,
+      "name_localized": {
+        "en": "Chapter 1",
+        "ja": "第1章",
+        "ko": "?? 1",
+        "zh-Hant": "第1章",
+        "zh-Hans": "第1章"
+      },
+      "description_localized": {
+        "en": "Begin your journey with the first chapter. Experience the origin of the story through a collection of 10 epic songs.",
+        "ja": "旅を始めましょう。この章では10曲の壮大な楽曲を通じて物語の起源を体験してください。",
+        "ko": "??? ?????. 10?? ????? ?? ?? ???? ??? ?????.",
+        "zh-Hant": "開始你的旅程。通過10首史詩般的歌曲體驗故事的起源。",
+        "zh-Hans": "开始你的旅程。通过10首史诗般的歌曲体验故事的起源。"
+      }
+    },
+    {
+      "id": "test",
+      "section": "sidestory",
+      "custom_banner": true,
+      "cutout_pack_image": true,
+      "plus_character": 2,
+      "name_localized": {
+        "en": "Test Pack",
+        "ja": "テストパック",
+        "ko": "??? ?",
+        "zh-Hant": "測試包",
+        "zh-Hans": "测试包"
+      },
+      "description_localized": {
+        "en": "This is a test pack designed to explore the depths of gameplay. Includes 5 experimental songs.",
+        "ja": "これはゲームプレイの深さを探るためのテストパックです。5曲の実験的な楽曲が含まれています。",
+        "ko": "?? ???? ??? ???? ?? ??? ??? ????. 5?? ???? ?? ???? ????.",
+        "zh-Hant": "這是一個用於探索遊戲深度的測試包。包括5首實驗性歌曲。",
+        "zh-Hans": "这是一个用于探索游戏深度的测试包。包括5首实验性歌曲。"
+      }
+    }
+  ]
+}

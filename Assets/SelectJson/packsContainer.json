@@ -1,0 +1,491 @@
+{
+    "packs": [
+        {
+            "idx": "0",
+            "id": "chapter_1",
+            "section": "main_chapter",
+            "plus_character": 0,
+            "name_localized": {
+                "en": "Chapter 1",
+                "ja": "不会日语",
+                "ko": "不会韩语",
+                "zh_Hant": "第一章",
+                "zh_Hans": "第一张（我是繁体字）"
+            },
+            "description_localized": {
+                "en": "Hay guys  this is Chapter 1",
+                "ja": "不会日语",
+                "ko": "不会韩语",
+                "zh_Hant": "各位这是第一章",
+                "zh_Hans": "各位这是第一章"
+            },
+            "songs": [
+                {
+                    "idx": 0,
+                    "id": "Z",
+                    "title": "Z",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 3,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 2,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 1,
+                    "id": "B",
+                    "title": "B",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 2,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                }
+            ],
+            "packconditions": []
+        },
+        {
+            "idx": "1",
+            "id": "single",
+            "section": "single",
+            "plus_character": -1,
+            "name_localized": {
+                "en": "Single",
+                "ja": "不会日语",
+                "ko": "不会韩语",
+                "zh_Hant": "单曲",
+                "zh_Hans": "单曲（我是繁体字）"
+            },
+            "description_localized": {
+                "en": "1",
+                "ja": "2",
+                "ko": "3",
+                "zh_Hant": "4",
+                "zh_Hans": "5"
+            },
+            "songs": [
+                {
+                    "idx": 2,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 3,
+                    "id": "123",
+                    "title": "123",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 14,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 4,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 5,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 6,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 7,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 8,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                },
+                {
+                    "idx": 9,
+                    "id": "A",
+                    "title": "A",
+                    "artist": "",
+                    "previewillustration": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 0.0
+                    },
+                    "illustrator": "",
+                    "bpm": "",
+                    "duration": "",
+                    "set": "",
+                    "songinfo": "",
+                    "unlockinfo": "",
+                    "audioPreview": 0,
+                    "audioPreviewEnd": 0,
+                    "version": "",
+                    "difficulties": [
+                        {
+                            "ratingClass": 0,
+                            "rating": 15,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        },
+                        {
+                            "ratingClass": 0,
+                            "rating": 0,
+                            "chartDesigner": "",
+                            "version": "",
+                            "conditions": []
+                        }
+                    ]
+                }
+            ],
+            "packconditions": [
+                {
+                    "type": 0,
+                    "song_id": "",
+                    "song_difficulty": 0,
+                    "grade": 0,
+                    "credit": 123
+                }
+            ]
+        }
+    ]
+}

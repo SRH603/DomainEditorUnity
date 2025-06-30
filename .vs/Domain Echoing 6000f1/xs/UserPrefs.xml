@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{A58C885A-ACB6-3225-F01E-85D8ADA387B0}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Utilities/SceneSwitcher.cs">
+    <Files>
+      <File FileName="Library/PackageCache/com.unity.services.authentication/Editor/Settings/AuthenticationSettingsElement.cs" Line="217" Column="1" />
+      <File FileName="Library/PackageCache/com.unity.services.authentication/Runtime/Network/WebRequest.cs" />
+      <File FileName="Library/PackageCache/com.unity.services.authentication/Runtime/AuthenticationServiceInternal.PlayerNames.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/Utilities/SceneSwitcher.cs" Line="15" Column="20" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Domain Echoing 6000f1" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Utilities" expanded="True">
+                  <Node name="SceneSwitcher.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e98badc9-add8-4ce2-a4ea-e6b8e310869a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

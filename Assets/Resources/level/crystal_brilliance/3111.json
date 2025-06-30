@@ -1,0 +1,881 @@
+{
+    "Info": {
+        "Title": "Luminaria",
+        "Difficulty": 1.5,
+        "RatingClass": 0,
+        "TotalNumberOfNotes": 3,
+        "FolderName": "luminaria"
+    },
+    "ChartContent": {
+        "BPMChanges": [
+            {
+                "StartBeat": [ 0, 0, 0 ],
+                "BPM": 227
+            }
+        ],
+        "NumberOfJudgmentLines": 2,
+        "JudgmentLines": [
+            {
+                "NumberOfNotes": 3,
+                "NoteFlowSpeed": 4,
+                "Notes": [
+                    {
+                        "Type": 0,
+                        "HitTime": [ 4, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 4, 0, 0 ],
+                        "Position": -1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 5, 0, 0 ],
+                        "Position": 2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 6, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 7, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 8, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 9, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 9, 0, 0 ],
+                        "Position": -0.5,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 10, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 10, 0, 0 ],
+                        "Position": -2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 11, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 12, 0, 0 ],
+                        "Position": -1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 12, 0, 0 ],
+                        "Position": 2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 12, 4, 1 ],
+                        "Position": -1.2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 12, 4, 2 ],
+                        "Position": -1.4,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 12, 4, 3 ],
+                        "Position": -1.6,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 13, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 14, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 15, 0, 0 ],
+                        "Position": 2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 16, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 17, 2, 1 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 18, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 19, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 20, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 21, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 22, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 24, 0, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 24, 0, 0 ],
+                        "Position": -1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 24, 2, 1 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 24, 2, 1 ],
+                        "Position": -2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 25, 0, 0 ],
+                        "Position": 2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 25, 0, 0 ],
+                        "Position": -1,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 25, 2, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 25, 2, 1 ],
+                        "Position": -2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 26, 0, 0 ],
+                        "Position": 2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": -1
+                    },
+
+                    {
+                        "Type": 2,
+                        "DataCount": 2,
+                        "Data": [
+                            {
+                                "HitTime": [ 0, 4, 1 ],
+                                "Position": -3,
+                                "Angle": 30
+                            },
+                            {
+                                "HitTime": [ 1, 4, 1 ],
+                                "Position": -2,
+                                "Angle": 60
+                            },
+                            {
+                                "HitTime": [ 2, 4, 1 ],
+                                "Position": -2,
+                                "Angle": 60
+                            },
+                            {
+                                "HitTime": [ 8, 4, 3 ],
+                                "Position": -5,
+                                "Angle": 60
+                            }
+                        ],
+                        "Speed": 1.5,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 28, 4, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 28, 4, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 28, 4, 2 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 28, 4, 3 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 29, 4, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 29, 4, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 29, 4, 2 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 29, 4, 3 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 30, 4, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 30, 4, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 30, 4, 2 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 30, 4, 3 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 31, 4, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 31, 4, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 31, 4, 2 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 31, 4, 3 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 32, 4, 0 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 32, 4, 1 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 32, 4, 2 ],
+                        "Position": 1,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    },
+                    {
+                        "Type": 0,
+                        "HitTime": [ 32, 4, 3 ],
+                        "Position": 0,
+                        "Angle": 90,
+                        "Speed": 1.2,
+                        "AppearTime": 8
+                    }
+                ],
+                "AnimationPositionsX": [
+                    {
+                        "Start": 0,
+                        "End": 0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 5,
+                        "IOMode": 0,
+                        "Section": [0,1]
+                    },
+                    {
+                        "Start": 0,
+                        "End": 0,
+                        "StartTime": [ 2, 0, 0 ],
+                        "EndTime": [ 3, 0, 0 ],
+                        "EasingMode": 9,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+
+                    {
+                        "Start": 0,
+                        "End": 0,
+                        "StartTime": [ 3, 0, 0 ],
+                        "EndTime": [ 4, 0, 0 ],
+                        "EasingMode": 10,
+                        "IOMode": 1,
+                        "Section": [ 0.5, 0.6 ]
+                    }
+
+                ],
+                "AnimationPositionsY": [
+                    {
+                        "Start": -1,
+                        "End": -1,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationPositionsZ": [
+                    {
+                        "Start": -15,
+                        "End": -15,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsQuaternion": [
+                    {
+                        "Start": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "End": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "End": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "StartTime": [ 3, 0, 0 ],
+                        "EndTime": [ 4, 0, 0 ],
+                        "EasingMode": 10,
+                        "IOMode": 1,
+                        "Section": [ 0.5, 1 ]
+                    },
+                    {
+                        "Start": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "End": {
+                            "x": -120,
+                            "y": 10,
+                            "z": -90
+                        },
+                        "StartTime": [ 5, 0, 0 ],
+                        "EndTime": [ 35, 0, 0 ],
+                        "EasingMode": 10,
+                        "IOMode": 1,
+                        "Section": [ 0.35, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsEulersangleX": [
+                    {
+                        "Start": -120,
+                        "End": -120,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": -120,
+                        "End": -120,
+                        "StartTime": [ 6, 0, 0 ],
+                        "EndTime": [ 15, 4, 1 ],
+                        "EasingMode": 10,
+                        "IOMode": 1,
+                        "Section": [ 0, 1 ]
+                    }
+                ],
+                "AnimationRotationsEulersangleY": [
+                    {
+                        "Start": -10,
+                        "End": -10,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsEulersangleZ": [
+                    {
+                        "Start": -90,
+                        "End": -90,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationTransparencies": [
+                    {
+                        "Start": 0.5,
+                        "End": 1.0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 3, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationSpeeds": [
+                    {
+                        "Start": 3,
+                        "End": 4,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 3, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 4,
+                        "End": 3,
+                        "StartTime": [ 9, 0, 0 ],
+                        "EndTime": [ 30, 0, 0 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 3,
+                        "End": 4,
+                        "StartTime": [ 40, 0, 0 ],
+                        "EndTime": [ 60, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 3,
+                        "End": 4,
+                        "StartTime": [ 61, 0, 0 ],
+                        "EndTime": [ 70, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 3,
+                        "End": 4,
+                        "StartTime": [ 71, 0, 0 ],
+                        "EndTime": [ 80, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 4,
+                        "End": 0.001,
+                        "StartTime": [ 81, 0, 0 ],
+                        "EndTime": [ 90, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    },
+                    {
+                        "Start": 0.001,
+                        "End": 4,
+                        "StartTime": [ 91, 0, 0 ],
+                        "EndTime": [ 100, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+                ]
+            },
+            {
+                "NumberOfNotes": 3,
+                "NoteFlowSpeed": 15,
+                "Notes": [
+                    {
+                        "Type": 0,
+                        "HitTime": [ 1, 4, 1 ],
+                        "Position": -2,
+                        "Angle": 45,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 1,
+                        "HitTime": [ 0, 2, 1 ],
+                        "Position": -2,
+                        "Angle": 90,
+                        "Speed": 1,
+                        "AppearTime": 9
+                    },
+                    {
+                        "Type": 2,
+                        "DataCount": 2,
+                        "Data": [
+                            {
+                                "HitTime": [ 5, 4, 1 ],
+                                "Position": -1,
+                                "Angle": 30
+                            },
+                            {
+                                "HitTime": [ 6, 4, 0 ],
+                                "Position": -3,
+                                "Angle": 60
+                            }
+                        ],
+                        "Speed": 1,
+                        "AppearTime": 9
+                    }
+                ],
+                "AnimationPositionsX": [
+                    {
+                        "Start": 0,
+                        "End": 10,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationPositionsY": [
+                    {
+                        "Start": -1,
+                        "End": 0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationPositionsZ": [
+                    {
+                        "Start": -15,
+                        "End": 0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 1, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsQuaternion": [
+                    {
+                        "Start": {
+                            "x": -120,
+                            "y": -10,
+                            "z": -90
+                        },
+                        "End": {
+                            "x": 90,
+                            "y": 0,
+                            "z": 0
+                        },
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsEulersangleX": [
+                    {
+                        "Start": -120,
+                        "End": 90,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsEulersangleY": [
+                    {
+                        "Start": -10,
+                        "End": 0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationRotationsEulersangleZ": [
+                    {
+                        "Start": -90,
+                        "End": 0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 2, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationTransparencies": [
+                    {
+                        "Start": 1.0,
+                        "End": 0.0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 3, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ],
+                "AnimationSpeeds": [
+                    {
+                        "Start": 4,
+                        "End": 1.0,
+                        "StartTime": [ 0, 0, 0 ],
+                        "EndTime": [ 3, 4, 1 ],
+                        "EasingMode": 0,
+                        "IOMode": 0,
+                        "Section": [ 0, 1 ]
+                    }
+
+                ]
+            }
+        ]
+    }
+}

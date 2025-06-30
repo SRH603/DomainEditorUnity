@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
+  m_Name: track
+  m_EditorClassIdentifier: 
+  idx: 2
+  id: palladyne
+  title: Palladyne
+  artist: Kahxlyrio
+  illustration: {fileID: 2800000, guid: 82eb5027b6f50441fa3cccee569ded26, type: 3}
+  previewIllustration: {fileID: 2800000, guid: 82eb5027b6f50441fa3cccee569ded26, type: 3}
+  track: {fileID: 8300000, guid: 5fcdfd4881a2b45cfae6f6d1439c7d4f, type: 3}
+  illustrator: "BD\u75C7\u5019\u7FA4"
+  bpm: 220
+  background: default
+  songInfo: nothing
+  audioPreviewStart: 104
+  audioPreviewEnd: 120
+  version: 
+  charts:
+  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
+  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
+  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
