@@ -13,59 +13,117 @@ using static AutoUnlock;
 
 public class SongSelect : MonoBehaviour
 {
+    /* ───────────────────────────── 数据容器 ───────────────────────────── */
+    #region Data Containers
     //public BoolExpression rootExpression;
+    [Header("数据容器")]
     public PacksContainer packsContainer;
     public UnlocksContainer unlocksContainer;
-    public ArchivePacksContainer archivePackContainer = new ArchivePacksContainer { };
-    //public LoadArchive loadArchive;
-    [HideInInspector]public List<ArchiveTrack> currentSonglist;
+    public ArchivePacksContainer archivePackContainer = new ArchivePacksContainer();
 
-    // ????
-    [HideInInspector]public int sortMethod; // 0 ??????1 ??????2 ??????3 ??????4 ????
-    [HideInInspector]public int sortOrder; // 0 ASC??1 DESC
-    public GameObject[] sortMethodTypeface;
-    public GameObject[] sortOrderTypeface; // 0 ASC 1 DESC
+    [Space]
+    [HideInInspector] public List<ArchiveTrack> currentSonglist;
+    #endregion
 
-    [HideInInspector]public int currentChapterIndex;
-    [HideInInspector]public int currentTrackIndex;
-    [HideInInspector]public int currentDifficultyIndex;
 
+    /* ───────────────────────────── 排序设置 ───────────────────────────── */
+    #region Sorting
+    [Header("排序参数")]
+    [HideInInspector] public int sortMethod;          // 0-4 不同排序方式
+    [HideInInspector] public int sortOrder;           // 0 ASC | 1 DESC
+
+    public GameObject[] sortMethodTypeface;           // 排序方式字体
+    public GameObject[] sortOrderTypeface;            // 0 ASC | 1 DESC
+    #endregion
+
+
+    /* ───────────────────────────── 当前索引 ───────────────────────────── */
+    #region Runtime Indices
+    [HideInInspector] public int currentChapterIndex;
+    [HideInInspector] public int currentTrackIndex;
+    [HideInInspector] public int currentDifficultyIndex;
+    #endregion
+
+
+    /* ───────────────────────────── 章节 / 关卡 UI ───────────────────────────── */
+    #region Chapter & Level UI
+    [Header("章节 / 关卡 UI")]
     public TextMeshProUGUI chapterText;
 
-    public GameObject levelUIPrefab;
-    public GameObject content;
-    [HideInInspector]public List<GameObject> levelContainer;
-    [HideInInspector]public GameObject selectedLevel;
+    public GameObject  levelUIPrefab;
+    public GameObject  content;
+    [HideInInspector] public List<GameObject> levelContainer;
+    [HideInInspector] public GameObject selectedLevel;
+
     public GameObject[] difficultyButtons;
-    [HideInInspector]public bool[] difficultyExist = new bool[4];
-    [HideInInspector]public bool[] difficultyUnlocked = new bool[4];
 
-    [HideInInspector]public int CurrentLevelLocation, CurrentContentLocation;
+    [HideInInspector] public bool[] difficultyExist    = new bool[4];
+    [HideInInspector] public bool[] difficultyUnlocked = new bool[4];
 
-    public Image Illustration, IllustrationLock;
-    public TextMeshProUGUI SongTitle, Score, Optimism, Artist, BPM, Duration, Level, Info;
+    [HideInInspector] public int CurrentLevelLocation, CurrentContentLocation;
+    #endregion
+
+
+    /* ───────────────────────────── 歌曲信息 UI ───────────────────────────── */
+    #region Song Info UI
+    [Header("歌曲信息 UI")]
+    public Image Illustration;
+    public Image IllustrationLock;
+
+    public TextMeshProUGUI SongTitle;
+    public TextMeshProUGUI Score;
+    public TextMeshProUGUI Optimism;
+    public TextMeshProUGUI Artist;
+    public TextMeshProUGUI BPM;
+    public TextMeshProUGUI Duration;
+    public TextMeshProUGUI Level;
+    public TextMeshProUGUI Info;
+
     public Button StartButton;
 
     public TextMeshProUGUI[] Ratings = new TextMeshProUGUI[4];
-    [HideInInspector]public string songTitle, artist;
-    [HideInInspector]public string bpm;
-    [HideInInspector]public string level, info, duration;
-    [HideInInspector]public int score;
-    [HideInInspector]public int[] ratings = new int[4];
-    [HideInInspector]public int optimism;
-    [HideInInspector]public bool unlock;
-    
-    [HideInInspector]public Archive archive;
-    [HideInInspector]public int echo;
-    [HideInInspector]public float rating;
-    public TMP_Text echoDisplay, ratingDisplay;
+    #endregion
 
+
+    /* ───────────────────────────── 歌曲元数据缓存 ───────────────────────────── */
+    #region Song Meta Cache
+    [HideInInspector] public string songTitle, artist;
+    [HideInInspector] public string bpm;
+    [HideInInspector] public string level, info, duration;
+
+    [HideInInspector] public int   score;
+    [HideInInspector] public int[] ratings   = new int[4];
+    [HideInInspector] public int   optimism;
+    [HideInInspector] public bool  unlock;
+    #endregion
+
+
+    /* ───────────────────────────── 统计 / 评分 ───────────────────────────── */
+    #region Stats
+    [HideInInspector] public Archive archive;
+    [HideInInspector] public int     echo;
+    [HideInInspector] public float   rating;
+
+    public TMP_Text echoDisplay;
+    public TMP_Text ratingDisplay;
+    #endregion
+
+
+    /* ───────────────────────────── 试听 & 资源 ───────────────────────────── */
+    #region Audio Preview
     [SerializeField] private PreviewAudioPlayer previewPlayer;
-    // 关卡 ID → AudioClip 映射
-    private Dictionary<string, AudioClip> clipDict = new();
+
+    // 关卡 ID → AudioClip 对照表
+    private readonly Dictionary<string, AudioClip> clipDict = new();
+
     private string currentPlayingId = null;
-    
+    #endregion
+
+
+    /* ───────────────────────────── 其他 ───────────────────────────── */
+    #region Misc
     public Color[] levelBarColor;
+    #endregion
 
 
     // Start is called before the first frame update
@@ -120,7 +178,7 @@ public class SongSelect : MonoBehaviour
         }
     }
 
-    public void InitArchivePack()
+    private void InitArchivePack()
     {
         ArchivePacksContainer archivePacksContainer = new ArchivePacksContainer();
         archivePacksContainer.packs = new List<ArchivePack>();
@@ -168,7 +226,7 @@ public class SongSelect : MonoBehaviour
         archivePackContainer = archivePacksContainer;
     }
 
-    public Sprite ConvertTextureToSprite(Texture texture)
+    private Sprite ConvertTextureToSprite(Texture texture)
     {
         // 检查 Texture 是否可以转换为 Texture2D
         if (texture is Texture2D texture2D)
@@ -392,8 +450,6 @@ public class SongSelect : MonoBehaviour
     public void DifficultyClick(int index)
     {
         currentDifficultyIndex = index;
-
-        
         LevelSynchronization();
         RefreshSongList(currentChapterIndex, sortMethod, currentDifficultyIndex, sortOrder);
         UpdateDifficultyButton(currentDifficultyIndex);
@@ -633,6 +689,8 @@ public class SongSelect : MonoBehaviour
             clonedObject.GetComponent<LevelBar>().optimism = song.charts[currentDifficultyIndex].GetOptimism();
             clonedObject.GetComponent<LevelBar>().id = song.id;
             clonedObject.GetComponent<LevelBar>().packId = song.packId;
+            clonedObject.GetComponent<LevelBar>().illustrator = song.illustrator;
+            clonedObject.GetComponent<LevelBar>().charter = song.charts[currentDifficultyIndex].designer;
             
             clonedObject.GetComponent<LevelBar>().coverImage.sprite = song.previewIllustration;
             //太卡了，还是自己裁剪
@@ -688,7 +746,7 @@ public class SongSelect : MonoBehaviour
         
     }
 
-    public bool GetPackUnlocked(string packId)
+    private bool GetPackUnlocked(string packId)
     {
         foreach (var pack in archivePackContainer.packs)
         {
@@ -701,7 +759,7 @@ public class SongSelect : MonoBehaviour
         return false;
     }
 
-    public ArchivePack GetPack(string packId)
+    private ArchivePack GetPack(string packId)
     {
         foreach (var pack in archivePackContainer.packs)
         {
@@ -787,7 +845,7 @@ public class SongSelect : MonoBehaviour
         }
     }
 
-    public string GenerateConditionString(Condition condition)
+    private string GenerateConditionString(Condition condition)
     {
         StringBuilder result = new StringBuilder();
 
@@ -926,7 +984,7 @@ public class SongSelect : MonoBehaviour
         RefreshSongSelected();
     }
 
-    public void RefreshSongSelected()
+    private void RefreshSongSelected()
     {
         if (levelContainer == null || levelContainer.Count == 0)
         {
@@ -1124,7 +1182,7 @@ public class SongSelect : MonoBehaviour
         PlayerPrefs.SetInt("ContentLocation", CurrentContentLocation);
     }
 
-    public void LevelPositionSynchronization()
+    private void LevelPositionSynchronization()
     {
         // Debug.Log("Original" + CurrentContentLocation);
         // Debug.Log("Original" + CurrentLevelLocation);
@@ -1146,8 +1204,21 @@ public class SongSelect : MonoBehaviour
     public void StartLevel()
     {
         previewPlayer.StopPreview();
-        PlayerPrefs.SetString("PlayingID", selectedLevel.GetComponent<LevelBar>().id);
-        SceneManager.LoadScene("ChartPlaying");
+        LevelBar lb   = selectedLevel.GetComponent<LevelBar>();
+        string   t    = lb.LevelName;              // 标题
+        string   a    = lb.artist;                 // 艺术家
+        string   ch   = lb.charter;            // EZ / HD / …（你已有这个字段）
+        string   illu = lb.illustrator;   // 插画者名
+        Sprite   pic  = lb.illustration;           // 封面
+
+        // ② 注入 Overlay
+        var ov = PlayingSceneLoadingOverlay.Instance;
+        if (ov != null)
+            ov.AssignInfo(t, a, ch, illu, pic);
+        
+        PlayerPrefs.SetString("PlayingID", lb.id);
+        PlayingSceneLoader.Load("ChartPlaying");
+        //SceneManager.LoadScene("ChartPlaying");
     }
     
     private void OnDisable()

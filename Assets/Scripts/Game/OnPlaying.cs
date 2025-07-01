@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using static GameUtilities.InGameUtilities;
 using static GameUtilities;
 
@@ -26,6 +27,7 @@ public class OnPlaying : MonoBehaviour
     [HideInInspector] public bool HoldGenerateEffectTick = false;
     public BPMTimingList bpmTimingList = new BPMTimingList();
     public GameObject EndUI;
+    public Button pauseButton;
 
     //public TMP_Text text;
 
@@ -64,6 +66,8 @@ public class OnPlaying : MonoBehaviour
 
         LevelMusic.enabled = true;
         LevelMusic.Pause();
+        
+        Invoke(nameof(BetaClick), 1.5f);
     }
 
     void Update()
@@ -253,6 +257,7 @@ public class OnPlaying : MonoBehaviour
     public void BetaClick()
     {
         if (isStart == false) isStart = true;
+        pauseButton.interactable = true;
         //Auto = true;
         LevelMusic.UnPause();
     }

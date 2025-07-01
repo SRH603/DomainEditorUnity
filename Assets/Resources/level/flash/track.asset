@@ -19,7 +19,7 @@ MonoBehaviour:
   illustration: {fileID: 2800000, guid: 179ba1ed96baf4195a1914d496702326, type: 3}
   previewIllustration: {fileID: 2800000, guid: 179ba1ed96baf4195a1914d496702326, type: 3}
   track: {fileID: 8300000, guid: 64f9f9f0bdbc24333b2377570874cfe7, type: 3}
-  illustrator: "BD\u75C7\u5019\u7FA4"
+  illustrator: Aiyru
   bpm: 220
   background: default
   songInfo: nothing

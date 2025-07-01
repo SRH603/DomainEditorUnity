@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   info:
-    designer: 
+    designer: Athmyx
     bpm: 220
     rating: 17.2
     offset: -0.25

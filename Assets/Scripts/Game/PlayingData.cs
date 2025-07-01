@@ -130,14 +130,14 @@ public class PlayingData : MonoBehaviour
     }
     public void BackToSelect()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneLoader.Load("LevelSelect");
     }
 
     public void Replay()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-
-        SceneManager.LoadScene(currentSceneName);
+        SceneLoader.Load(currentSceneName);
+        //SceneManager.LoadScene(currentSceneName);
     }
 
 }

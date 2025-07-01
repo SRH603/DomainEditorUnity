@@ -41,6 +41,7 @@ public class LevelBar : MonoBehaviour
     public Image coverImage;
     public Image mainBar;
     [HideInInspector] public Sprite illustration;
+    public string illustrator, charter;
     
     // Start is called before the first frame update
     void Start()

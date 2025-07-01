@@ -36,6 +36,8 @@ public class GenerateLevel : MonoBehaviour
         GetComponent<OnPlaying>().LoadLevel();
         // 获取当前对象的Renderer组件
         Renderer renderer = background.GetComponent<Renderer>();
+        background.transform.localPosition = new Vector3(0, 0, appearDistance * 37f + 30f);
+        background.transform.localScale = new Vector3(appearDistance * 61.62846f, appearDistance * 61.62846f, 0.06162845f);
         if(renderer != null)
         {
             // 获取材质实例（避免修改所有使用相同材质的对象）

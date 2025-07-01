@@ -1,56 +1,75 @@
-// Assets/Scripts/SceneLoader.cs
+/* ────────────────────────────────
+ * Assets/Scripts/SceneLoader.cs
+ * 统一异步加载场景，带淡入/淡出与实时进度
+ * ──────────────────────────────── */
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
 public static class SceneLoader
 {
+    /* 内部 Runner：协程执行器（DontDestroy） */
     private class Runner : MonoBehaviour { }
     private static Runner runner;
     private static Runner GetRunner()
     {
-        if (runner != null) return runner;
-        var go = new GameObject("~SceneLoader"); Object.DontDestroyOnLoad(go);
+        if (runner) return runner;
+        var go = new GameObject("~SceneLoader");
+        Object.DontDestroyOnLoad(go);
         return runner = go.AddComponent<Runner>();
     }
 
-    public static void Load(string target) => GetRunner().StartCoroutine(LoadRoutine(target));
+    /* ---------- 公共接口 ---------- */
+    public static void Load(string targetScene) =>
+        GetRunner().StartCoroutine(LoadRoutine(targetScene));
 
-    // SceneLoader.cs （关键段落）
+    /* ---------- 主流程协程 ---------- */
     private static IEnumerator LoadRoutine(string target)
     {
-        /* 阶段 1 —— 让 UI 先出现 */
-        /* ① 确保 Overlay 存在并立刻显出来 */
+        /* 0) 保障 LoadingOverlay 单例存在 */
         if (LoadingOverlay.Instance == null)
             Object.Instantiate(Resources.Load<LoadingOverlay>("LoadingOverlay"));
-        LoadingOverlay.Instance.Show();              // 立刻 SetActive(true)
-        LoadingOverlay.Instance.Show();
-        yield return new WaitForEndOfFrame();
-        yield return new WaitForEndOfFrame();
 
-        /* 阶段 2 —— 只加载“精简版”场景 */
-        var sceneOp = SceneManager.LoadSceneAsync(target, LoadSceneMode.Single);
-        while (!sceneOp.isDone) {
-            LoadingOverlay.Instance.UpdateProgress(sceneOp.progress * 0.6f); // 0~60%
+        /* 1) 淡入（可自行调 Show 的淡入时长） */
+        LoadingOverlay.Instance.Show();                        // 0 %
+        yield return new WaitForSecondsRealtime(.25f);         // 淡入结束
+
+        /* 2) 开始异步加载场景，但先禁止激活 */
+        var op = SceneManager.LoadSceneAsync(target, LoadSceneMode.Single);
+        op.allowSceneActivation = false;
+
+        float displayProg = 0f;                                // 显示用的进度
+        const float SMOOTH = .15f;                             // 平滑系数
+
+        /* 2-A) 场景磁盘 I/O 阶段（0-0.9） */
+        while (op.progress < .9f)
+        {
+            float raw = op.progress / .9f;                     // 0-1
+            displayProg = Mathf.Lerp(displayProg, raw, SMOOTH);
+            LoadingOverlay.Instance.UpdateProgress(displayProg);
+            yield return null;                                 // 每帧让出
+        }
+
+        /* 2-B) 阶段完成，进度补满到 100 % */
+        while (displayProg < 1f - 0.001f)
+        {
+            displayProg = Mathf.Lerp(displayProg, 1f, SMOOTH);
+            LoadingOverlay.Instance.UpdateProgress(displayProg);
             yield return null;
         }
+        LoadingOverlay.Instance.UpdateProgress(1f);
 
-        /* 阶段 3 —— 分帧加载音频（Resources 方式示例） */
-        string path = "Audio/BGM";                          // Resources/Audio/BGM
-        var clips = Resources.LoadAll<AudioClip>(path);     // 同步取 Asset 数组（不解码）
-        float  oneStep = 0.4f / clips.Length;               // 40% 预算给音频
-        foreach (var clip in clips)
-        {
-            var req = Resources.LoadAsync<AudioClip>($"{path}/{clip.name}");
-            while (!req.isDone) {
-                yield return null;      // 让 UI 刷帧
-            }
-            yield return req;           // 解码完成
-            LoadingOverlay.Instance.UpdateProgress(0.6f + oneStep); // 60~100%
-        }
+        /* 3) 允许场景激活，进入新场景 */
+        op.allowSceneActivation = true;
+        while (!op.isDone) yield return null;                  // 等真正完成
 
-        /* (可选) 等玩家按键、淡出 Overlay */
-        LoadingOverlay.Instance.Hide();
+        /* 4) 等首帧渲染完，避免白屏/黑屏一闪 */
+        yield return new WaitForEndOfFrame();
+        
+        /* 4.5) 额外等待 0.2 秒 */
+        yield return new WaitForSecondsRealtime(0.1f);   // ← 新增这一行
+
+        /* 5) 淡出并在淡出结束后隐藏 Overlay */
+        LoadingOverlay.Instance.Hide();                        // 内部带渐隐
     }
-
 }
