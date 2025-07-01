@@ -22,9 +22,6 @@ public class JudgeNotes : MonoBehaviour
                 if (Physics.Raycast(touchray, out touchhit))
                 {
                     bool FirstTap = false;
-                    //currentTouch.Add(hit.point.x); // ????????????????????
-                    //touch.Add(hit.point.x); // ????????????????
-                    //NotesHighLight notesHighLight = touchhit.transform.GetComponent<JudgeCollider>().ParentNote.GetComponentInParent<NotesHighLight>();
                     RaycastHit[] allhits = Physics.RaycastAll(touchray);
                     var sortedHits = allhits
                         .Select(hit => new
@@ -35,48 +32,22 @@ public class JudgeNotes : MonoBehaviour
                         })
                         .Where(x => x.Notes != null) // ??????????????NotesHighLight????
                         .OrderBy(x => x.Notes.HitBeat) // ????????hittime????
+                        .ThenBy(x =>
+                            // 第二优先：标签优先级，Tap 排最前，Drag 次之，Hold 最后
+                            x.Notes.CompareTag("Tap")  ? 0 :
+                            x.Notes.CompareTag("Drag") ? 1 :
+                            x.Notes.CompareTag("Hold") ? 2 : 3
+                        )
                         .ThenBy(x => x.DistanceToCenter) // ????hittime??????????????????????????????
                         .Select(x => x.Hit) // ????????????RaycastHit????
                         .ToArray();
-                    /*
-                    foreach (RaycastHit allhit in sortedHits)
-                    {
-                        NotesHighLight allnotesHighLight = allhit.transform.GetComponent<JudgeCollider>().ParentNote.GetComponentInParent<NotesHighLight>();
-
-                        if (finger.phase == TouchPhase.Began)
-                        {
-                            if (FirstTap == false && allnotesHighLight.notetype == 0)
-                            {
-                                if (allnotesHighLight.Hitted == false)
-                                {
-                                    allnotesHighLight.Hit();
-                                    FirstTap = true;
-                                    continue;
-                                }
-                            }
-                            else
-                            {
-                                FirstTap = true;
-                            }
-                        }
-                        if (allnotesHighLight != null && allnotesHighLight.notetype == 1)
-                        {
-                            allnotesHighLight.TaggedDrag = true;
-                        }
-                        if (allnotesHighLight != null && allnotesHighLight.notetype == 2)
-                        {
-                            allnotesHighLight.ProcessingHold(); // ????????
-                        }
-
-                    }
-                    */
                     foreach (RaycastHit allhit in sortedHits)
                     {
                         GameObject note = allhit.transform.GetComponent<JudgeCollider>().ParentNote;
 
                         if (finger.phase == TouchPhase.Began)
                         {
-                            if (FirstTap == false && note.tag == "Tap")
+                            if (FirstTap == false && note.CompareTag("Tap"))
                             {
                                 Tap tap = note.GetComponent<Tap>();
                                 if (tap.Hitted == false)
@@ -86,17 +57,19 @@ public class JudgeNotes : MonoBehaviour
                                     continue;
                                 }
                             }
+                            /*
                             else
                             {
                                 FirstTap = true;
                             }
+                            */
                         }
-                        if (note.tag == "Drag")
+                        if (note.CompareTag("Drag"))
                         {
                             Drag drag = note.GetComponent<Drag>();
                             drag.Tagged = true;
                         }
-                        if (note.tag == "Hold")
+                        if (note.CompareTag("Hold"))
                         {
                             Hold hold = note.GetComponent<Hold>();
                             hold.TagElement(allhit.collider);
@@ -113,55 +86,6 @@ public class JudgeNotes : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    //currentTouch.Add(hit.point.x); // ????????????????????
-                    //touch.Add(hit.point.x); // ????????????????
-                    /*
-                    NotesHighLight notesHighLight = hit.transform.GetComponent<JudgeCollider>().ParentNote.GetComponentInParent<NotesHighLight>();
-                    RaycastHit[] allhits = Physics.RaycastAll(ray);
-                    foreach (RaycastHit allhit in allhits)
-                    {
-                        NotesHighLight allnotesHighLight = allhit.transform.GetComponent<JudgeCollider>().ParentNote.GetComponentInParent<NotesHighLight>();
-                        if (allnotesHighLight != null && allnotesHighLight.notetype == 1)
-                        {
-                            allnotesHighLight.TaggedDrag = true;
-                        }
-
-                    }
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        if (notesHighLight != null)
-                        {
-                            if (notesHighLight.notetype == 1)
-                            {
-                                notesHighLight.TaggedDrag = true;
-
-                            }
-                            if (notesHighLight.notetype == 2)
-                            {
-                                notesHighLight.ProcessingHold();
-                            }
-                            if (notesHighLight.notetype == 0)
-                            {
-                                //notesHighLight.Hit();
-                                notesHighLight.gameObject.GetComponent<Tap>().Hit();
-                            }
-
-
-                        }
-                    }
-                    if (Input.GetMouseButton(0))
-                    {
-                        if (notesHighLight != null && notesHighLight.notetype == 1)
-                        {
-                            notesHighLight.TaggedDrag = true;
-
-                        }
-                        if (notesHighLight != null && notesHighLight.notetype == 2)
-                        {
-                            notesHighLight.ProcessingHold();
-                        }
-                    }
-                    */
                     GameObject note = hit.transform.GetComponent<JudgeCollider>().ParentNote;
                     RaycastHit[] allhits = Physics.RaycastAll(ray);
                     foreach (RaycastHit allhit in allhits)
