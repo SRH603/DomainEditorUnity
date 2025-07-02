@@ -66,9 +66,9 @@ public class SongSelect : MonoBehaviour
 
     /* ───────────────────────────── 歌曲信息 UI ───────────────────────────── */
     #region Song Info UI
-    [Header("歌曲信息 UI")]
-    public Image Illustration;
-    public Image IllustrationLock;
+    [FormerlySerializedAs("Illustration")] [Header("歌曲信息 UI")]
+    public Image illustration;
+    [FormerlySerializedAs("IllustrationLock")] public Image illustrationLock;
 
     public TextMeshProUGUI SongTitle;
     public TextMeshProUGUI Score;
@@ -372,41 +372,44 @@ public class SongSelect : MonoBehaviour
     {
         archive = GetComponent<PlayFabManager>().LoadPlayerArchive();
     }
-    
     private void LoadArchive()
     {
+        /* ───────── ❶ 预先构建索引 ───────── */
+        // ① Pack 索引：packId → Pack
+        var packIndex = archivePackContainer.packs
+            .ToDictionary(p => p.id);
+
+        // ② Track 索引：trackId → Track
+        var trackIndex = archivePackContainer.packs
+            .SelectMany(p => p.tracks)
+            .ToDictionary(t => t.id);
+
+        /* ───────── ❷ 同步 Track 状态 ───────── */
         foreach (var trackArchive in archive.tracks)
         {
-            foreach (var pack in archivePackContainer.packs)
-            {
-                foreach (var track in pack.tracks)
-                {
-                    if (trackArchive.id == track.id)
-                    {
-                        track.SetUnlocked(trackArchive.unlocked);
-                        //Debug.Log(track.title);
-                        foreach (var chartArchive in trackArchive.charts)
-                        {
-                            track.charts[chartArchive.ratingClass].SetScore(chartArchive.score);
-                            track.charts[chartArchive.ratingClass].SetOptimism(chartArchive.optimism);
-                            track.charts[chartArchive.ratingClass].SetUnlocked(chartArchive.unlocked);
-                        }
-                    }
-                }
-            }
-            
-        }
-        
-        foreach (var packArchive in archive.packs)
-        {
-            foreach (var pack in archivePackContainer.packs.Where(pack => pack.id == packArchive.id))
-            {
-                pack.SetUnlocked(packArchive.unlocked);
-                break;
-            }
-        }
-    }
+            if (!trackIndex.TryGetValue(trackArchive.id, out var track)) continue;
 
+            track.SetUnlocked(trackArchive.unlocked);
+
+            foreach (var chartArchive in trackArchive.charts)
+            {
+                // 防御式编程：确保 ratingClass 在合法范围
+                if (chartArchive.ratingClass < 0 || chartArchive.ratingClass >= track.charts.Count) 
+                    continue;
+
+                var chart = track.charts[chartArchive.ratingClass];
+                chart.SetScore(chartArchive.score);
+                chart.SetOptimism(chartArchive.optimism);
+                chart.SetUnlocked(chartArchive.unlocked);
+            }
+        }
+
+        /* ───────── ❸ 同步 Pack 状态 ───────── */
+        foreach (var packArchive in archive.packs)
+            if (packIndex.TryGetValue(packArchive.id, out var pack))
+                pack.SetUnlocked(packArchive.unlocked);
+    }
+    
     private void UpdateButton(int buttonIndex)
     {
         for (var i = 0; i <= sortMethodTypeface.Length - 1; ++i)
@@ -1085,42 +1088,18 @@ public class SongSelect : MonoBehaviour
 
         SongTitle.text = songTitle.ToString();
         Score.text = score.ToString("D7");
-        if (score >= 1000000)
+        Level.text = score switch
         {
-            Level.text = "♾";
-        }
-        else if (score >= 990000)
-        {
-            Level.text = "IIS";
-        }
-        else if (score >= 980000)
-        {
-            Level.text = "IS";
-        }
-        else if (score >= 970000)
-        {
-            Level.text = "S";
-        }
-        else if (score >= 950000)
-        {
-            Level.text = "A";
-        }
-        else if (score >= 920000)
-        {
-            Level.text = "B";
-        }
-        else if (score >= 880000)
-        {
-            Level.text = "C";
-        }
-        else if (score >= 800000)
-        {
-            Level.text = "F";
-        }
-        else
-        {
-            Level.text = "-";
-        }
+            >= 1000000 => "X",
+            >=  990000 => "IIS",
+            >=  980000 => "IS",
+            >=  970000 => "S",
+            >=  950000 => "A",
+            >=  920000 => "B",
+            >=  880000 => "C",
+            >=  800000 => "F",
+            _          => "-"
+        };
         if (optimism <= 100)
         {
             Level.color = Color.white;
@@ -1133,7 +1112,7 @@ public class SongSelect : MonoBehaviour
         {
             Level.color = Color.cyan;
         }
-        IllustrationLock.gameObject.SetActive(!unlock);
+        illustrationLock.gameObject.SetActive(!unlock);
         Artist.text = artist;
         BPM.text = bpm.ToString();
         Info.text = info;
@@ -1142,7 +1121,7 @@ public class SongSelect : MonoBehaviour
 
         // ????????
         //Texture2D texture = Resources.Load<Texture2D>("level/" + levelBar.id + "/illustration");
-        Illustration.sprite = levelBar.illustration;
+        illustration.sprite = levelBar.illustration;
 
         /*
         if (texture != null)

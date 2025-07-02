@@ -28,6 +28,7 @@ public class OnPlaying : MonoBehaviour
     public BPMTimingList bpmTimingList = new BPMTimingList();
     public GameObject EndUI;
     public Button pauseButton;
+    public GameObject pauseGroup;
 
     //public TMP_Text text;
 
@@ -252,17 +253,69 @@ public class OnPlaying : MonoBehaviour
         }
         return returnvalue;
     }
+    
+    /// <summary>
+    /// 当应用暂停（切到后台）／恢复（回到前台）时被调用
+    /// </summary>
+    /// <param name="pauseStatus">true = 应用已暂停／进入后台；false = 应用已恢复／回到前台</param>
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            // 应用切到后台，暂停游戏
+            Pause();
+            //Debug.Log("应用已暂停，游戏已暂停");
+        }
+        else
+        {
+            // 应用回到前台，根据需求决定是否自动恢复
+            // 若不想自动恢复，可留空或弹出“继续/重试”界面
+            //BetaClick();
+            //Debug.Log("应用已恢复，游戏已继续");
+        }
+    }
+
+    /// <summary>
+    /// 当应用失去／获得焦点时被调用（某些平台会优先调用 OnApplicationFocus）
+    /// </summary>
+    /// <param name="hasFocus">true = 获得焦点；false = 失去焦点</param>
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+        {
+            // 也可以在这里做一遍，作为保险
+            Pause();
+            //Debug.Log("应用失去焦点，游戏已暂停");
+        }
+        else
+        {
+            // 恢复
+            //BetaClick();
+            //Debug.Log("应用重新获得焦点，游戏已继续");
+        }
+    }
 
 
     public void BetaClick()
     {
         if (isStart == false) isStart = true;
+        pauseGroup.SetActive(false);
         pauseButton.interactable = true;
         //Auto = true;
         LevelMusic.UnPause();
     }
     public void BetaPause()
     {
+        isStart = false;
+        pauseButton.interactable = false;
+        LevelMusic.Pause();
+        //Auto = true;
+    }
+    
+    public void Pause()
+    {
+        pauseGroup.SetActive(true);
+        pauseButton.interactable = false;
         isStart = false;
         LevelMusic.Pause();
         //Auto = true;

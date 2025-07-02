@@ -57,7 +57,7 @@ public class ChapterPicker : MonoBehaviour
     #region Unity
     private void Awake()
     {
-        if (songSelect == null) songSelect = FindObjectOfType<SongSelect>();
+        //if (songSelect == null) songSelect = FindObjectOfType<SongSelect>();
         viewportRT = (RectTransform)scrollRect.viewport;
 
         BuildGallery();
