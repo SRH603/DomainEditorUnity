@@ -237,7 +237,13 @@ public class ChapterPicker : MonoBehaviour
     #region Helpers
     private bool ViewportChanged()
     {
-        return !Mathf.Approximately(viewportRT.rect.width, lastViewportW);
+        // 如果 viewportRT 已被销毁或引用丢失，则直接返回 false 或者其他默认行为
+        if (viewportRT == null) return false;
+
+        float currentW = viewportRT.rect.width;
+        bool changed = !Mathf.Approximately(currentW, lastViewportW);
+        lastViewportW = currentW;   // 更新上次宽度
+        return changed;
     }
     #endregion
 }

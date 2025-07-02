@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -33,6 +34,12 @@ public class PackArchive
 [System.Serializable]
 public class Archive
 {
+    public string playerName;
+    public List<string> titles;
+    public string displayedTitle;
+    public List<string> avatars;
+    public string displayedAvatar;
+    public int courseModeLevel;
     public int echo;
     public bool isMaster;
     public List<PackArchive> packs;

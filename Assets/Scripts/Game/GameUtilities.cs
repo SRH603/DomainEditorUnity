@@ -565,6 +565,62 @@ public static class GameUtilities
     {
         Debug.LogError("Failed to load archive data from PlayFab: " + error.GenerateErrorReport());
     }
+    
+    public static void ChangePlayerName(string playerName)
+    {
+        global::Archive archive = LoadLocalArchive();
+        archive.playerName = playerName;
+        SaveLocalArchive(archive);
+    }
+    public static bool ChangeDisplayedTitle(string title)
+    {
+        global::Archive archive = LoadLocalArchive();
+        foreach (var unlockedTitle in archive.titles)
+        {
+            if (title == unlockedTitle)
+            {
+                archive.displayedTitle = title;
+                SaveLocalArchive(archive);
+                return true;
+                //break;
+            }
+        }
+        return false;
+    }
+    public static bool ChangeDisplayedAvatar(string avatar)
+    {
+        global::Archive archive = LoadLocalArchive();
+        foreach (var unlockedAvatar in archive.avatars)
+        {
+            if (avatar == unlockedAvatar)
+            {
+                archive.displayedAvatar = avatar;
+                SaveLocalArchive(archive);
+                return true;
+                //break;
+            }
+        }
+        return false;
+    }
+    public static void UnlockTitle(string title)
+    {
+        global::Archive archive = LoadLocalArchive();
+        archive.titles.Add(title);
+        SaveLocalArchive(archive);
+    }
+    public static void UnlockAvatar(string avatar)
+    {
+        global::Archive archive = LoadLocalArchive();
+        archive.avatars.Add(avatar);
+        SaveLocalArchive(archive);
+    }
+    public static void UpdateCourseModeLevel(int level)
+    {
+        global::Archive archive = LoadLocalArchive();
+        archive.courseModeLevel = level;
+        SaveLocalArchive(archive);
+    }
+    
     }
 
 }

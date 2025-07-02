@@ -18781,6 +18781,7 @@ MonoBehaviour:
     Changes: []
   EndUI: {fileID: 348490376}
   pauseButton: {fileID: 1065184140}
+  pauseGroup: {fileID: 628168081}
 --- !u!114 &1284313161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32818,6 +32819,10 @@ PrefabInstance:
       propertyPath: LevelPlayingControl
       value: 
       objectReference: {fileID: 1284313155}
+    - target: {fileID: 3184905350735879430, guid: 13763e8a694fb1b4b892470c7b083801, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4487690321225704214, guid: 13763e8a694fb1b4b892470c7b083801, type: 3}
       propertyPath: m_Enabled
       value: 0
