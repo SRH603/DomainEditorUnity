@@ -15,9 +15,17 @@ MonoBehaviour:
   info:
     designer: Athmyx111
     bpm: 220
-    rating: 16.8
+    rating: 15.4
     offset: 0.061
     version: 1
+    condition:
+      type: 4
+      amount: 0
+      otherTrackId: glass
+      ratingClass: 2
+      targetScore: 920000
+      packId: 
+      otherPackId: 
   content:
     bpmList:
     - startBeat: {x: 0, y: 0, z: 0}

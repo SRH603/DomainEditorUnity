@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: flash
   title: Flash
   artist: Aiyru
@@ -26,6 +25,14 @@ MonoBehaviour:
   audioPreviewStart: 25
   audioPreviewEnd: 39
   version: 
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
   - {fileID: 11400000, guid: 1be4d43388e4047569df049a51b9344f, type: 2}
   - {fileID: 11400000, guid: d5f97f1ac94c24eb6920e5327139c391, type: 2}

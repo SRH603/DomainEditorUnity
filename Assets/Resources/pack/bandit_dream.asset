@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56fe21956ccf48629264589eba1da1b, type: 3}
+  m_Name: bandit_dream
+  m_EditorClassIdentifier: 
+  id: bandit_dream
+  section: 2
+  character: 0
+  name:
+    en: Bandit's Dream
+    zhHans: 
+  description:
+    en: 
+    zhHans: 
+  tracks:
+  - {fileID: 11400000, guid: e81c58deac45c4a2e89859838e1865a5, type: 2}
+  - {fileID: 11400000, guid: 7dc63ba31c09d411eac60a38d0957bf3, type: 2}
+  - {fileID: 11400000, guid: f15b553458690440182337a113d10f43, type: 2}
+  - {fileID: 11400000, guid: db23e7947b82944f2b4066488155e1c7, type: 2}
+  - {fileID: 11400000, guid: 9464c2b9ec787400e987bcc5b651b898, type: 2}
+  condition:
+    type: 2
+    amount: 180
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
+  illustration: {fileID: 21300000, guid: 63f6ff934e9244c6e9fe8554ce22877a, type: 3}

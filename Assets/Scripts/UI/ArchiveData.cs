@@ -59,11 +59,12 @@ public class ArchiveChart
         return unlocked;
     }
     // 构造函数：用于直接初始化 ArchiveChart 实例
-    public ArchiveChart(int ratingClass, double rating, string designer)
+    public ArchiveChart(int ratingClass, double rating, string designer, Condition condition)
     {
         this.ratingClass = ratingClass;
         this.rating = rating;
         this.designer = designer;
+        this.condition = condition;
     }
 }
 
@@ -100,7 +101,7 @@ public class ArchiveTrack
     public Condition condition;
     
     // 构造函数：用于直接初始化 ArchiveTrack 实例
-    public ArchiveTrack(int idx, string id, string title, string artist, Sprite illustration, Sprite previewIllustration, string illustrator, string bpm, string background, string songInfo, int audioPreviewStart, int audioPreviewEnd, string version)
+    public ArchiveTrack(int idx, string id, string title, string artist, Sprite illustration, Sprite previewIllustration, string illustrator, string bpm, string background, string songInfo, int audioPreviewStart, int audioPreviewEnd, string version, Condition condition)
     {
         this.idx = idx;
         this.id = id;
@@ -115,6 +116,7 @@ public class ArchiveTrack
         this.audioPreviewStart = audioPreviewStart;
         this.audioPreviewEnd = audioPreviewEnd;
         this.version = version;
+        this.condition = condition;
     }
 }
 
@@ -141,7 +143,7 @@ public class ArchivePack
     {
         return unlocked;
     }
-    public ArchivePack(int idx, string id, string section, int character, LocalizedString name, LocalizedString description)
+    public ArchivePack(int idx, string id, string section, int character, LocalizedString name, LocalizedString description, Condition condition)
     {
         this.idx = idx;
         this.id = id;
@@ -150,6 +152,7 @@ public class ArchivePack
         this.name = name;
         this.description = description;
         this.tracks = new List<ArchiveTrack>();
+        this.condition = condition;
     }
 }
 

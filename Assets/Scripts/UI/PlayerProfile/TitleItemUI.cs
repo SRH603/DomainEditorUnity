@@ -25,6 +25,7 @@ public class TitleItemUI : MonoBehaviour
         lockOverlay.SetActive(!isUnlocked);
         selectButton.interactable = isUnlocked;
         selectButton.onClick.RemoveAllListeners();
+        GetComponent<ButtonClickPlayer>().Refresh();
         selectButton.onClick.AddListener(() => onClick(id));
     }
 

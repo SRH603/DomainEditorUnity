@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static GameUtilities.Archive;
 
@@ -111,8 +112,23 @@ public static class AutoUnlock
         return unlock;
     }
     
-    public static void UnlockAll(UnlocksContainer allUnlocks)
+    public static void UnlockAll(List<PackData> packs)
     {
+        foreach (var pack in packs)
+        {
+            if (Evaluate(pack.condition)) UnlockPack(pack.id);
+            foreach (var track in pack.tracks)
+            {
+                if (Evaluate(track.condition)) UnlockTrack(track.id);
+                int index = 0;
+                foreach (var chart in track.charts)
+                {
+                    if (Evaluate(chart.info.condition)) UnlockChart(track.id, index);
+                    index++;
+                }
+            }
+        }
+        /*
         Archive archive = LoadLocalArchive();
         foreach (var trackUnlock in allUnlocks.tracks)
         {
@@ -126,6 +142,7 @@ public static class AutoUnlock
         {
             if (Evaluate(packUnlock.condition)) UnlockPack(packUnlock.packId);
         }
+        */
     }
 }
 

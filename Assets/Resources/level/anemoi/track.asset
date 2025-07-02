@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: anemoi
   title: "Anem\xF8i"
   artist: Crystal_P
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 36
   audioPreviewEnd: 53
   version: 
+  condition:
+    type: 2
+    amount: 80
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: 67324ca890ebb4c8c95ed04977291782, type: 2}
+  - {fileID: 11400000, guid: d191b8ca586ec4253a570d5ed24ea978, type: 2}
+  - {fileID: 11400000, guid: 3cc3ec79c35cd4137a52be8e118c26bb, type: 2}

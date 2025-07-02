@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56fe21956ccf48629264589eba1da1b, type: 3}
+  m_Name: chapter0
+  m_EditorClassIdentifier: 
+  id: chapter0
+  section: 1
+  character: 0
+  name:
+    en: Pre Chapter
+    zhHans: "\u5E8F\u7AE0"
+  description:
+    en: 
+    zhHans: 
+  tracks:
+  - {fileID: 11400000, guid: a02c06876935b4da8b4c7d790d05e0ff, type: 2}
+  - {fileID: 11400000, guid: e4c395db7efae4f3ba7dcd52eef0e1da, type: 2}
+  - {fileID: 11400000, guid: 4392b5ba97a9c4419a72df8c1e4c2448, type: 2}
+  - {fileID: 11400000, guid: 6e45fbe0bc2d74abfbcd3917483a7d76, type: 2}
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
+  illustration: {fileID: 21300000, guid: 7e9fa874f052c43418c66cc0b4440ea9, type: 3}

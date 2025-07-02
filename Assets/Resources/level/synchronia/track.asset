@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: synchronia
   title: Synchronia
   artist: Athmyx
@@ -26,6 +25,14 @@ MonoBehaviour:
   audioPreviewStart: 33
   audioPreviewEnd: 51
   version: 
+  condition:
+    type: 2
+    amount: 80
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
   - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
   - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}

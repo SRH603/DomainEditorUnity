@@ -379,9 +379,7 @@ public static class GameUtilities
     public static void UnlockRatingClass2()
     {
         global::Archive archive = LoadLocalArchive();
-
         archive.isMaster = true;
-        
         SaveLocalArchive(archive);  // 保存更新后的存档
     }
     
@@ -394,7 +392,10 @@ public static class GameUtilities
         if (track != null)
         {
             if (track.unlocked)
+            {
                 Debug.Log("The track is already unlocked.");
+                return;
+            }
             else
                 track.unlocked = true;
         }
@@ -415,7 +416,10 @@ public static class GameUtilities
         if (pack != null)
         {
             if (pack.unlocked)
+            {
                 Debug.Log("The pack is already unlocked.");
+                return;
+            }
             else
                 pack.unlocked = true;
         }
@@ -441,7 +445,10 @@ public static class GameUtilities
             if (chart != null)
             {
                 if (chart.unlocked)
+                {
                     Debug.Log("The chart is already unlocked.");
+                    return;
+                }
                 else
                     chart.unlocked = true;
             }

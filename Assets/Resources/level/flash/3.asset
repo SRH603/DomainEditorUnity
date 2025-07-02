@@ -18,6 +18,14 @@ MonoBehaviour:
     rating: 17.2
     offset: -0.25
     version: 1
+    condition:
+      type: 0
+      amount: 0
+      otherTrackId: 
+      ratingClass: 0
+      targetScore: 0
+      packId: 
+      otherPackId: 
   content:
     bpmList:
     - startBeat: {x: 0, y: 0, z: 0}

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56fe21956ccf48629264589eba1da1b, type: 3}
+  m_Name: single
+  m_EditorClassIdentifier: 
+  id: single
+  section: 0
+  character: 0
+  name:
+    en: Single
+    zhHans: "\u5355\u66F2"
+  description:
+    en: 
+    zhHans: 
+  tracks:
+  - {fileID: 11400000, guid: 9edd774c1d38c48a4a169623f80b2168, type: 2}
+  - {fileID: 11400000, guid: f5586df1ad3444ae28102660a92eeb8b, type: 2}
+  - {fileID: 11400000, guid: 7e2f12dbec0024d1e855dca718e4fb07, type: 2}
+  - {fileID: 11400000, guid: f2949a95c18b1416cabf07916e6d991a, type: 2}
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
+  illustration: {fileID: 21300000, guid: 1f806a850e4ff264eafc4935f65793b8, type: 3}

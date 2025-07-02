@@ -35,11 +35,21 @@ public class PlayerProfileUI : MonoBehaviour
         {
             // 1. 载入存档
             archive = GameUtilities.Archive.LoadLocalArchive();
+            if (archive.playerName == null || archive.playerName == "")
+            {
+                GameUtilities.Archive.ChangePlayerName("Player");
+                archive = GameUtilities.Archive.LoadLocalArchive();
+            }
             // 2. 显示玩家信息
             nameInputField.text = archive.playerName;
             nameDisplayText.text = archive.playerName;
-            courseModeLevelText.text = archive.courseModeLevel.ToString();
-            displayedTitleText.text = archive.displayedTitle;
+            
+            if (archive.courseModeLevel != 0) courseModeLevelText.text = archive.courseModeLevel.ToString();
+            else courseModeLevelText.text = "";
+            //displayedTitleText.text = archive.displayedTitle;
+            var tit = allTitles.Find(a => a.id == archive.displayedTitle);
+            if (tit != null) displayedTitleText.text = tit.enText; 
+            else displayedTitleText.text = "";
             // 如果存档里有对应头像 id，则找到 sprite
             var ava = allAvatars.Find(a => a.id == archive.displayedAvatar);
             if (ava != null) displayedAvatarImage.sprite = ava.sprite;
@@ -64,6 +74,10 @@ public class PlayerProfileUI : MonoBehaviour
                 var ui = go.GetComponent<AvatarItemUI>();
                 ui.Setup(data, unlocked, OnAvatarSelected);
             }
+            
+            /* --- 6. 生成完毕后立即自动排布 --- */
+            AutoLayoutContent(titleContent);
+            AutoLayoutContent(avatarContent);
         }
 
         private void OnNameChanged(string newName)
@@ -89,5 +103,57 @@ public class PlayerProfileUI : MonoBehaviour
                 if (data != null)
                     displayedAvatarImage.sprite = data.sprite;
             }
+        }
+        
+        /// <summary>
+        /// 让 Content 内所有子物体从左上开始紧贴排布，
+        /// 按行优先，无空隙，行高 = 该行子物体最大高度。
+        /// </summary>
+        private void AutoLayoutContent(Transform content)
+        {
+            var contentRT = content as RectTransform;
+            if (contentRT == null || content.childCount == 0) return;
+
+            // 强制刷新所有带 ContentSizeFitter / Layout 的子物体尺寸
+            LayoutRebuilder.ForceRebuildLayoutImmediate(contentRT);
+
+            float viewW = ((RectTransform)content.parent).rect.width;
+
+            float curX = 0f;            // 当前行已占宽度
+            float curY = 0f;            // 累计行高（负值，因左上原点）
+            float rowMaxH = 0f;         // 当前行最高子物体
+
+            for (int i = 0; i < content.childCount; ++i)
+            {
+                var rt = content.GetChild(i) as RectTransform;
+                if (rt == null) continue;
+
+                // ---- 统一锚点 / Pivot 为左上 ----
+                rt.anchorMin = rt.anchorMax = new Vector2(0, 1);
+                rt.pivot     = new Vector2(0, 1);
+
+                float w = rt.rect.width;
+                float h = rt.rect.height;
+
+                // 换行判断（留 0.01 容错）
+                if (curX + w > viewW + 0.01f)
+                {
+                    // 进入下一行
+                    curX = 0f;
+                    curY -= rowMaxH;    // 行距 = 上一行最高高度
+                    rowMaxH = 0f;
+                }
+
+                // 定位
+                rt.anchoredPosition = new Vector2(curX, curY);
+
+                // 更新游标
+                curX   += w;
+                rowMaxH = Mathf.Max(rowMaxH, h);
+            }
+
+            // 最后一行高度也要计入 Content 总高
+            curY -= rowMaxH;
+            contentRT.sizeDelta = new Vector2(contentRT.sizeDelta.x, -curY);
         }
     }

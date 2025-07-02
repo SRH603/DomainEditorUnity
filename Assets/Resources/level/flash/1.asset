@@ -15,9 +15,17 @@ MonoBehaviour:
   info:
     designer: 
     bpm: 220
-    rating: 13.6
+    rating: 11.2
     offset: 0.061
     version: 1
+    condition:
+      type: 4
+      amount: 0
+      otherTrackId: glass
+      ratingClass: 1
+      targetScore: 920000
+      packId: 
+      otherPackId: 
   content:
     bpmList:
     - startBeat: {x: 0, y: 0, z: 0}

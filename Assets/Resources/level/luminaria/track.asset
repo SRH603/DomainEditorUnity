@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: luminaria
   title: Luminaria
   artist: Lime
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 18
   audioPreviewEnd: 31
   version: 
+  condition:
+    type: 2
+    amount: 80
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: e32006e35a0d143cbb842e5b38fe23ea, type: 2}
+  - {fileID: 11400000, guid: ddfbda49c9967412eacd4ab1657b9f94, type: 2}
+  - {fileID: 11400000, guid: d0f69f733f14746fb80d631d1dc74810, type: 2}

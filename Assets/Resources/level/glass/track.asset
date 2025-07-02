@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: glass
   title: Glass
   artist: Pixel Prism
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 59
   audioPreviewEnd: 82
   version: 
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: a490803b2a5ef4a4abeeaecc170249fa, type: 2}
+  - {fileID: 11400000, guid: 2596978b455d648089ef85efecd763f9, type: 2}
+  - {fileID: 11400000, guid: 442151228f36543d5a5800ce2bef9750, type: 2}

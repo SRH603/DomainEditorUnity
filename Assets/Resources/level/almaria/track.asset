@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: almaria
   title: Almaria
   artist: Suzuka
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 12
   audioPreviewEnd: 24
   version: 
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: 31e035c4d21e64a888cef3318dd1f2f3, type: 2}
+  - {fileID: 11400000, guid: e49661ca50998424887f79d7cca4d472, type: 2}
+  - {fileID: 11400000, guid: fb5307a2def0e461895f246def48e11b, type: 2}

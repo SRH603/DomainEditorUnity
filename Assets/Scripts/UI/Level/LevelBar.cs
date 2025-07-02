@@ -5,16 +5,24 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
 
+public enum UnlockState
+{
+    Pack,
+    Track,
+    Chart,
+    None,
+    Num
+}
+
 public class LevelBar : MonoBehaviour
 {
-    [FormerlySerializedAs("songselect")] public SongSelect songSelect;
-
+    public SongSelect songSelect;
     public bool selected;
     public int idx = -1;
     public string id, packId;
     public int difficulty = -1;
     public string LevelName, LevelRating;
-    public TextMeshProUGUI Score; // ���еȼ�
+    public TextMeshProUGUI Score;
     public int score = 0;
     public bool trackUnlocked = false, chartUnlocked = false, packUnlocked = false;
     public GameObject lockcover;
@@ -41,6 +49,7 @@ public class LevelBar : MonoBehaviour
     public Image coverImage;
     public Image mainBar;
     [HideInInspector] public Sprite illustration;
+    public UnlockState unlockState;
     public string illustrator, charter;
     
     // Start is called before the first frame update

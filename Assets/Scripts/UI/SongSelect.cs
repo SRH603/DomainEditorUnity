@@ -17,23 +17,21 @@ public class SongSelect : MonoBehaviour
     #region Data Containers
     //public BoolExpression rootExpression;
     [Header("数据容器")]
-    public PacksContainer packsContainer;
-    public UnlocksContainer unlocksContainer;
-    public ArchivePacksContainer archivePackContainer = new ArchivePacksContainer();
-
-    [Space]
+    //public PacksContainer packsContainer;
+    public List<PackData> packs;
+    //public UnlocksContainer unlocksContainer;
+    [HideInInspector] public ArchivePacksContainer archivePackContainer = new ArchivePacksContainer();
     [HideInInspector] public List<ArchiveTrack> currentSonglist;
     #endregion
-
-
+    
     /* ───────────────────────────── 排序设置 ───────────────────────────── */
     #region Sorting
     [Header("排序参数")]
-    [HideInInspector] public int sortMethod;          // 0-4 不同排序方式
-    [HideInInspector] public int sortOrder;           // 0 ASC | 1 DESC
-
     public GameObject[] sortMethodTypeface;           // 排序方式字体
     public GameObject[] sortOrderTypeface;            // 0 ASC | 1 DESC
+    
+    [HideInInspector] public int sortMethod;          // 0-4 不同排序方式
+    [HideInInspector] public int sortOrder;           // 0 ASC | 1 DESC
     #endregion
 
 
@@ -134,7 +132,7 @@ public class SongSelect : MonoBehaviour
 
     private void Init()
     {
-        UnlockAll(unlocksContainer);
+        UnlockAll(packs);
         currentChapterIndex = PlayerPrefs.GetInt("ChapterIndex", -1);
         currentTrackIndex = PlayerPrefs.GetInt("SongIndex", 0);
         currentDifficultyIndex = PlayerPrefs.GetInt("DifficultyIndex", 0);
@@ -162,7 +160,7 @@ public class SongSelect : MonoBehaviour
         LoadEcho();
         
         //LoadPacks();
-        LoadConditions();
+        //LoadConditions();
         LoadArchive();
         LoadRating();
         UpdateChapterUI();
@@ -184,26 +182,26 @@ public class SongSelect : MonoBehaviour
         archivePacksContainer.packs = new List<ArchivePack>();
         int packidx = 0;
         int trackidx = 0;
-        foreach (var pack in packsContainer.packs)
+        foreach (var pack in packs)
         {
-            ArchivePack archivePack = new ArchivePack(packidx, pack.id, pack.section, pack.character, pack.name, pack.description);
+            ArchivePack archivePack = new ArchivePack(packidx, pack.id, pack.section, pack.character, pack.name, pack.description, pack.condition);
             archivePack.tracks = new List<ArchiveTrack>();
             foreach (var track in pack.tracks)
             {
-                ArchiveTrack archiveTrack = new ArchiveTrack(trackidx, track.id, track.title, track.artist, ConvertTextureToSprite(track.illustration), ConvertTextureToSprite(track.previewIllustration), track.illustrator, track.bpm, track.background, track.songInfo, track.audioPreviewStart, track.audioPreviewEnd, track.version);
+                ArchiveTrack archiveTrack = new ArchiveTrack(trackidx, track.id, track.title, track.artist, ConvertTextureToSprite(track.illustration), ConvertTextureToSprite(track.previewIllustration), track.illustrator, track.bpm, track.background, track.songInfo, track.audioPreviewStart, track.audioPreviewEnd, track.version, track.condition);
                 archiveTrack.charts = new List<ArchiveChart>();
                 int i = 0;
                 foreach (var chart in track.charts)
                 {
                     if (chart != null)
                     {
-                        ArchiveChart archiveChart = new ArchiveChart(i, chart.info.rating, chart.info.designer);
+                        ArchiveChart archiveChart = new ArchiveChart(i, chart.info.rating, chart.info.designer, chart.info.condition);
                         archiveTrack.charts.Add(archiveChart);
                         //Debug.Log(JsonUtility.ToJson(archiveChart));
                     }
                     else
                     {
-                        ArchiveChart archiveChart = new ArchiveChart(i, 0, "");
+                        ArchiveChart archiveChart = new ArchiveChart(i, 0, "", new Condition());
                         archiveTrack.charts.Add(archiveChart);
                     }
                     ++i;
@@ -244,35 +242,52 @@ public class SongSelect : MonoBehaviour
         }
     }
 
-    public void BuyTrack()
+    public bool Purchase()
     {
-        if (selectedLevel.GetComponent<LevelBar>().packCondition.type == ConditionType.Currency)
+        if (selectedLevel.GetComponent<LevelBar>().unlockState == UnlockState.Pack && selectedLevel.GetComponent<LevelBar>().packCondition.type == ConditionType.Currency)
         {
             if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().packCondition.amount)
             {
                 AddEcho(-selectedLevel.GetComponent<LevelBar>().packCondition.amount);
                 UnlockPack(selectedLevel.GetComponent<LevelBar>().packId);
+                Init();
+                return true;
             }
-            Init();
+            else
+            {
+                return false;
+            }
+            
         }
-        else if (selectedLevel.GetComponent<LevelBar>().trackCondition.type == ConditionType.Currency)
+        else if (selectedLevel.GetComponent<LevelBar>().unlockState == UnlockState.Track && selectedLevel.GetComponent<LevelBar>().trackCondition.type == ConditionType.Currency)
         {
             if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().trackCondition.amount)
             {
                 AddEcho(-selectedLevel.GetComponent<LevelBar>().trackCondition.amount);
                 UnlockTrack(selectedLevel.GetComponent<LevelBar>().id);
+                Init();
+                return true;
             }
-            Init();
+            else
+            {
+                return false;
+            }
         }
-        else if (selectedLevel.GetComponent<LevelBar>().chartCondition.type == ConditionType.Currency)
+        else if (selectedLevel.GetComponent<LevelBar>().unlockState == UnlockState.Chart && selectedLevel.GetComponent<LevelBar>().chartCondition.type == ConditionType.Currency)
         {
             if (GetEcho() >= selectedLevel.GetComponent<LevelBar>().chartCondition.amount)
             {
                 AddEcho(-selectedLevel.GetComponent<LevelBar>().chartCondition.amount);
                 UnlockChart(selectedLevel.GetComponent<LevelBar>().id, currentDifficultyIndex);
+                Init();
+                return true;
             }
-            Init();
+            else
+            {
+                return false;
+            }
         }
+        return false;
     }
 
     private void LoadRating()
@@ -312,6 +327,7 @@ public class SongSelect : MonoBehaviour
         echoDisplay.text = echo.ToString();
     }
 
+    /*
     private void LoadConditions()
     {
         foreach (var trackUnlocks in unlocksContainer.tracks)
@@ -367,6 +383,7 @@ public class SongSelect : MonoBehaviour
             }
         }
     }
+    */
 
     public void DownLoadArchive()
     {
@@ -658,16 +675,19 @@ public class SongSelect : MonoBehaviour
             if (GetPackUnlocked(song.packId) && song.GetUnlocked() && song.charts[currentDifficultyIndex].GetUnlocked() == false)
             {
                 clonedObject.GetComponent<LevelBar>().unlockCondition = TruncateText(GenerateConditionString(song.charts[currentDifficultyIndex].condition), 80);
+                clonedObject.GetComponent<LevelBar>().unlockState = UnlockState.Chart;
                 //Debug.Log("wgvewvwe"+song.title);
             }
             else if (GetPackUnlocked(song.packId) && song.GetUnlocked() == false)
             {
                 clonedObject.GetComponent<LevelBar>().unlockCondition = TruncateText(GenerateConditionString(song.condition), 120);
+                clonedObject.GetComponent<LevelBar>().unlockState = UnlockState.Track;
                 //Debug.Log("sb"+song.title);
             }
             else if (!GetPackUnlocked(song.packId))
             {
                 clonedObject.GetComponent<LevelBar>().unlockCondition = TruncateText(GenerateConditionString(GetPack(song.packId).condition), 120);
+                clonedObject.GetComponent<LevelBar>().unlockState = UnlockState.Pack;
             }
                 
 
@@ -856,7 +876,7 @@ public class SongSelect : MonoBehaviour
             return "";
 
         string trackName = "";
-        foreach (var pack in packsContainer.packs)
+        foreach (var pack in packs)
         {
             foreach (var track in pack.tracks)
             {
@@ -1035,7 +1055,7 @@ public class SongSelect : MonoBehaviour
 
             if (needReplay)
             {
-                var td = packsContainer.packs
+                var td = packs
                     .SelectMany(p => p.tracks)
                     .First(t => t.id == id);
 

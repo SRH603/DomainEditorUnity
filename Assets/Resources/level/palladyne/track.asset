@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: palladyne
   title: Palladyne
   artist: Kahxlyrio
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 104
   audioPreviewEnd: 120
   version: 
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: 22959309db74a446e87eed32b61286a6, type: 2}
+  - {fileID: 11400000, guid: 500c23e782ca4443988d31fe26e9d955, type: 2}
+  - {fileID: 11400000, guid: 80a6aaaab9b184643b502d5fad851871, type: 2}

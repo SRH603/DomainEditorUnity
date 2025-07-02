@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 2
   id: aeternitas_resonantia
   title: Aeternitas Resonantia
   artist: Athmyx feat. Valenozma
@@ -26,7 +25,15 @@ MonoBehaviour:
   audioPreviewStart: 24
   audioPreviewEnd: 41
   version: 
+  condition:
+    type: 1
+    amount: 0
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
-  - {fileID: 11400000, guid: f6cd5cbd998af43ffba9ed2ce2a698a0, type: 2}
-  - {fileID: 11400000, guid: 50517002f89e043229a92f88640462dd, type: 2}
-  - {fileID: 11400000, guid: 3080a49c501b84a658e9f15be3c3d252, type: 2}
+  - {fileID: 11400000, guid: cd18fd0f9e8a94ef29965fd4019190a7, type: 2}
+  - {fileID: 11400000, guid: bc1b571ca3cda4839887cfb057d16873, type: 2}
+  - {fileID: 11400000, guid: 2ae12d905933d43af943f41020d11b2d, type: 2}

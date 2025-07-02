@@ -15,7 +15,8 @@ public class ChapterPicker : MonoBehaviour
 {
     [Header("依赖")]
     public SongSelect songSelect;               // 场景中的 SongSelect
-    private PacksContainer Packs => songSelect.packsContainer;
+    //private PacksContainer Packs => songSelect.packsContainer;
+    private List<PackData> Packs => songSelect.packs;
 
     [Header("画廊 UI")]
     public ScrollRect      scrollRect;          // 必须 Horizontal
@@ -51,7 +52,7 @@ public class ChapterPicker : MonoBehaviour
 
     private RectTransform viewportRT;
     private float lastViewportW = -1f;
-    private float pageStep => Packs.packs.Count <= 1 ? 0 : 1f / (Packs.packs.Count - 1);
+    private float pageStep => Packs.Count <= 1 ? 0 : 1f / (Packs.Count - 1);
 
     //────────────────────────────────────
     #region Unity
@@ -63,7 +64,7 @@ public class ChapterPicker : MonoBehaviour
         BuildGallery();
         BuildDots();
 
-        curIndex = Mathf.Clamp(songSelect.currentChapterIndex, 0, Packs.packs.Count-1);
+        curIndex = Mathf.Clamp(songSelect.currentChapterIndex, 0, Packs.Count-1);
         //JumpTo(curIndex, true);
         JumpTo(0, true);
         RefreshTexts();
@@ -86,7 +87,7 @@ public class ChapterPicker : MonoBehaviour
 
         // 实时页码监控
         int idx = Mathf.RoundToInt(scrollRect.horizontalNormalizedPosition / pageStep);
-        idx = Mathf.Clamp(idx, 0, Packs.packs.Count-1);
+        idx = Mathf.Clamp(idx, 0, Packs.Count-1);
         if (idx != curIndex)
         {
             curIndex = idx;
@@ -108,9 +109,9 @@ public class ChapterPicker : MonoBehaviour
     {
         foreach (Transform c in contentRoot) Destroy(c.gameObject);
 
-        for (int i = 0; i < Packs.packs.Count; i++)
+        for (int i = 0; i < Packs.Count; i++)
         {
-            var pack = Packs.packs[i];
+            var pack = Packs[i];
             var go   = Instantiate(itemPrefab, contentRoot);
             var img  = go.GetComponentInChildren<Image>();
 
@@ -131,7 +132,7 @@ public class ChapterPicker : MonoBehaviour
     {
         foreach (Transform d in dotContainer) Destroy(d.gameObject);
         dots.Clear();
-        for (int i = 0; i < Packs.packs.Count; i++)
+        for (int i = 0; i < Packs.Count; i++)
         {
             var g = Instantiate(dotPrefab, dotContainer);
             var img = g.GetComponent<Image>();
@@ -146,7 +147,7 @@ public class ChapterPicker : MonoBehaviour
         if (vw <= 0) return;
 
         // 1) content 宽 = Viewport * 页数
-        contentRoot.sizeDelta = new Vector2(vw * Packs.packs.Count, contentRoot.sizeDelta.y);
+        contentRoot.sizeDelta = new Vector2(vw * Packs.Count, contentRoot.sizeDelta.y);
 
         // 2) 每个子 item 宽 = Viewport
         foreach (RectTransform child in contentRoot)
@@ -176,7 +177,7 @@ public class ChapterPicker : MonoBehaviour
         // 拖动总位移占比
         float progress = scrollRect.horizontalNormalizedPosition / pageStep - curIndex;
 
-        if      (progress >=  turnThreshold) curIndex = Mathf.Min(curIndex + 1, Packs.packs.Count - 1);
+        if      (progress >=  turnThreshold) curIndex = Mathf.Min(curIndex + 1, Packs.Count - 1);
         else if (progress <= -turnThreshold) curIndex = Mathf.Max(curIndex - 1, 0);
 
         JumpTo(curIndex);
@@ -186,7 +187,7 @@ public class ChapterPicker : MonoBehaviour
 
     private void Shift(int delta)
     {
-        curIndex = Mathf.Clamp(curIndex + delta, 0, Packs.packs.Count - 1);
+        curIndex = Mathf.Clamp(curIndex + delta, 0, Packs.Count - 1);
         JumpTo(curIndex);
     }
 
@@ -215,7 +216,7 @@ public class ChapterPicker : MonoBehaviour
 
     private void RefreshTexts()
     {
-        var pack = Packs.packs[curIndex];
+        var pack = Packs[curIndex];
         if (chapterNameText)  chapterNameText.text = pack.name.en;
         if (chapterDescText)  chapterDescText.text = pack.description.en;
     }

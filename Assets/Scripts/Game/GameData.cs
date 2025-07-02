@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameData", menuName = "Custom/GameData")]
+[CreateAssetMenu(fileName = "GameData", menuName = "GameData/GameData")]
 public class GameData : ScriptableObject
 {
     public Info info;
@@ -16,6 +16,7 @@ public class Info
     public double rating;
     public float offset; // �����Ӻ�����벥��
     public float version;
+    public Condition condition;
 }
 
 [System.Serializable]

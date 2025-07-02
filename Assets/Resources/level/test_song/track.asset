@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669218041a444a0898ef8d24be7c04c, type: 3}
   m_Name: track
   m_EditorClassIdentifier: 
-  idx: 3
   id: test_song
   title: Test Song
   artist: Athmyx
@@ -26,6 +25,14 @@ MonoBehaviour:
   audioPreviewStart: 0
   audioPreviewEnd: 10
   version: 
+  condition:
+    type: 2
+    amount: 80
+    otherTrackId: 
+    ratingClass: 0
+    targetScore: 0
+    packId: 
+    otherPackId: 
   charts:
   - {fileID: 11400000, guid: 278cc3e3a29784a038a918fc57996c9e, type: 2}
   - {fileID: 11400000, guid: cd525ed1b1593444a8cedb493a66a16b, type: 2}

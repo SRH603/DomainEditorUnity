@@ -11,6 +11,11 @@ public class ButtonClickPlayer : MonoBehaviour
     {
         GetComponent<Button>().onClick.AddListener(PlayClickSound);
     }
+    
+    public  void Refresh()
+    {
+        GetComponent<Button>().onClick.AddListener(PlayClickSound);
+    }
 
     private void PlayClickSound()
     {
