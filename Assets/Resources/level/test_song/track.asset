@@ -19,12 +19,12 @@ MonoBehaviour:
   illustration: {fileID: 2800000, guid: 7e9fa874f052c43418c66cc0b4440ea9, type: 3}
   previewIllustration: {fileID: 2800000, guid: 7e9fa874f052c43418c66cc0b4440ea9, type: 3}
   track: {fileID: 8300000, guid: d2d93430b4987b3419f0e635fda72d81, type: 3}
-  illustrator: "BD\u75C7\u5019\u7FA4"
+  illustrator: "\u8BF4\u7684\u9053\u7406"
   bpm: 60 - 470.52
   background: default
   songInfo: nothing
-  audioPreviewStart: 12
-  audioPreviewEnd: 24
+  audioPreviewStart: 0
+  audioPreviewEnd: 10
   version: 
   charts:
   - {fileID: 11400000, guid: 278cc3e3a29784a038a918fc57996c9e, type: 2}

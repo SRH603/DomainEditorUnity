@@ -31,6 +31,13 @@ public class PackArchive
     public bool unlocked = false;
 }
 
+public class CharacterArchive
+{
+    public string id;
+    public bool unlocked;
+    public int levelProgress;
+}
+
 [System.Serializable]
 public class Archive
 {
@@ -40,6 +47,7 @@ public class Archive
     public List<string> avatars;
     public string displayedAvatar;
     public int courseModeLevel;
+    public List<CharacterArchive> characters;
     public int echo;
     public bool isMaster;
     public List<PackArchive> packs;

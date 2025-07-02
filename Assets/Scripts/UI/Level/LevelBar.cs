@@ -135,42 +135,18 @@ public class LevelBar : MonoBehaviour
     public void UpdateInfo()
     {
         //RefreshConditionButton();
-        if (score >= 1000000)
+        Grade.text = score switch
         {
-            Grade.text = "♾";
-        }
-        else if (score >= 990000)
-        {
-            Grade.text = "IIS";
-        }
-        else if (score >= 980000)
-        {
-            Grade.text = "IS";
-        }
-        else if (score >= 970000)
-        {
-            Grade.text = "S";
-        }
-        else if (score >= 950000)
-        {
-            Grade.text = "A";
-        }
-        else if (score >= 920000)
-        {
-            Grade.text = "B";
-        }
-        else if (score >= 880000)
-        {
-            Grade.text = "C";
-        }
-        else if (score >= 800000)
-        {
-            Grade.text = "F";
-        }
-        else
-        {
-            Grade.text = "-";
-        }
+            >= 1000000 => "X",
+            >=  990000 => "IIS",
+            >=  980000 => "IS",
+            >=  970000 => "S",
+            >=  950000 => "A",
+            >=  920000 => "B",
+            >=  880000 => "C",
+            >=  800000 => "F",
+            _          => "-"
+        };
         Name.text = LevelName;
         Rating.text = LevelRating;
         Score.text = score.ToString("D7");
