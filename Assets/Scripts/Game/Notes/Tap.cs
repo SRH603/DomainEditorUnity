@@ -78,7 +78,7 @@ public class Tap : NoteEntity
         {
             LevelPlayingControl.GetComponent<PlayingData>().MissNum += 1;
             LevelPlayingControl.GetComponent<PlayingData>().Combo = 0;
-            Debug.Log("漏了一个Tap" + HitBeat);
+            //Debug.Log("漏了一个Tap" + HitBeat);
             gameObject.SetActive(false);
         }
     }
@@ -97,7 +97,7 @@ public class Tap : NoteEntity
             else if (State == 2) Judge("EarlyPerfectNum", true, true, PerfectEffectPrefab);
             else if (State == 1) Judge("EarlyGoodNum", true, true, GoodEffectPrefab);
             else if (State == 0) Judge("BadNum", false, false, new GameObject());
-            audioSource.PlayOneShot(hitSound);
+            if (State != 0) audioSource.PlayOneShot(hitSound);
             Note.SetActive(false);
         }
     }
