@@ -1,0 +1,22 @@
+{
+    "name": "Battlehub.Storage.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:962b533f12105a74f86684e3ee087776",
+        "GUID:b3b972c730c2900458f27e5228872ae6",
+        "GUID:544c803c26aae1545b7130deee61b362",
+        "GUID:1698125321ed322409e6b0fac3d49140",
+        "GUID:392f579849c8cb34dab1cf1135fc67f1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+  "name": "net.battlehub.storage",
+  "version": "1.5.2",
+  "displayName": "Battlehub Storage",
+  "description": "The Runtime Asset Database is a library designed to simplify the implementation of a runtime save and load subsystem in your Unity application.",
+  "unity": "2021.3",
+  "dependencies": {
+    "net.battlehub.storage.core": "1.5.2",
+    "net.battlehub.storage.shaderutil": "1.5.2",
+    "net.battlehub.protobuf": "2.0.0"
+  },
+  "keywords": [
+    "runtime asset database"
+  ],
+  "author": {
+    "name": "Battlehub",
+    "email": "Battlehub@outlook.com",
+    "url": "https://www.battlehub.net/"
+  }
+}

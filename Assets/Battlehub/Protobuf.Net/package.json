@@ -1,0 +1,14 @@
+{
+   "name":"net.battlehub.protobuf",
+   "version":"2.0.0",
+   "displayName":"protobuf-net library",
+   "description":"This package contains protobuf-net.dll by Marc Gravell see Licence.txt for details",
+   "unity":"2020.3",
+   "dependencies":{
+   },
+   "keywords":[
+      "protobuf-net"
+   ],
+   "author":{
+   }
+}

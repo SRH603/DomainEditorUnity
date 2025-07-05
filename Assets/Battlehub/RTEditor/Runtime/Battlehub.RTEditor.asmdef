@@ -1,0 +1,36 @@
+{
+    "name": "Battlehub.RTEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ac16a7f1382387c4fb4aa45510c7883d",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:87494dd5f0eae244faefdc0364122ed5",
+        "GUID:654f8e5b02fb16f47afe9f4945e69a51",
+        "GUID:392f579849c8cb34dab1cf1135fc67f1",
+        "GUID:962b533f12105a74f86684e3ee087776",
+        "GUID:b3b972c730c2900458f27e5228872ae6",
+        "GUID:93116c5eb6fe5ec41a0be69ac8923508",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "UnityWeld.dll",
+        "ICSharpCode.SharpZipLib.dll",
+        "protobuf-net.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.addressables",
+            "expression": "",
+            "define": "UNITY_ADDRESSABLES"
+        }
+    ],
+    "noEngineReferences": false
+}

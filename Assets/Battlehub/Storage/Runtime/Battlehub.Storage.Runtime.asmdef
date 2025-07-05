@@ -1,0 +1,17 @@
+{
+    "name": "Battlehub.Storage.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:962b533f12105a74f86684e3ee087776",
+        "GUID:392f579849c8cb34dab1cf1135fc67f1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

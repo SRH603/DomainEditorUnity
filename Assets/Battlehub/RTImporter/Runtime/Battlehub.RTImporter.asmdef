@@ -1,0 +1,23 @@
+{
+    "name": "Battlehub.RTImporter",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a42927d1d4a3b4cda9b076a7adecb9cc",
+        "GUID:fb20bc2d30583e34fba2eb37c20bd497"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.cloud.gltfast",
+            "expression": "",
+            "define": "UNITY_GLTFAST"
+        }
+    ],
+    "noEngineReferences": false
+}

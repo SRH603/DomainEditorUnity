@@ -1,0 +1,19 @@
+{
+  "name": "net.battlehub.storage.addressables",
+  "version": "1.5.2",
+  "displayName": "Battlehub Storage Addressables",
+  "description": "Addressables importer for Runtime Asset Database",
+  "unity": "2021.3",
+  "dependencies": {
+    "net.battlehub.storage.core": "1.5.2",
+    "com.unity.addressables": "1.19.19"
+  },
+  "keywords": [
+    "runtime asset database"
+  ],
+  "author": {
+    "name": "Battlehub",
+    "email": "Battlehub@outlook.com",
+    "url": "https://www.battlehub.net/"
+  }
+}
