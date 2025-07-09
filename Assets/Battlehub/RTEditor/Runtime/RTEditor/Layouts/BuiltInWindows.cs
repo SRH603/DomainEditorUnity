@@ -66,6 +66,11 @@ namespace Battlehub.RTEditor
 
         public readonly static string Settings = RuntimeWindowType.Settings.ToString().ToLower();
         
+        public readonly static string NoteEditor = RuntimeWindowType.NoteEditor.ToString().ToLower();
+        public readonly static string JudgmentLineEditor = RuntimeWindowType.JudgmentLineEditor.ToString().ToLower();
+        public readonly static string LevelEditor = RuntimeWindowType.LevelEditor.ToString().ToLower();
+        public readonly static string NoteDetailEditor = RuntimeWindowType.NoteDetailEditor.ToString().ToLower();
+        
         public readonly static string Empty = RuntimeWindowType.Empty.ToString().ToLower();
         public readonly static string EmptyDialog = RuntimeWindowType.EmptyDialog.ToString().ToLower();
 

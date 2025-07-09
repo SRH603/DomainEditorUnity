@@ -316,6 +316,11 @@ namespace Battlehub.RTCommon
 
         Empty = 256,
         EmptyDialog = 257,
+        
+        NoteEditor = 301,
+        JudgmentLineEditor = 302,
+        LevelEditor = 303,
+        NoteDetailEditor = 304,
 
         Custom = 1 << 16,
     }
