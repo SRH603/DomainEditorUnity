@@ -68,7 +68,7 @@ public class OnPlaying : MonoBehaviour
         LevelMusic.enabled = true;
         LevelMusic.Pause();
         
-        Invoke(nameof(BetaClick), 1.5f);
+        //Invoke(nameof(BetaClick), 1.5f);
     }
 
     void Update()
@@ -77,7 +77,8 @@ public class OnPlaying : MonoBehaviour
         //if (Input.GetMouseButtonDown(0)) Debug.Log(currentBeat);
         currentAudioTime = LevelMusic.time;
 
-        if (isStart == true) ChartPlaying();
+        if (isStart) ChartPlaying();
+        UpdateChart();
         
         // End
         if (generateLevel != null && currentBeat >= generateLevel.totalBeats)
@@ -91,10 +92,10 @@ public class OnPlaying : MonoBehaviour
 
     }
 
-    void ChartPlaying()
+    void UpdateChart()
     {
         MoveNotesTowardsJudgementLine();
-        currentTime += Time.deltaTime;
+        
         offsetTime = currentTime - offset;
         currentBeat = Time2Beat(offsetTime, bpmTimingList);
         LegacyHold();
@@ -103,6 +104,10 @@ public class OnPlaying : MonoBehaviour
         {
             UpdateJudgementLineAnimation(Lines, currentBeat);
         }
+    }
+    void ChartPlaying()
+    {
+        currentTime += Time.deltaTime;
         
     }
 

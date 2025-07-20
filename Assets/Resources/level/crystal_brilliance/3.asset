@@ -18,6 +18,14 @@ MonoBehaviour:
     rating: 17.2
     offset: -0.25
     version: 1
+    condition:
+      type: 0
+      amount: 0
+      otherTrackId: 
+      ratingClass: 0
+      targetScore: 0
+      packId: 
+      otherPackId: 
   content:
     bpmList:
     - startBeat: {x: 0, y: 0, z: 0}
@@ -27,21 +35,21 @@ MonoBehaviour:
       notes:
       - type: 0
         speed: 1
-        appearBeat: {x: 17, y: 4, z: 0}
+        appearBeat: {x: 0, y: 4, z: 0}
         data:
-        - hitBeat: {x: 17, y: 4, z: 0}
+        - hitBeat: {x: 0, y: 4, z: 0}
           position: -0
       - type: 0
         speed: 1
-        appearBeat: {x: 17, y: 4, z: 2}
+        appearBeat: {x: 0, y: 4, z: 2}
         data:
-        - hitBeat: {x: 17, y: 4, z: 2}
+        - hitBeat: {x: 0, y: 4, z: 2}
           position: 2
       - type: 0
         speed: 1
-        appearBeat: {x: 18, y: 4, z: 0}
+        appearBeat: {x: 1, y: 4, z: 0}
         data:
-        - hitBeat: {x: 18, y: 4, z: 0}
+        - hitBeat: {x: 1, y: 4, z: 0}
           position: 0
       - type: 0
         speed: 1

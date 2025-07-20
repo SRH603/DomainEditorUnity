@@ -14045,8 +14045,8 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 191a11797e711ea49bbef69e8caed4fb, type: 3}
+  m_Resource: {fileID: 8300000, guid: 191a11797e711ea49bbef69e8caed4fb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -18742,6 +18742,8 @@ GameObject:
   - component: {fileID: 1284313161}
   - component: {fileID: 1284313162}
   - component: {fileID: 1284313163}
+  - component: {fileID: 1284313164}
+  - component: {fileID: 1284313165}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -18910,6 +18912,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsText: {fileID: 768023462}
+--- !u!114 &1284313164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284313155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e316deacd96c4d5a9880dcef3f86f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressSlider: {fileID: 0}
+  playButton: {fileID: 0}
+  stopButton: {fileID: 0}
+  playing: {fileID: 1284313160}
+--- !u!114 &1284313165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284313155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2210f6580535a4206932a20644b301d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 193957ac300cd1f44815531790c5b558, type: 2}
+  levelMusic: {fileID: 963194229}
+  bpmTimingList:
+    Changes: []
+  laneCount: 8
+  currentLineIndex: 0
 --- !u!1 &1286448426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20401,7 +20437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1393332197
 Transform:
   m_ObjectHideFlags: 0
@@ -28230,6 +28266,7 @@ GameObject:
   - component: {fileID: 1796223472}
   - component: {fileID: 1796223471}
   - component: {fileID: 1796223473}
+  - component: {fileID: 1796223474}
   m_Layer: 0
   m_Name: RTE
   m_TagString: Untagged
@@ -28299,6 +28336,23 @@ MonoBehaviour:
   m_prefab: {fileID: 5186639825075379583, guid: c605608f37b414234954bbda38127fc4, type: 3}
   m_icon: {fileID: 0}
   m_header: NoteEditor
+  m_isDialog: 0
+  m_maxWindows: 1
+--- !u!114 &1796223474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796223468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b436b8038b344f119863a00eaebdf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_prefab: {fileID: 5186639825075379583, guid: c1a55bceeb1d44f0599c6f8e0881971c, type: 3}
+  m_icon: {fileID: 0}
+  m_header: ChartInfo
   m_isDialog: 0
   m_maxWindows: 1
 --- !u!1 &1802625748
