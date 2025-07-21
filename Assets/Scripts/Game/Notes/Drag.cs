@@ -12,7 +12,7 @@ public class Drag : NoteEntity
     [HideInInspector] public bool Hitted = false;
 
 
-    void Start()
+    public void Start()
     {
         LevelPlayingControl = GameObject.Find("LevelControl");
 

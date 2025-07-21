@@ -82,6 +82,7 @@ public class GenerateLevel : MonoBehaviour
     private void HandleNoteAdded(int lineIndex, Note note, int noteIndex)
     {
         GenerateSingleNote(lineIndex, note);
+        //GetComponent<OnPlaying>().LoadLevel();
     }
 
     // —— ② 删除音符 —— 
@@ -95,6 +96,7 @@ public class GenerateLevel : MonoBehaviour
             NotesNum = Mathf.Max(0, NotesNum - 1);
         }
         NotesHighLighter();
+        //GetComponent<OnPlaying>().LoadLevel();
     }
 
     // —— ③、④ 留空 —— 
@@ -256,13 +258,7 @@ public class GenerateLevel : MonoBehaviour
 
             if (note.type == 0 || note.type == 1)
             {
-                if (note.data[0].hitBeat == null)
-                {
-                    Debug.LogWarning("HitTime array is not initialized or does not have enough elements");
-                    continue; // 跳过当前迭代
-                }
-
-                double beatTime = GameUtilities.FractionToDecimal(note.data[0].hitBeat); // 计算note的击打时间（转换为拍数）
+                double beatTime = FractionToDecimal(note.data[0].hitBeat); // 计算note的击打时间（转换为拍数）
                 
                 double xPosition = CalculateIntegratedSpeed(judgmentLine.speed, 0, beatTime) * note.speed * flowSpeed; // 计算note的z坐标（假设NoteFlowSpeed是已知的）
                 Vector3 noteLocalPosition = new Vector3((float)xPosition, (float)note.data[0].position, 0); // 使用局部坐标实例化note预制体，并设置其位置和父物体
@@ -284,6 +280,7 @@ public class GenerateLevel : MonoBehaviour
                     lineData.Notes.Add(noteInstance); // 将生成的note添加到对应判定线的数据中
                     if (beatTime < totalBeats) // 是否为有效音符
                         NotesNum++;
+                    noteInstance.GetComponent<Tap>().Start();
                 }
                 if (note.type == 1)
                 {
@@ -301,6 +298,7 @@ public class GenerateLevel : MonoBehaviour
                     lineData.Notes.Add(noteInstance); // 将生成的note添加到对应判定线的数据中
                     if (beatTime < totalBeats)
                         NotesNum++;
+                    noteInstance.GetComponent<Drag>().Start();
                 }
 
 

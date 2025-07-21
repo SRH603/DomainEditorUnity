@@ -31663,6 +31663,18 @@ MonoBehaviour:
   State: -1
   NoteCollider: {fileID: 1677827001506466684}
   Hitted: 0
+--- !u!114 &2037858095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037858092}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4520cfc8bb98e4acda8f4561e6e01652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2040750559
 GameObject:
   m_ObjectHideFlags: 0
@@ -33522,6 +33534,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1285310573776927249, guid: 13763e8a694fb1b4b892470c7b083801, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2037858094}
+    - targetCorrespondingSourceObject: {fileID: 1285310573776927249, guid: 13763e8a694fb1b4b892470c7b083801, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037858095}
   m_SourcePrefab: {fileID: 100100000, guid: 13763e8a694fb1b4b892470c7b083801, type: 3}
 --- !u!136 &1677827001506466684 stripped
 CapsuleCollider:

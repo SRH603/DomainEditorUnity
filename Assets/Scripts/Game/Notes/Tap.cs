@@ -11,8 +11,9 @@ public class Tap : NoteEntity
     [HideInInspector] public bool Hitted = false;
 
 
-    void Start()
+    public void Start()
     {
+        //Debug.Log(this.gameObject.activeSelf);
         LevelPlayingControl = GameObject.Find("LevelControl");
 
         if (AppearTime == -1) Mesh.SetActive(true);
