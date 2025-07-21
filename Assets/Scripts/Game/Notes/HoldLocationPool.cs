@@ -56,7 +56,12 @@ public class HoldLocationPool : MonoBehaviour
             }
             if (onPlaying.currentBeat >= EndTime)
             {
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                parallelogram.SetActive(false);
+            }
+            else
+            {
+                parallelogram.SetActive(true);
             }
 
         }

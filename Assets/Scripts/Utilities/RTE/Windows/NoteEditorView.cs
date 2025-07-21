@@ -41,7 +41,7 @@ namespace NoteEditor.Views
         [SerializeField] private Toggle selectToggle;     // 第四个“选择”Toggle
 
         // 记录当前工具类型：0=Tap,1=Drag,2=Hold
-        private int currentTool = 0;
+        [HideInInspector] public int currentTool = 0;
 
         /* ───── 对象池：三种音符一人一池 ───── */
         private readonly List<RectTransform> tapPool  = new();
@@ -50,6 +50,8 @@ namespace NoteEditor.Views
         
         // ① 增加一个字段用来保存 OnBpmListChanged 的委托
         private System.Action _onBpmListChangedHandler;
+
+        [HideInInspector] public int selectToolIndex = 3;
 
         /* ───────────────── 生命周期 ───────────────── */
         protected override void Awake()
@@ -72,11 +74,8 @@ namespace NoteEditor.Views
             };
             ChartManager.Instance.OnBpmListChanged += _onBpmListChangedHandler;
             
-            ChartManager.Instance.OnContentChanged += () =>
-            {
-                // Note 列表变了，就重新渲染
-                RefreshNotes();
-            };
+            // Note 列表变了，就重新渲染
+            ChartManager.Instance.OnContentChanged += () => RefreshNotes();
             
             // 1) 切换工具回调
             tapToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 0; });
@@ -130,6 +129,33 @@ namespace NoteEditor.Views
         void Update()
         {
             grid.SetCurrentBeat(playing.currentBeat);
+            HandleDeleting();
+        }
+
+        void HandleDeleting()
+        {
+            // 2) 如果右键正在按住，且不是“选择”工具，就检测划过删除
+            if (Input.GetMouseButton(1) && currentTool != selectToolIndex)
+            {
+                // 准备一个 PointerEventData 去 RaycastAll
+                PointerEventData pd = new PointerEventData(EventSystem.current)
+                {
+                    position = Input.mousePosition
+                };
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pd, results);
+
+                foreach (var rr in results)
+                {
+                    // 找到第一个 NoteUI，就删它
+                    var noteUI = rr.gameObject.GetComponent<NoteUI>();
+                    if (noteUI != null)
+                    {
+                        DeleteNote(noteUI.dataIndex);
+                        break;
+                    }
+                }
+            }
         }
         
         // 在类里加上这一行
@@ -144,6 +170,15 @@ namespace NoteEditor.Views
             if (currentTool == 3) return; // 选择工具时不创建
 
             var p = (PointerEventData)data;
+            
+            if (p.button != PointerEventData.InputButton.Left)
+                return;
+            
+            // 1) 计算插入到哪一行、哪一个位置（这里只示例追加到末尾）
+            var mgr = ChartManager.Instance;
+            int lineIdx = mgr.currentLineIndex;
+            var line    = mgr.gameData.content.judgmentLines[lineIdx];
+            
             Vector2 local;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 content, p.position, p.pressEventCamera, out local);
@@ -162,10 +197,12 @@ namespace NoteEditor.Views
             var hitBeat = new Vector3Int(beatInt, beatDen, beatNum);
 
             // 写入 GameData
+            /*
             var mgr = ChartManager.Instance;
             var gd  = mgr.gameData;
             int lineIdx = mgr.currentLineIndex;
             var line    = gd.content.judgmentLines[lineIdx];
+            */
 
             var newNote = new Note
             {
@@ -178,8 +215,13 @@ namespace NoteEditor.Views
                 }
             };
 
+            int insertIndex = line.notes.Length;
+            mgr.AddNote(lineIdx, newNote, insertIndex);
+
+            /*
             var notes = new List<Note>(line.notes) { newNote };
             line.notes = notes.ToArray();
+            */
 
             // 触发内容变更，NoteEditor 会刷新
             mgr.NotifyContentChanged();
@@ -218,8 +260,9 @@ namespace NoteEditor.Views
             int dragIdx  = 0;
             int holdIdx  = 0;
 
-            foreach (var n in line.notes)
+            for(int i = 0; i < line.notes.Length; i++)
             {
+                var n = line.notes[i];
                 if (n.data == null || n.data.Count == 0) continue;
 
                 double beat  = FractionToDecimal(n.data[0].hitBeat);
@@ -244,6 +287,9 @@ namespace NoteEditor.Views
                         continue;   // 其他类型忽略
                 }
                 rt.anchoredPosition = new Vector2(x, y);
+                
+                var noteUI = rt.gameObject.GetComponent<NoteUI>() ?? rt.gameObject.AddComponent<NoteUI>();
+                noteUI.dataIndex = i; // i 是循环里的 note 索引
             }
         }
 
@@ -281,6 +327,35 @@ namespace NoteEditor.Views
             var rt = pool[idx];
             rt.gameObject.SetActive(true);
             return rt;
+        }
+        
+        /// <summary>
+        /// 删除当前判定线 notes 中索引为 dataIndex 的 Note，然后刷新
+        /// </summary>
+        public void DeleteNote(int dataIndex)
+        {
+            /*
+            var cm = ChartManager.Instance;
+            var line = cm.gameData.content.judgmentLines[cm.currentLineIndex];
+            var list = new List<Note>(line.notes);
+            if (dataIndex >= 0 && dataIndex < list.Count)
+            {
+                list.RemoveAt(dataIndex);
+                line.notes = list.ToArray();
+
+                // 同步数据变更，刷新 UI
+                cm.NotifyContentChanged();
+            }
+            */
+            
+            var mgr = ChartManager.Instance;
+            int lineIdx = mgr.currentLineIndex;
+
+            // 调用 ChartManager.RemoveNote
+            mgr.RemoveNote(lineIdx, dataIndex);
+            
+            // 触发内容变更，NoteEditor 会刷新
+            mgr.NotifyContentChanged();
         }
     }
 }

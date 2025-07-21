@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
 
 /// <summary>负责保存 GameData、音乐、BPM 信息，并广播“判定线切换”事件。</summary>
     public class ChartManager : MonoBehaviour
@@ -23,6 +25,62 @@ using UnityEngine;
         // —— 新增：内容变更事件 —— 
         /// <summary>当 Note 列表（content）改变时触发</summary>
         public event Action OnContentChanged;
+        
+        // —— 增量音符事件 —— 
+        public event Action<int, Note, int> OnNoteAdded;
+        public event Action<int, Note, int> OnNoteRemoved;
+        public event Action<int, Note, int> OnNoteUpdated;
+        public event Action<int>          OnJudgmentLineChanged;
+        
+        /// <summary>
+        /// 在第 lineIndex 条判定线上，index 位置插入一个 note
+        /// </summary>
+        public void AddNote(int lineIndex, Note note, int insertIndex)
+        {
+            var lines = gameData.content.judgmentLines;
+            var list  = new List<Note>(lines[lineIndex].notes);
+            list.Insert(insertIndex, note);
+            lines[lineIndex].notes = list.ToArray();
+
+            OnNoteAdded?.Invoke(lineIndex, note, insertIndex);
+            OnContentChanged?.Invoke();
+        }
+
+        /// <summary>
+        /// 在第 lineIndex 条判定线上，删除 index 位置的 note
+        /// </summary>
+        public void RemoveNote(int lineIndex, int removeIndex)
+        {
+            var lines = gameData.content.judgmentLines;
+            var list  = new List<Note>(lines[lineIndex].notes);
+            var note  = list[removeIndex];
+            list.RemoveAt(removeIndex);
+            lines[lineIndex].notes = list.ToArray();
+
+            OnNoteRemoved?.Invoke(lineIndex, note, removeIndex);
+            OnContentChanged?.Invoke();
+        }
+
+
+        /// <summary>
+        /// 更新第 lineIndex 号判定线第 noteIndex 个 note
+        /// </summary>
+        public void UpdateNote(int lineIndex, Note note, int noteIndex)
+        {
+            var list = gameData.content.judgmentLines[lineIndex].notes;
+            list[noteIndex] = note;
+            OnNoteUpdated?.Invoke(lineIndex, note, noteIndex);
+            OnContentChanged?.Invoke();
+        }
+
+        /// <summary>
+        /// 整条判定线的参数（如 flowSpeed）变更
+        /// </summary>
+        public void NotifyJudgmentLineChanged(int lineIndex)
+        {
+            OnJudgmentLineChanged?.Invoke(lineIndex);
+            OnContentChanged?.Invoke();
+        }
 
         /// <summary>修改 bpmList 时调用</summary>
         public void NotifyBpmListChanged()

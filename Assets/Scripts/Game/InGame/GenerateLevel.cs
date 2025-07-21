@@ -22,11 +22,126 @@ public class GenerateLevel : MonoBehaviour
     [HideInInspector] public BPMTimingList bpmTimingList = new BPMTimingList();
     [HideInInspector] public float totalBeats;
     public GameObject background;
+    
+    private ReadChart _currentReadChart;
 
-    public void Generate(ReadChart readChart)
+    void Awake()
+    {
+        ChartManager cm = GetComponent<ChartManager>();
+        // 订阅内容变更事件（我们之前在 ChartManager 里调用 NotifyContentChanged）
+        //cm.OnContentChanged += OnDataChanged;
+        // 也订阅 BPM 列表或其他大修改事件，按需
+        cm.OnBpmListChanged += OnDataChanged;
+        cm.OnNoteAdded             += HandleNoteAdded;
+        cm.OnNoteRemoved           += HandleNoteRemoved;
+        cm.OnNoteUpdated           += HandleNoteUpdated;           // 先空
+        cm.OnJudgmentLineChanged   += HandleJudgmentLineChanged;   // 先空
+    }
+
+    void OnDestroy()
+    {
+        // 取消订阅，防止泄漏
+        if (ChartManager.Instance != null)
+        {
+            //ChartManager.Instance.OnContentChanged   -= OnDataChanged;
+            ChartManager.Instance.OnBpmListChanged  -= OnDataChanged;
+            var cm = ChartManager.Instance;
+            cm.OnNoteAdded           -= HandleNoteAdded;
+            cm.OnNoteRemoved         -= HandleNoteRemoved;
+            cm.OnNoteUpdated         -= HandleNoteUpdated;
+            cm.OnJudgmentLineChanged -= HandleJudgmentLineChanged;
+        }
+    }
+    
+    // —— 生成单个 note 的复用入口 —— 
+    private void GenerateSingleNote(int lineIndex, Note note)
+    {
+        // 利用已有的整条线生成逻辑，只生成这一条 note
+        var jl        = gameData.content.judgmentLines[lineIndex];
+        var lineData  = AllJudgementLines[lineIndex];
+        // 临时构建一个只包含这一个 note 的 JudgmentLine
+        JudgmentLine tmp = new JudgmentLine
+        {
+            flowSpeed   = jl.flowSpeed,
+            notes       = new Note[] { note },
+            positionX   = jl.positionX,
+            positionY   = jl.positionY,
+            positionZ   = jl.positionZ,
+            rotationX   = jl.rotationX,
+            rotationY   = jl.rotationY,
+            rotationZ   = jl.rotationZ,
+            transparency= jl.transparency,
+            speed       = jl.speed
+        };
+        GenerateNotes(tmp, lineData.LineObject.transform, lineData);
+        NotesNum++;
+        NotesHighLighter();
+    }
+
+    // —— ① 新增音符 —— 
+    private void HandleNoteAdded(int lineIndex, Note note, int noteIndex)
+    {
+        GenerateSingleNote(lineIndex, note);
+    }
+
+    // —— ② 删除音符 —— 
+    private void HandleNoteRemoved(int lineIndex, Note note, int noteIndex)
+    {
+        var lineData = AllJudgementLines[lineIndex];
+        if (noteIndex >= 0 && noteIndex < lineData.Notes.Count)
+        {
+            Destroy(lineData.Notes[noteIndex]);
+            lineData.Notes.RemoveAt(noteIndex);
+            NotesNum = Mathf.Max(0, NotesNum - 1);
+        }
+        NotesHighLighter();
+    }
+
+    // —— ③、④ 留空 —— 
+    private void HandleNoteUpdated(int lineIndex, Note note, int noteIndex) { /* TODO */ }
+    private void HandleJudgmentLineChanged(int lineIndex)             { /* TODO */ }
+    
+    /// <summary>
+    /// 当 GameData.content 发生任何变更时被回调
+    /// </summary>
+    private void OnDataChanged()
+    {
+        // 只有当我们之前已经调用过一次 Generate 并且有 readChart 可用，才重新生成
+        if (_currentReadChart != null)
+        {
+            Generate(_currentReadChart);
+        }
+    }
+
+    /// <summary>
+    /// 清除当前已经实例化的判定线和 notes
+    /// </summary>
+    private void ClearLevel()
+    {
+        NotesNum = 0;
+        AllJudgementLines.Clear();
+        // 删除父节点下所有子物体
+        for (int i = judgmentLinesParent.childCount - 1; i >= 0; i--)
+        {
+            Destroy(judgmentLinesParent.GetChild(i).gameObject);
+        }
+    }
+
+    public void Init(ReadChart readChart)
     {
         gameData = readChart.gameData;
         trackData = readChart.trackData;
+        Generate(readChart);
+    }
+
+    public void Generate(ReadChart readChart)
+    {
+        // 先保存 readChart，以便后面自动重新生成
+        _currentReadChart = readChart;
+
+        // —— 清理旧对象 —— 
+        ClearLevel();
+        
         LoadBPMList();
         GenerateJudgmentLines();
         float appearDistance = PlayerPrefs.GetFloat("appearDistance", 1f);
@@ -290,24 +405,41 @@ public class GenerateLevel : MonoBehaviour
 
     void NotesHighLighter()
     {
-        foreach (var generatedjudgmentLine in AllJudgementLines)
+        // 1）先把所有 NoteEntity 收集起来，按 HitBeat 分组
+        var groups = new Dictionary<double, List<NoteEntity>>();
+        foreach (var lineData in AllJudgementLines)
         {
-            foreach (var AllGeneratedNotes in generatedjudgmentLine.Notes)
+            foreach (var go in lineData.Notes)
             {
-                foreach (var generatedjudgmentLineit in AllJudgementLines)
+                var entity = go.GetComponent<NoteEntity>();
+                double beat = entity.HitBeat;
+                if (!groups.TryGetValue(beat, out var list))
                 {
-                    foreach (var AllGeneratedNotesit in generatedjudgmentLine.Notes)
-                    {
-                        if (AllGeneratedNotes == AllGeneratedNotesit)
-                        {
-                            continue;
-                        }
-                        if (AllGeneratedNotes.GetComponent<NoteEntity>().HitBeat == AllGeneratedNotesit.GetComponent<NoteEntity>().HitBeat)
-                        {
-                            AllGeneratedNotesit.GetComponent<NoteEntity>().HighLight();
-                            AllGeneratedNotes.GetComponent<NoteEntity>().HighLight();
-                        }
-                    }
+                    list = new List<NoteEntity>();
+                    groups[beat] = list;
+                }
+                list.Add(entity);
+            }
+        }
+
+        // 2）遍历每个拍，决定 highlight 还是 unhighlight
+        foreach (var kv in groups)
+        {
+            var list = kv.Value;
+            if (list.Count > 1)
+            {
+                // 同拍多于 1 个，全部高亮
+                foreach (var e in list)
+                {
+                    e.HighLight();
+                }
+            }
+            else
+            {
+                // 只有 1 个，取消高亮
+                foreach (var e in list)
+                {
+                    e.UnHighLight();
                 }
             }
         }

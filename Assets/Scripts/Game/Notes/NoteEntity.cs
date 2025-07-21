@@ -21,12 +21,12 @@ public class NoteEntity : MonoBehaviour
 
     public void HighLight()
     {
-        Note.SetActive(false);
+        //Note.SetActive(false);
         HighLightNote.SetActive(true);
     }
     public void UnHighLight()
     {
-        Note.SetActive(true);
+        //Note.SetActive(true);
         HighLightNote.SetActive(false);
     }
 }

@@ -147,6 +147,12 @@ public class OnPlaying : MonoBehaviour
                     double BeatBasedDistance = AdvancedCalculateIntegratedSpeed(line.speed, currentBeat, (float)note.GetComponent<NoteEntity>().HitBeat);
                     double FinalDistance = BeatBasedDistance * note.GetComponent<NoteEntity>().Speed;
                     note.transform.localPosition = new Vector3((float)FinalDistance, note.transform.localPosition.y, note.transform.localPosition.z);
+                    if (note.GetComponent<Hold>() == null)
+                        note.SetActive(note.GetComponent<NoteEntity>().HitTime > offsetTime);
+                    else
+                    {
+                        note.GetComponent<Hold>().baseMesh.SetActive(note.GetComponent<NoteEntity>().HitTime > offsetTime);
+                    }
                 }
             }
         }

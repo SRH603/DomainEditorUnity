@@ -79,7 +79,7 @@ public class Tap : NoteEntity
             LevelPlayingControl.GetComponent<PlayingData>().MissNum += 1;
             LevelPlayingControl.GetComponent<PlayingData>().Combo = 0;
             //Debug.Log("漏了一个Tap" + HitBeat);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 

@@ -161,7 +161,7 @@ public class Hold : NoteEntity
         }
         if (State == 7)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
     

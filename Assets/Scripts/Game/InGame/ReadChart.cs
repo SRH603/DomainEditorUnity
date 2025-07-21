@@ -19,7 +19,7 @@ public class ReadChart : MonoBehaviour
 
             audioSource.volume = PlayerPrefs.GetFloat("musicVolume", 1f);
             hitSounds.volume = PlayerPrefs.GetFloat("hitSoundVolume", 1f);
-            generateLevel.Generate(this);
+            generateLevel.Init(this);
 
             Debug.Log(trackData.title + " " + gameData.info.rating);            
         }

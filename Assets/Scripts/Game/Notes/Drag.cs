@@ -76,7 +76,7 @@ public class Drag : NoteEntity
         {
             LevelPlayingControl.GetComponent<PlayingData>().MissNum += 1;
             LevelPlayingControl.GetComponent<PlayingData>().Combo = 0;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 
