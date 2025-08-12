@@ -56,6 +56,19 @@ namespace NoteEditor.Views
         private RectTransform    _holdPreviewQuad; // 预览用的 UI 四边形
         private List<double>     _holdPosXs  = new List<double>();
         
+        // 新增：线段可视化
+        private readonly List<RectTransform> _holdSegLines = new();
+        private RectTransform _holdPreviewLine; // 鼠标跟随的预览线
+        private int _pendingAttachNoteIndex = -1;
+        
+        // 放到字段区其它 SerializeField 附近
+        [Header("Hold Line Style")]
+        [SerializeField] private Color holdSegColor = new Color(1f, 1f, 1f, 0.6f);
+        [SerializeField] private float holdSegThickness = 2f;
+
+        [SerializeField] private Color holdPreviewColor = new Color(1f, 1f, 1f, 0.35f);
+        [SerializeField] private float holdPreviewThickness = 2f;
+        
         #endregion
 
         #region 生命周期
@@ -84,9 +97,16 @@ namespace NoteEditor.Views
             ChartManager.Instance.OnContentChanged += () => RefreshNotes();
             
             // 1) 切换工具回调
+            /*
             tapToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 0; });
             dragToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 1; });
             holdToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 2; });
+            */
+            
+            // 原：if (isOn) currentTool = 0/1/2;
+            tapToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(0); });
+            dragToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(1); });
+            holdToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(2); });
 
             // 默认选中 Tap
             tapToggle.isOn = true;
@@ -116,7 +136,9 @@ namespace NoteEditor.Views
         void ToolsInit()
         {
             // —— 工具切换 —— 
-            selectToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 3; });
+            //selectToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 3; });
+            // 原：if (isOn) currentTool = 3;
+            selectToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(3); });
             
             // —— 始终允许滚轮滚动 —— 
             // 把 GridLayer（GridGraphic 所在物体）上的 EventTrigger 注册到 scrollRect
@@ -138,6 +160,8 @@ namespace NoteEditor.Views
             trigger.triggers.Add(dragEntry);
         }
         
+        
+        
         void Update()
         {
             grid.SetCurrentBeat(playing.currentBeat);
@@ -153,6 +177,103 @@ namespace NoteEditor.Views
         
 #region Note摆放
 #region Hold逻辑
+#region Hold显示
+
+        // 创建一条 UI 线（RectTransform + Image）—— 修正锚点/枢轴/缩放
+        RectTransform CreateLineGO(string name, Color color)
+        {
+            var go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            go.transform.SetParent(noteLayer, false);
+
+            var rt = go.GetComponent<RectTransform>();
+            // 横 center, 竖 bottom
+            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0f);
+            rt.pivot     = new Vector2(0.5f, 0f);
+            rt.anchoredPosition3D = Vector3.zero;
+            rt.localScale         = Vector3.one;
+            rt.localRotation      = Quaternion.identity;
+            rt.sizeDelta          = Vector2.zero;
+
+            var img = go.GetComponent<Image>();
+            img.raycastTarget = false;
+            img.color = color;
+
+            return rt;
+        }
+        
+        // 把一条线摆放为点 A→B（中心、长度、旋转）
+        static void SetLine(RectTransform rt, Vector2 a, Vector2 b, float thickness)
+        {
+            Vector2 dir      = b - a;
+            float   length   = dir.magnitude;
+            float   angleRad = Mathf.Atan2(dir.y, dir.x);
+            float   angleDeg = angleRad * Mathf.Rad2Deg;
+
+            Vector2 mid = (a + b) * 0.5f;
+            // 底部枢轴：把底边对齐到“线的中线”，需要沿“上线方向”回退半个厚度
+            Vector2 up = new Vector2(-Mathf.Sin(angleRad), Mathf.Cos(angleRad));
+            Vector2 pivotOffset = up * (thickness * 0.5f);
+
+            rt.sizeDelta        = new Vector2(length, thickness);
+            rt.localRotation    = Quaternion.Euler(0, 0, angleDeg);
+            rt.anchoredPosition = mid - pivotOffset;
+        }
+
+        // Beat(拍)+横向 pos → 转成 UI 坐标
+        Vector2 ToUI(Vector3Int beat, double posX)
+        {
+            float x = LanePosToX(posX);
+            float y = (beat.x + (float)beat.z / beat.y) * grid.beatHeight;
+            return new Vector2(x, y);
+        }
+
+        // 清理所有可视化线段
+        void ClearHoldLines()
+        {
+            if (_holdPreviewLine != null) Destroy(_holdPreviewLine.gameObject);
+            _holdPreviewLine = null;
+            foreach (var rt in _holdSegLines)
+                if (rt != null) Destroy(rt.gameObject);
+            _holdSegLines.Clear();
+        }
+        
+        // 清掉某个 Hold UI 下旧的可视化线段
+        void DestroyChildHoldSegs(RectTransform holdRt)
+        {
+            var segs = holdRt.GetComponentsInChildren<HoldSegTag>(true);
+            foreach (var seg in segs)
+                if (seg != null) Destroy(seg.gameObject);
+        }
+
+// 按 Note.data 邻点生成线段并挂到 holdRt 下
+        void RebuildHoldLinesFromData(RectTransform holdRt, Note holdNote)
+        {
+            var d = holdNote.data;
+            if (d == null || d.Count < 2) return;
+
+            for (int s = 0; s < d.Count - 1; s++)
+            {
+                var a = d[s];
+                var b = d[s + 1];
+
+                var seg = CreateLineGO("HoldSeg", holdSegColor);
+                seg.gameObject.AddComponent<HoldSegTag>();
+
+                // 先按全局 UI 坐标摆好
+                SetLine(
+                    seg,
+                    ToUI(a.hitBeat, a.position),
+                    ToUI(b.hitBeat, b.position),
+                    holdSegThickness
+                );
+
+                // 再改父到这个 Hold 方块下，保持屏幕位置不变
+                seg.SetParent(holdRt, worldPositionStays: true);
+                seg.SetAsLastSibling();
+            }
+        }
+        
+#endregion Hold显示
         private void FinalizeHold()
         {
             if (!_isCreatingHold) return;
@@ -175,11 +296,30 @@ namespace NoteEditor.Views
                 data       = dataList
             };
 
+            /*
             var newNotes = new List<Note>(line.notes) { note };
             line.notes   = newNotes.ToArray();
             mgr.NotifyContentChanged();
+            int insertIndex = mgr.gameData.content.judgmentLines[lineIdx].notes.Length;
+            mgr.AddNote(lineIdx, note, insertIndex);
+            */
+            
+            // 2) 只走 AddNote（不要再直接改 line.notes）
+            int insertIndex = line.notes.Length;           // 追加到末尾
+            mgr.AddNote(lineIdx, note, insertIndex);
+            _pendingAttachNoteIndex = insertIndex;         // 记住：等刷新时把线段挂到这个 Note 的 UI 上
+            mgr.NotifyContentChanged();
 
+            // 3) 清理“预览线”，但保留已固化的段（_holdSegLines）
+            if (_holdPreviewLine != null) Destroy(_holdPreviewLine.gameObject);
+            _holdPreviewLine = null;
+
+            if (_holdPreviewQuad != null) Destroy(_holdPreviewQuad.gameObject);
+            _holdPreviewQuad = null;
+            /*
+            ClearHoldLines();
             Destroy(_holdPreviewQuad.gameObject);
+            */
             _holdBeats.Clear();
             _holdPosXs.Clear();
         }
@@ -188,10 +328,13 @@ namespace NoteEditor.Views
         {
             _isCreatingHold = false;
             _holdBeats.Clear();
+            _holdPosXs.Clear();
+            _pendingAttachNoteIndex = -1; // 新增：避免后续错误挂靠
             if (_holdPreviewQuad != null)
             {
                 Destroy(_holdPreviewQuad.gameObject);
             }
+            ClearHoldLines();
         }
         
         private void CreateHoldPreview()
@@ -212,6 +355,19 @@ namespace NoteEditor.Views
             // Tint it
             var img = go.GetComponent<UnityEngine.UI.Image>();
             img.color = new Color(1f, 1f, 1f, 0.3f);
+            
+            ClearHoldLines(); // 保守起见先清掉旧的
+            //_holdPreviewLine = CreateLineGO("HoldPreviewLine", new Color(1f, 1f, 1f, 0.35f));
+            // 原： _holdPreviewLine = CreateLineGO("HoldPreviewLine", new Color(1f, 1f, 1f, 0.35f));
+            _holdPreviewLine = CreateLineGO("HoldPreviewLine", holdPreviewColor);
+        }
+        
+        private void AddPreviewSegment(Vector3Int a, double ax, Vector3Int b, double bx)
+        {
+            var seg = CreateLineGO("HoldSeg", holdSegColor);
+            seg.gameObject.AddComponent<HoldSegTag>();
+            SetLine(seg, ToUI(a, ax), ToUI(b, bx), holdSegThickness); // 原来用 grid.minorLineWidth
+            _holdSegLines.Add(seg);
         }
 
         private void AddPreviewSegment(Vector3Int a, Vector3Int b)
@@ -276,15 +432,40 @@ namespace NoteEditor.Views
 
                 foreach (var rr in results)
                 {
-                    // 找到第一个 NoteUI，就删它
-                    var noteUI = rr.gameObject.GetComponent<NoteUI>();
+                    // ★ 改为从点击对象向上找 NoteUI，避免点到别的 Graphic
+                    var noteUI = rr.gameObject.GetComponentInParent<NoteUI>();
                     if (noteUI != null)
                     {
-                        DeleteNote(noteUI.dataIndex);
+                        DeleteNoteByUI(noteUI);  // 用准确 UI 删除
                         break;
                     }
                 }
             }
+        }
+        
+        // ★ 新增：按“具体被点中的 UI”来删
+        // 精准删除：先清可视化线，再把这个 UI 从对象池移除并销毁，最后删数据并刷新
+        private void DeleteNoteByUI(NoteUI noteUI)
+        {
+            // 1) 清掉这颗 Note 下的线段可视化
+            foreach (var seg in noteUI.GetComponentsInChildren<HoldSegTag>(true))
+                Destroy(seg.gameObject);
+
+            // 2) 从对应的对象池移除并销毁这个具体 UI（避免“删 A 复用到 B”的错觉）
+            var rt = noteUI.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                if (holdPool.Contains(rt)) holdPool.Remove(rt);
+                if (dragPool.Contains(rt)) dragPool.Remove(rt);
+                if (tapPool.Contains(rt))  tapPool.Remove(rt);
+                Destroy(rt.gameObject);
+            }
+
+            // 3) 删数据并刷新
+            var mgr = ChartManager.Instance;
+            int lineIdx = mgr.currentLineIndex;
+            mgr.RemoveNote(lineIdx, noteUI.dataIndex);
+            mgr.NotifyContentChanged();
         }
         
         // 在类里加上这一行
@@ -327,21 +508,32 @@ namespace NoteEditor.Views
                     _holdBeats.Add(hitBeat);
                     _holdPosXs.Add(posX);
                     CreateHoldPreview(); // 创建空的预览 Quad
+                    
+                    // 刚创建时，让预览线长度为 0（起点=终点）
+                    //SetLine(_holdPreviewLine, ToUI(hitBeat, posX), ToUI(hitBeat, posX), grid.minorLineWidth);
+                    SetLine(_holdPreviewLine, ToUI(hitBeat, posX), ToUI(hitBeat, posX), holdPreviewThickness);
                 }
                 else
                 {
                     // 再次点击：大于上一次才算新点；否则结束
-                    var prev = _holdBeats[^1];
-                    // ……后面每次 new 点也同理
-                    if (FractionToDecimal(hitBeat) > FractionToDecimal(prev))
+                    // （在 OnGridClicked 的 Hold 分支里）点击第二次以后：
+                    var prevBeat = _holdBeats[^1];
+                    if (FractionToDecimal(hitBeat) > FractionToDecimal(prevBeat))
                     {
+                        var prevPosX = _holdPosXs[^1];
+
+                        // 固化一段：prev → 当前点击
+                        AddPreviewSegment(prevBeat, prevPosX, hitBeat, posX);
+
                         _holdBeats.Add(hitBeat);
                         _holdPosXs.Add(posX);
-                        AddPreviewSegment(prev, hitBeat);
+
+                        // 预览线重置为 0 长度，等待鼠标移动刷新
+                        if (_holdPreviewLine != null)
+                            SetLine(_holdPreviewLine, ToUI(hitBeat, posX), ToUI(hitBeat, posX), grid.minorLineWidth);
                     }
                     else
                     {
-                        // 相同或更小，就结束创建
                         FinalizeHold();
                     }
                 }
@@ -427,9 +619,24 @@ namespace NoteEditor.Views
             Vector2 local;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 content, pd.position, pd.pressEventCamera, out local);
+            
             var lastBeat = _holdBeats[^1];
             var currBeat = ComputeHitBeat(local);
             UpdatePreviewSegment(lastBeat, currBeat);
+            
+            // 起点：最后一个已确定的点
+            var aBeat = _holdBeats[^1];
+            var aPosX = _holdPosXs[^1];
+
+            // 终点：鼠标所在“临时点”
+            var bBeat = ComputeHitBeat(local);
+            var bPosX = ComputePosX(local);
+            
+            if (_holdPreviewLine == null)
+                _holdPreviewLine = CreateLineGO("HoldPreviewLine", new Color(1f,1f,1f,0.35f));
+
+            //SetLine(_holdPreviewLine, ToUI(aBeat, aPosX), ToUI(bBeat, bPosX), grid.minorLineWidth);
+            SetLine(_holdPreviewLine, ToUI(aBeat, aPosX), ToUI(bBeat, bPosX), holdPreviewThickness);
         }
         
         /* ───────────────── Note 刷新 ───────────────── */
@@ -472,6 +679,28 @@ namespace NoteEditor.Views
                         break;
                     case 2: // Hold 起点
                         rt = Spawn(holdPool, holdPrefab, holdIdx++);
+
+                        // —— 如果这是刚刚新建的 Hold（数据索引 == _pendingAttachNoteIndex），把临时线段挂上去
+                        if (_pendingAttachNoteIndex == i)
+                        {
+                            // 先清掉旧的，避免叠加
+                            DestroyChildHoldSegs(rt);
+
+                            foreach (var seg in _holdSegLines)
+                            {
+                                if (seg == null) continue;
+                                seg.SetParent(rt, worldPositionStays: true);
+                                seg.SetAsLastSibling();
+                            }
+                            _holdSegLines.Clear();
+                            _pendingAttachNoteIndex = -1;
+                        }
+                        else
+                        {
+                            // 非新建（或刷新加载）的 Hold：直接按数据重建线段
+                            DestroyChildHoldSegs(rt);
+                            RebuildHoldLinesFromData(rt, n);
+                        }
                         break;
                     default:
                         continue;   // 其他类型忽略
@@ -486,7 +715,12 @@ namespace NoteEditor.Views
         /* —— 对象池 —— */
         static void DeactivatePool(List<RectTransform> pool)
         {
-            foreach (var rt in pool) rt.gameObject.SetActive(false);
+            for (int i = pool.Count - 1; i >= 0; i--)
+            {
+                var rt = pool[i];
+                if (rt == null) { pool.RemoveAt(i); continue; }
+                rt.gameObject.SetActive(false);
+            }
         }
 
         RectTransform Spawn(List<RectTransform> pool, RectTransform prefab, int idx)
@@ -519,6 +753,25 @@ namespace NoteEditor.Views
             
             var mgr = ChartManager.Instance;
             int lineIdx = mgr.currentLineIndex;
+            
+            // ★ 新增：找到这个 dataIndex 对应的 Hold UI，并清它下面的 HoldSeg
+            RectTransform targetUI = null;
+            foreach (var rt in holdPool)
+            {
+                if (rt == null || !rt.gameObject.activeSelf) continue;
+                var ui = rt.GetComponent<NoteUI>();
+                if (ui != null && ui.dataIndex == dataIndex)
+                {
+                    targetUI = rt;
+                    break;
+                }
+            }
+            if (targetUI != null)
+            {
+                var segs = targetUI.GetComponentsInChildren<HoldSegTag>(true);
+                foreach (var seg in segs)
+                    Destroy(seg.gameObject);
+            }
 
             // 调用 ChartManager.RemoveNote
             mgr.RemoveNote(lineIdx, dataIndex);

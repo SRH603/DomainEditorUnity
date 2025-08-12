@@ -148,10 +148,10 @@ public class OnPlaying : MonoBehaviour
                     double FinalDistance = BeatBasedDistance * note.GetComponent<NoteEntity>().Speed;
                     note.transform.localPosition = new Vector3((float)FinalDistance, note.transform.localPosition.y, note.transform.localPosition.z);
                     if (note.GetComponent<Hold>() == null)
-                        note.SetActive(note.GetComponent<NoteEntity>().HitTime > offsetTime && (note.GetComponent<NoteEntity>().AppearTime == -1 || note.GetComponent<NoteEntity>().HitBeat - offsetTime >= note.GetComponent<NoteEntity>().AppearTime));
+                        note.SetActive(note.GetComponent<NoteEntity>().HitTime > offsetTime && (note.GetComponent<NoteEntity>().AppearTime == -1 || offsetTime >= note.GetComponent<NoteEntity>().AppearTime));
                     else
                     {
-                        note.SetActive(note.GetComponent<NoteEntity>().AppearTime == -1 || note.GetComponent<NoteEntity>().HitBeat - offsetTime >= note.GetComponent<NoteEntity>().AppearTime);
+                        note.SetActive(note.GetComponent<NoteEntity>().AppearTime == -1 || offsetTime >= note.GetComponent<NoteEntity>().AppearTime);
                         note.GetComponent<Hold>().baseMesh.SetActive(note.GetComponent<NoteEntity>().HitTime > offsetTime);
                     }
                 }
