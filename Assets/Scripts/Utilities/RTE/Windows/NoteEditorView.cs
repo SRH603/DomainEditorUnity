@@ -642,6 +642,11 @@ namespace NoteEditor.Views
         /* ───────────────── Note 刷新 ───────────────── */
         void RefreshNotes()
         {
+            // ★ 新增：确保布局完成，Rect 正确
+            Canvas.ForceUpdateCanvases();
+            LayoutRebuilder.ForceRebuildLayoutImmediate(content);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(noteLayer);
+            
             // 1. 先全部隐藏
             DeactivatePool(tapPool);
             DeactivatePool(dragPool);
@@ -679,33 +684,32 @@ namespace NoteEditor.Views
                         break;
                     case 2: // Hold 起点
                         rt = Spawn(holdPool, holdPrefab, holdIdx++);
-
-                        // —— 如果这是刚刚新建的 Hold（数据索引 == _pendingAttachNoteIndex），把临时线段挂上去
-                        if (_pendingAttachNoteIndex == i)
-                        {
-                            // 先清掉旧的，避免叠加
-                            DestroyChildHoldSegs(rt);
-
-                            foreach (var seg in _holdSegLines)
-                            {
-                                if (seg == null) continue;
-                                seg.SetParent(rt, worldPositionStays: true);
-                                seg.SetAsLastSibling();
-                            }
-                            _holdSegLines.Clear();
-                            _pendingAttachNoteIndex = -1;
-                        }
-                        else
-                        {
-                            // 非新建（或刷新加载）的 Hold：直接按数据重建线段
-                            DestroyChildHoldSegs(rt);
-                            RebuildHoldLinesFromData(rt, n);
-                        }
                         break;
                     default:
                         continue;   // 其他类型忽略
                 }
                 rt.anchoredPosition = new Vector2(x, y);
+                // ★ 新增：现在父物体位置已确定，再挂线就不会二次偏移
+                if (n.type == 2)
+                {
+                    if (_pendingAttachNoteIndex == i)
+                    {
+                        DestroyChildHoldSegs(rt);
+                        foreach (var seg in _holdSegLines)
+                        {
+                            if (seg == null) continue;
+                            seg.SetParent(rt, worldPositionStays: true);
+                            seg.SetAsLastSibling();
+                        }
+                        _holdSegLines.Clear();
+                        _pendingAttachNoteIndex = -1;
+                    }
+                    else
+                    {
+                        DestroyChildHoldSegs(rt);
+                        RebuildHoldLinesFromData(rt, n); // 用 Note.data 邻点重建线
+                    }
+                }
                 
                 var noteUI = rt.gameObject.GetComponent<NoteUI>() ?? rt.gameObject.AddComponent<NoteUI>();
                 noteUI.dataIndex = i; // i 是循环里的 note 索引
