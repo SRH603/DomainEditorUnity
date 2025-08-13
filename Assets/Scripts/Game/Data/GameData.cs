@@ -38,6 +38,7 @@ public class JudgmentLine
 {
     public double flowSpeed;
     public Note[] notes;
+    
     public AnimationCurve positionX;
     public AnimationCurve positionY;
     public AnimationCurve positionZ;

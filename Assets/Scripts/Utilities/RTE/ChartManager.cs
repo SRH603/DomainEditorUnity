@@ -2,10 +2,16 @@ using System;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Battlehub.RTCommon;
+using System.Reflection;
+
 
 /// <summary>负责保存 GameData、音乐、BPM 信息，并广播“判定线切换”事件。</summary>
     public class ChartManager : MonoBehaviour
     {
+        private static readonly MemberInfo kNotesMember =
+            typeof(JudgmentLine).GetField("notes");
+        
         public static ChartManager Instance { get; private set; }
 
         [Header("资源")]
@@ -37,27 +43,60 @@ using System.Collections.Generic;
         /// </summary>
         public void AddNote(int lineIndex, Note note, int insertIndex)
         {
-            var lines = gameData.content.judgmentLines;
-            var list  = new List<Note>(lines[lineIndex].notes);
-            list.Insert(insertIndex, note);
-            lines[lineIndex].notes = list.ToArray();
+            var rte  = IOC.Resolve<IRTE>();                             //  [oai_citation:0‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
+            var undo = rte.Undo;                                        //  [oai_citation:1‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
 
-            OnNoteAdded?.Invoke(lineIndex, note, insertIndex);
+            var line = gameData.content.judgmentLines[lineIndex];
+
+            undo.BeginRecord();                                         // 开始打包一步   [oai_citation:2‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
+            undo.BeginRecordValue(line, kNotesMember);                  // 记录修改前值   [oai_citation:3‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
+            {
+                var list = new List<Note>(line.notes);
+                if (insertIndex < 0 || insertIndex > list.Count) insertIndex = list.Count;
+                list.Insert(insertIndex, note);
+                line.notes = list.ToArray();                            // 调到①里的属性 -> 自动刷新 UI
+            }
+            undo.EndRecordValue(line, kNotesMember);                    // 记录修改后值   [oai_citation:4‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
+            undo.EndRecord();                                           // 压入撤销栈      [oai_citation:5‡rteditor.battlehub.net](https://rteditor.battlehub.net/v20/infrastructure/)
+            
+            // ✅ 更新快照，避免监视器在下一帧再次把这次“自己加的”当成外部变化
+            if (_notesSnapshots != null && lineIndex < _notesSnapshots.Length)
+                _notesSnapshots[lineIndex] = line.notes;
+
+            OnNoteAdded?.Invoke(lineIndex, note, insertIndex);          // 你已有的事件
             OnContentChanged?.Invoke();
+            // 不必再手动 Notify，属性 setter 已经发了；留着也无妨
         }
 
         /// <summary>
         /// 在第 lineIndex 条判定线上，删除 index 位置的 note
         /// </summary>
-        public void RemoveNote(int lineIndex, int removeIndex)
+        
+        public void RemoveNote(int lineIndex, int noteIndex)
         {
-            var lines = gameData.content.judgmentLines;
-            var list  = new List<Note>(lines[lineIndex].notes);
-            var note  = list[removeIndex];
-            list.RemoveAt(removeIndex);
-            lines[lineIndex].notes = list.ToArray();
+            var rte  = IOC.Resolve<IRTE>();
+            var undo = rte.Undo;
 
-            OnNoteRemoved?.Invoke(lineIndex, note, removeIndex);
+            var line = gameData.content.judgmentLines[lineIndex];
+            if (line.notes == null || noteIndex < 0 || noteIndex >= line.notes.Length) return;
+
+            var removed = line.notes[noteIndex];
+
+            undo.BeginRecord();
+            undo.BeginRecordValue(line, kNotesMember);
+            {
+                var list = new List<Note>(line.notes);
+                list.RemoveAt(noteIndex);
+                line.notes = list.ToArray();                            // 属性 -> 自动刷新 UI
+            }
+            undo.EndRecordValue(line, kNotesMember);
+            undo.EndRecord();
+            
+            // ✅ 更新快照，避免监视器在下一帧再次把这次“自己加的”当成外部变化
+            if (_notesSnapshots != null && lineIndex < _notesSnapshots.Length)
+                _notesSnapshots[lineIndex] = line.notes;
+
+            OnNoteRemoved?.Invoke(lineIndex, removed, noteIndex);
             OnContentChanged?.Invoke();
         }
 
@@ -173,5 +212,70 @@ using System.Collections.Generic;
                     i++;
                 }
             }
+        }
+        
+        // ChartManager.cs 里（字段区）
+        private Note[][] _notesSnapshots;
+        private bool _snapInited;
+
+// 在合适时机（GameData/谱面就绪后）调用一次
+        public void InitNotesSnapshots()
+        {
+            var lines = gameData.content.judgmentLines;
+            _notesSnapshots = new Note[lines.Length][];
+            for (int i = 0; i < lines.Length; i++)
+                _notesSnapshots[i] = lines[i].notes;
+            _snapInited = true;
+        }
+
+// 轻量监视（不分配、不遍历 Note 内容，先看数组引用/长度）
+        private void LateUpdate()
+        {
+            if (!_snapInited || gameData == null || gameData.content == null) return;
+
+            var lines = gameData.content.judgmentLines;
+            for (int li = 0; li < lines.Length; li++)
+            {
+                var oldArr = _notesSnapshots[li];
+                var newArr = lines[li].notes;
+
+                if (!ReferenceEquals(oldArr, newArr))
+                {
+                    EmitNoteDelta(li, oldArr, newArr);
+                    _notesSnapshots[li] = newArr; // 更新快照，防止重复
+                }
+            }
+        }
+
+        private void EmitNoteDelta(int lineIndex, Note[] oldArr, Note[] newArr)
+        {
+            int oldLen = oldArr?.Length ?? 0;
+            int newLen = newArr?.Length ?? 0;
+
+            if (newLen == oldLen + 1)
+            {
+                int idx = FirstDiffIndex(oldArr, newArr);
+                if (idx < 0) idx = oldLen; // 追加在末尾
+                OnNoteAdded?.Invoke(lineIndex, newArr[idx], idx);
+            }
+            else if (newLen + 1 == oldLen)
+            {
+                int idx = FirstDiffIndex(oldArr, newArr);
+                if (idx < 0) idx = newLen; // 删除末尾
+                OnNoteRemoved?.Invoke(lineIndex, oldArr[idx], idx);
+            }
+            else
+            {
+                // 出现重排或批量变化，兜底一次全量刷新（仍比每次增删都全量好很多）
+                OnContentChanged?.Invoke();
+            }
+        }
+
+        private static int FirstDiffIndex(Note[] a, Note[] b)
+        {
+            int n = Mathf.Min(a?.Length ?? 0, b?.Length ?? 0);
+            for (int i = 0; i < n; i++)
+                if (!ReferenceEquals(a[i], b[i])) return i;
+            return -1;
         }
     }

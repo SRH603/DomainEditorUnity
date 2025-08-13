@@ -29,7 +29,7 @@ public class GenerateLevel : MonoBehaviour
     {
         ChartManager cm = GetComponent<ChartManager>();
         // 订阅内容变更事件（我们之前在 ChartManager 里调用 NotifyContentChanged）
-        //cm.OnContentChanged += OnDataChanged;
+        // cm.OnContentChanged += OnDataChanged;
         // 也订阅 BPM 列表或其他大修改事件，按需
         cm.OnBpmListChanged += OnDataChanged;
         cm.OnNoteAdded             += HandleNoteAdded;
@@ -167,6 +167,8 @@ public class GenerateLevel : MonoBehaviour
         {
             Debug.LogError("当前对象没有Renderer组件！");
         }
+        // GenerateLevel.Generate(readChart) 的最后（在 GenerateJudgmentLines() 之后）
+        ChartManager.Instance.InitNotesSnapshots();
     }
     void LoadBPMList()
     {

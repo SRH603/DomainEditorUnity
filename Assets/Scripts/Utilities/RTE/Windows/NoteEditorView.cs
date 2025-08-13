@@ -117,6 +117,12 @@ namespace NoteEditor.Views
             var gridGO = grid.gameObject;
             var moveHandler = gridGO.AddComponent<GridPointerMoveHandler>();
             moveHandler.Init(this);
+            
+            // NoteEditorView.Awake() 里，InitDropdown/BuildGridOnce 之后加：
+            var cm = ChartManager.Instance;
+            cm.OnNoteAdded   += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); };
+            cm.OnNoteRemoved += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); };
+            cm.OnNoteUpdated += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); }; // 若有的话
         }
 
         protected override void OnDestroy()
