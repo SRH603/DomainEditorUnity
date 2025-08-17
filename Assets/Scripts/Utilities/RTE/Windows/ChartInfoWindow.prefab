@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3202280572692778566}
   - component: {fileID: 9065298539323300788}
   - component: {fileID: 694923024970063158}
-  - component: {fileID: 4581166297315432452}
+  - component: {fileID: 1155186216368271228}
   m_Layer: 5
   m_Name: ChartInfoWindow
   m_TagString: Untagged
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_activateOnAnyKey: 0
   m_pointer: {fileID: 0}
   m_windowType: 65536
-  m_background: {fileID: 0}
-  m_viewRoot: {fileID: 0}
+  m_background: {fileID: 4264408394120540178}
+  m_viewRoot: {fileID: 8543023968397462962}
 --- !u!114 &9065298539323300788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,13 +132,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8365b3050ea4de48aa61e0a4010fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dragDropTargetGO: {fileID: 0}
-  m_canActivate: 1
-  m_activateOnAnyKey: 0
-  m_pointer: {fileID: 0}
-  m_windowType: 2
-  m_background: {fileID: 0}
-  m_viewRoot: {fileID: 0}
+  m_baseViewInput: {fileID: 0}
+  m_window: {fileID: 0}
+  host: {fileID: 4218142655737955451}
+  gameDataOverride: {fileID: 0}
+  autoGetFromChartManager: 1
+  fallbackScreenRect:
+    serializedVersion: 2
+    x: 24
+    y: 24
+    width: 560
+    height: 520
 --- !u!114 &694923024970063158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa515a0a44a64bcca794e0e7453bdbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4581166297315432452
+--- !u!114 &1155186216368271228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,8 +217,44 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4218142655737955451}
   m_Father: {fileID: 3933709747141899472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6399905115172892097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4218142655737955451}
+  m_Layer: 5
+  m_Name: Host
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4218142655737955451
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399905115172892097}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8543023968397462962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

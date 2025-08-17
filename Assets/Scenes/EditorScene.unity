@@ -19291,6 +19291,7 @@ MonoBehaviour:
   playButton: {fileID: 0}
   stopButton: {fileID: 0}
   playing: {fileID: 1284313160}
+  generate: {fileID: 0}
 --- !u!114 &1284313165
 MonoBehaviour:
   m_ObjectHideFlags: 0

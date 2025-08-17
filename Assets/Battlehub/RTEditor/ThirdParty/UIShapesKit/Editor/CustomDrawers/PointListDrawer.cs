@@ -52,7 +52,7 @@ namespace ThisOtherThing.UI.Shapes
 		{
 			worldPosition = rectTransform.TransformPoint(position);
 
-			var fmh_58_6_638871497709582580 = Quaternion.identity; draggedPosition = rectTransform.InverseTransformPoint(
+			var fmh_58_6_638910431587973170 = Quaternion.identity; draggedPosition = rectTransform.InverseTransformPoint(
 				Handles.FreeMoveHandle(
 					worldPosition,
 					HandleUtility.GetHandleSize(worldPosition) * 0.1f,

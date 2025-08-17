@@ -14,7 +14,7 @@ public class Info
     public string designer;
     public string bpm;
     public double rating;
-    public float offset; // �����Ӻ�����벥��
+    public float offset;
     public float version;
     public Condition condition;
 }

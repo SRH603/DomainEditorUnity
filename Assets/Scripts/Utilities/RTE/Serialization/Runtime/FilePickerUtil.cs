@@ -1,8 +1,11 @@
 // Assets/Scripts/DomainEchoing/Runtime/FilePickerUtil.cs
 using System;
 using System.Linq;
-using System.Reflection;
+using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 using UnityEngine;
 
 public static class FilePickerUtil
@@ -70,6 +73,7 @@ public class DegradedPathPrompt : MonoBehaviour
         GUILayout.Label(_hint);
         GUI.SetNextControlName("path");
         path = GUILayout.TextField(path);
+#if UNITY_EDITOR
         if (Event.current.type == EventType.DragUpdated || Event.current.type == EventType.DragPerform)
         {
             DragAndDrop.visualMode = DragAndDropVisualMode.Copy;
@@ -81,6 +85,7 @@ public class DegradedPathPrompt : MonoBehaviour
             }
             Event.current.Use();
         }
+#endif
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("OK", GUILayout.Width(120)))
         {
