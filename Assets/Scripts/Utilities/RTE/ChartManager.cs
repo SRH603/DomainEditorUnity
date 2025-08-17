@@ -28,6 +28,8 @@ using System.Reflection;
         /// <summary>bpmList 被修改后触发，NoteEditor 监听该事件重建网格</summary>
         public event Action OnBpmListChanged;
         
+        public event Action OnOffsetChanged;
+        
         // —— 新增：内容变更事件 —— 
         /// <summary>当 Note 列表（content）改变时触发</summary>
         public event Action OnContentChanged;
@@ -36,7 +38,15 @@ using System.Reflection;
         public event Action<int, Note, int> OnNoteAdded;
         public event Action<int, Note, int> OnNoteRemoved;
         public event Action<int, Note, int> OnNoteUpdated;
-        public event Action<int>          OnJudgmentLineChanged;
+        public event Action<int> OnJudgmentLineChanged;
+        
+        // —— 监视 bpmList 的引用变化，配合撤销/重做自动广播刷新 —— 
+        private BPMList[] _bpmListSnapshot;
+        
+        // —— offset 变化快照 —— 
+        private float _offsetSnapshot;
+        private bool  _offsetSnapInited;
+
         
         /// <summary>
         /// 在第 lineIndex 条判定线上，index 位置插入一个 note
@@ -145,7 +155,25 @@ using System.Reflection;
 
             gameData = DechHub.Instance.GetGameData();
             levelMusic = DechHub.Instance.GetAudioClip();
+            
+            InitBpmSnapshot();
+            InitOffsetSnapshot();
         }
+        
+        public void InitBpmSnapshot()
+        {
+            _bpmListSnapshot = gameData != null && gameData.content != null ? gameData.content.bpmList : null;
+        }
+
+        public void InitOffsetSnapshot()
+        {
+            if (gameData != null && gameData.info != null)
+            {
+                _offsetSnapshot   = gameData.info.offset;
+                _offsetSnapInited = true;
+            }
+        }
+
 
         /* ——— 公共 API ——— */
         public void SetLine(int idx)
@@ -248,6 +276,40 @@ using System.Reflection;
                     _notesSnapshots[li] = newArr; // 更新快照，防止重复
                 }
             }
+            
+            // —— 监视 bpmList 变化（包括撤销/重做或其它面板保存）——
+            if (gameData != null && gameData.content != null)
+            {
+                var cur = gameData.content.bpmList;
+                if (!object.ReferenceEquals(cur, _bpmListSnapshot))
+                {
+                    _bpmListSnapshot = cur;
+                    // 清一次缓存并按需要重建
+                    if (bpmTimingList != null) bpmTimingList.Changes.Clear();
+                    NotifyBpmListChanged(); // 触发 GenerateLevel / NoteEditorView 刷新
+                }
+            }
+            
+            // —— 侦测 Info.offset 是否变化（包括 Undo / Redo）——
+            if (!_offsetSnapInited && gameData != null && gameData.info != null)
+            {
+                _offsetSnapshot   = gameData.info.offset;
+                _offsetSnapInited = true;
+            }
+            if (_offsetSnapInited && gameData != null && gameData.info != null)
+            {
+                float cur = gameData.info.offset;
+                if (!Mathf.Approximately(cur, _offsetSnapshot))
+                {
+                    _offsetSnapshot = cur;
+                    // 与 bpmList 一样复用刷新事件，驱动 GenerateLevel / NoteEditorView 重建
+                    //OnBpmListChanged?.Invoke();
+                    // 如需区分，可另外再暴露 OnOffsetChanged?.Invoke();
+                    OnOffsetChanged?.Invoke();
+                }
+            }
+
+
         }
 
         private void EmitNoteDelta(int lineIndex, Note[] oldArr, Note[] newArr)
@@ -281,4 +343,60 @@ using System.Reflection;
                 if (!ReferenceEquals(a[i], b[i])) return i;
             return -1;
         }
+        
+        private static readonly FieldInfo kBpmListField =
+            typeof(Content).GetField("bpmList", BindingFlags.Public | BindingFlags.Instance);
+
+        /// <summary>
+        /// 覆盖 bpmList（压入 Undo 栈），并广播刷新；如果 Dech 会话已打开，则同时写盘。
+        /// </summary>
+        public void ApplyBpmListWithUndo(BPMList[] newList, bool saveDech = true)
+        {
+            if (gameData == null)
+            {
+                Debug.LogWarning("[ChartManager] ApplyBpmListWithUndo: gameData 为空。");
+                return;
+            }
+            if (gameData.content == null) gameData.content = new Content();
+
+            var rte  = IOC.IsRegistered<IRTE>() ? IOC.Resolve<IRTE>() : null;
+            var undo = rte != null ? rte.Undo : null;
+
+            if (undo != null && kBpmListField != null)
+            {
+                undo.BeginRecord();
+                undo.BeginRecordValue(gameData.content, kBpmListField);
+                gameData.content.bpmList = newList;
+                undo.EndRecordValue(gameData.content, kBpmListField);
+                undo.EndRecord();
+            }
+            else
+            {
+                gameData.content.bpmList = newList;
+            }
+
+            // 更新快照，避免下一帧被当作“外部变化”再次触发
+            _bpmListSnapshot = newList;
+
+            // 清 bpm 计算缓存
+            if (bpmTimingList != null) bpmTimingList.Changes.Clear();
+
+            // 广播：刷新所有依赖
+            NotifyBpmListChanged();
+
+            if (saveDech)
+            {
+                try
+                {
+                    DechHub.Instance?.Save();
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogWarning("[ChartManager] 写盘失败（已应用到内存）： " + ex.Message);
+                }
+            }
+
+            Debug.Log("[ChartManager] 已应用 bpmList（含 Undo），并广播刷新。");
+        }
+
     }

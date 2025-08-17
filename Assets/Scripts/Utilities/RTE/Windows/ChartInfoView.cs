@@ -1,118 +1,152 @@
 // Assets/Scripts/Utilities/RTE/Windows/ChartInfoView.cs
 using UnityEngine;
-using Battlehub.RTEditor; // 仅为继承 RuntimeWindow
 using System;
-using System.Reflection;
+using System.Collections.Generic;
 using Battlehub.RTEditor.Views;
 
 namespace ChartInfo.Views
 {
-    /// <summary>
-    /// 只使用自绘 BPM 面板；在本窗口层级内移除 UnityWeld 绑定，避免 ViewBinding.Connect NRE。
-    /// </summary>
-    /// 
-    [DefaultExecutionOrder(-10000)] // 提前于同物体上的其它组件执行，先进行“去绑定”
     public class ChartInfoView : View
     {
-        [Header("把自绘 BPM 面板渲染到此区域（RectTransform，锚定四角）")]
-        [SerializeField] private RectTransform host;
+        [Header("BPM List 面板容器（可空，不填会自动创建在上方、占剩余空间）")]
+        [SerializeField] private RectTransform bpmHost;
 
-        [Header("可选：直接指定 GameData；若为空可勾选下方自动获取")]
-        [SerializeField] private GameData gameDataOverride;
+        [Header("Info 面板容器（可空，不填会自动创建在下方、固定高度）")]
+        [SerializeField] private RectTransform infoHost;
 
-        [Header("若未手动指定 GameData，则尝试 ChartManager.Instance.gameData")]
-        [SerializeField] private bool autoGetFromChartManager = true;
+        [Header("在 Awake 时移除 MVVM 绑定脚本以避免 NRE")]
+        [SerializeField] private bool stripMvvmBindings = true;
 
-        [Header("备用：若未绑定 Host，则使用该屏幕矩形绘制")]
-        [SerializeField] private Rect fallbackScreenRect = new Rect(24, 24, 560, 520);
+        [Header("标题（可选）")]
+        [SerializeField] private string bpmTitle  = "BPM List";
+        [SerializeField] private string infoTitle = "Info";
 
-        private ChartInfoBpmListPanel m_panel;
+        // 底部 Info 固定高度（可按需改）
+        private const float kInfoHeight = 160f;
+
+        private ChartInfoBpmListPanel _bpmPanel;
+        private ChartInfoInfoPanel    _infoPanel;
 
         protected override void Awake()
         {
             base.Awake();
 
-            // 1) 先“去绑定”：只在当前窗口 GameObject 子树中移除 UnityWeld / ViewBinding 组件
-            StripBindingsInSubtree(this.gameObject);
-
-            // 2) 确保自绘面板存在并配置
-            m_panel = GetComponent<ChartInfoBpmListPanel>() ?? gameObject.AddComponent<ChartInfoBpmListPanel>();
-            m_panel.host = host;
-            m_panel.fallbackScreenRect = fallbackScreenRect;
-
-            if (gameDataOverride != null)
+            if (stripMvvmBindings)
             {
-                m_panel.targetGameData = gameDataOverride;
-                m_panel.autoGetFromChartManager = false;
-            }
-            else
-            {
-                m_panel.autoGetFromChartManager = autoGetFromChartManager;
+                StripBindingsInSubtree(this.gameObject);
             }
 
-            Debug.Log("[ChartInfo] 自绘 BPM 面板就绪（已移除本窗口中的 UnityWeld 绑定组件）。");
+            EnsureRootRect();
+
+            // 先创建底部 Info（固定高度）
+            if (infoHost == null)
+                infoHost = CreateBottomHost("InfoHost", kInfoHeight);
+
+            // 再创建上方 BPM（占剩余空间，并为底部腾出 kInfoHeight）
+            if (bpmHost == null)
+                bpmHost  = CreateFillHostWithBottomPadding("BpmHost", kInfoHeight);
+
+            // 组装 BPM 面板（放上面）
+            _bpmPanel = GetComponent<ChartInfoBpmListPanel>();
+            if (_bpmPanel == null) _bpmPanel = gameObject.AddComponent<ChartInfoBpmListPanel>();
+            _bpmPanel.host       = bpmHost;
+            _bpmPanel.title      = bpmTitle;        // 固定显示 "BPM List"
+            _bpmPanel.arrowOnly  = true;            // 只保留上下箭头图标
+            _bpmPanel.rowHeight  = 22f;             // 紧凑行高
+            _bpmPanel.rowPadV    = 2;               // 上下留白更小
+
+            // 组装 Info 面板（放下面）
+            _infoPanel = GetComponent<ChartInfoInfoPanel>();
+            if (_infoPanel == null) _infoPanel = gameObject.AddComponent<ChartInfoInfoPanel>();
+            _infoPanel.host  = infoHost;
+            _infoPanel.title = infoTitle;
+
+            Debug.Log("[ChartInfo] 布局：上=BPM List（紧凑），下=Info（固定 160），两者零间隙。");
         }
 
-        /// <summary>运行时切换 GameData（例如新建/打开后调用）。</summary>
-        public void InjectGameData(GameData so)
+        private void EnsureRootRect()
         {
-            if (m_panel != null)
-            {
-                m_panel.targetGameData = so;
-                m_panel.autoGetFromChartManager = false;
-            }
+            var rt = gameObject.GetComponent<RectTransform>();
+            if (rt == null) rt = gameObject.AddComponent<RectTransform>();
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
         }
 
-        /// <summary>
-        /// 仅在当前窗口子树内移除可能导致 NRE 的绑定组件：
-        /// - Battlehub.RTEditor.Binding.ViewBinding 及其子类
-        /// - UnityWeld.Binding.BindingContext 及其子类
-        /// - UnityWeld.Binding.AbstractMemberBinding 及其子类（包含所有具体绑定）
-        /// </summary>
-        private void StripBindingsInSubtree(GameObject root)
+        private RectTransform CreateBottomHost(string name, float height)
+        {
+            var go = new GameObject(name, typeof(RectTransform));
+            var rt = go.GetComponent<RectTransform>();
+            rt.SetParent(this.transform, false);
+
+            // 底部固定高度（零间隙）
+            rt.anchorMin = new Vector2(0, 0);
+            rt.anchorMax = new Vector2(1, 0);
+            rt.pivot     = new Vector2(0.5f, 0);
+            rt.sizeDelta = new Vector2(0, height);
+            rt.anchoredPosition = Vector2.zero;
+
+            return rt;
+        }
+
+        private RectTransform CreateFillHostWithBottomPadding(string name, float bottomPadding)
+        {
+            var go = new GameObject(name, typeof(RectTransform));
+            var rt = go.GetComponent<RectTransform>();
+            rt.SetParent(this.transform, false);
+
+            // 占满剩余空间，并为底部 Info 腾出 bottomPadding；中间不引入额外缝隙
+            rt.anchorMin = new Vector2(0, 0);
+            rt.anchorMax = new Vector2(1, 1);
+            rt.pivot     = new Vector2(0.5f, 0.5f);
+            rt.offsetMin = new Vector2(0, bottomPadding); // 仅底部内边距
+            rt.offsetMax = new Vector2(0, 0);             // 顶部紧贴
+
+            return rt;
+        }
+
+        // ========= 工具：移除绑定脚本，避免 RTE 的 MVVM 对接报错 =========
+        private static void StripBindingsInSubtree(GameObject root)
         {
             TryRemoveAll(root, "Battlehub.RTEditor.Binding.ViewBinding");
-            TryRemoveAll(root, "UnityWeld.Binding.BindingContext");
             TryRemoveAll(root, "UnityWeld.Binding.AbstractMemberBinding");
-            Debug.Log("[ChartInfo] 从窗口层级移除了可能触发 NRE 的 MVVM 绑定脚本。");
         }
 
-        private static void TryRemoveAll(GameObject root, string typeFullName)
+        private static void TryRemoveAll(GameObject root, string fullTypeName)
         {
-            var t = FindType(typeFullName);
-            if (t == null) return;
+            var toRemove = new List<Component>();
+            CollectComponentsByFullName(root.transform, fullTypeName, toRemove);
 
-            var comps = root.GetComponentsInChildren<Component>(true);
-            int removed = 0;
+            foreach (var c in toRemove)
+                if (c != null) GameObject.Destroy(c);
+
+            if (toRemove.Count > 0)
+                Debug.Log($"[ChartInfo] 移除 {fullTypeName} 及其派生类 {toRemove.Count} 个。");
+        }
+
+        private static void CollectComponentsByFullName(Transform t, string fullTypeName, List<Component> outList)
+        {
+            var comps = t.GetComponents<Component>();
             foreach (var c in comps)
             {
                 if (c == null) continue;
-                var ct = c.GetType();
-                if (t.IsAssignableFrom(ct))
-                {
-                    // 仅干预本窗口层级
-                    UnityEngine.Object.Destroy(c);
-                    removed++;
-                }
+                var type = c.GetType();
+                if (TypeOrBaseMatches(type, fullTypeName))
+                    outList.Add(c);
             }
-            if (removed > 0)
-            {
-                Debug.Log($"[ChartInfo] 移除 {typeFullName} 及其派生类 {removed} 个。");
-            }
+            for (int i = 0; i < t.childCount; i++)
+                CollectComponentsByFullName(t.GetChild(i), fullTypeName, outList);
         }
 
-        private static Type FindType(string fullName)
+        private static bool TypeOrBaseMatches(Type type, string fullName)
         {
-            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+            while (type != null)
             {
-                try
-                {
-                    var t = asm.GetType(fullName, throwOnError: false);
-                    if (t != null) return t;
-                }
-                catch { }
+                if (type.FullName == fullName) return true;
+                type = type.BaseType;
             }
-            return null;
+            return false;
         }
     }
 }

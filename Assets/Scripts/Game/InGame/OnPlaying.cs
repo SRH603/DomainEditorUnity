@@ -31,6 +31,27 @@ public class OnPlaying : MonoBehaviour
     public GameObject pauseGroup;
 
     //public TMP_Text text;
+    
+    void Awake()
+    {
+        ChartManager cm = GetComponent<ChartManager>();
+        cm.OnOffsetChanged += HandleOffsetChanged;
+    }
+    
+    void OnDestroy()
+    {
+        if (ChartManager.Instance != null)
+        {
+            var cm = ChartManager.Instance;
+            cm.OnOffsetChanged -= HandleOffsetChanged;
+        }
+    }
+
+    public void HandleOffsetChanged()
+    {
+        ChartManager cm = GetComponent<ChartManager>();
+        offset = cm.gameData.info.offset;
+    }
 
     public void LoadLevel()
     {
