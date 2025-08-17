@@ -16,7 +16,7 @@ using System.Reflection;
 
         [Header("资源")]
         public GameData gameData;          // ScriptableObject
-        public AudioSource levelMusic;     // AudioSource 内含 clip
+        public AudioClip levelMusic;     // AudioSource 内含 clip
         public GameUtilities.BPMTimingList bpmTimingList;
 
         [Header("全局设置")]
@@ -142,6 +142,9 @@ using System.Reflection;
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }
             Instance = this;
             //DontDestroyOnLoad(gameObject);
+
+            gameData = DechHub.Instance.GetGameData();
+            levelMusic = DechHub.Instance.GetAudioClip();
         }
 
         /* ——— 公共 API ——— */
@@ -176,11 +179,11 @@ using System.Reflection;
 
         public int CalcTotalBeatsRounded()
         {
-            if (levelMusic != null && levelMusic.clip != null)
+            if (levelMusic != null && levelMusic != null)
             {
                 //Debug.Log(levelMusic.clip.length);
                 LoadBpmList();
-                float raw = Time2Beat(levelMusic.clip.length);
+                float raw = Time2Beat(levelMusic.length);
                 return Mathf.CeilToInt(raw) + 8;          // 向上取整再 +8
             }
             else
@@ -218,7 +221,7 @@ using System.Reflection;
         private Note[][] _notesSnapshots;
         private bool _snapInited;
 
-// 在合适时机（GameData/谱面就绪后）调用一次
+        // 在合适时机（GameData/谱面就绪后）调用一次
         public void InitNotesSnapshots()
         {
             var lines = gameData.content.judgmentLines;
@@ -228,7 +231,7 @@ using System.Reflection;
             _snapInited = true;
         }
 
-// 轻量监视（不分配、不遍历 Note 内容，先看数组引用/长度）
+        // 轻量监视（不分配、不遍历 Note 内容，先看数组引用/长度）
         private void LateUpdate()
         {
             if (!_snapInited || gameData == null || gameData.content == null) return;

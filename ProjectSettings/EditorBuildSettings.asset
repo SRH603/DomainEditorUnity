@@ -6,25 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Opening screen.unity
+    path: Assets/Scenes/HubScene.unity
     guid: a2341ed00ed0f4b1eacdc838bdceb28d
   - enabled: 1
-    path: Assets/Scenes/Index.unity
-    guid: 1f49b5f14970dfc41971a76af8920606
-  - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: d1b2b054c3d485449a1f1733fc2ee8d7
-  - enabled: 1
-    path: Assets/Scenes/ChartPlaying.unity
+    path: Assets/Scenes/EditorScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Collection.unity
+  - enabled: 0
+    path: Assets/Scenes/Others/Index.unity
+    guid: 1f49b5f14970dfc41971a76af8920606
+  - enabled: 0
+    path: Assets/Scenes/Others/LevelSelect.unity
+    guid: d1b2b054c3d485449a1f1733fc2ee8d7
+  - enabled: 0
+    path: Assets/Scenes/Others/Collection.unity
     guid: 02cbbbb8c42bf4c08be68993cd98a97a
-  - enabled: 1
-    path: Assets/Scenes/Player.unity
+  - enabled: 0
+    path: Assets/Scenes/Others/Player.unity
     guid: d7d7be011972846a988a5f1141bc18f9
-  - enabled: 1
-    path: Assets/Scenes/Shop.unity
+  - enabled: 0
+    path: Assets/Scenes/Others/Shop.unity
     guid: 3849d030440b342ed88d6ca54cf425be
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

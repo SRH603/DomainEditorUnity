@@ -90,7 +90,7 @@ public class PlayControlUI : MonoBehaviour
 
     private void Seek(float t)
     {
-        t = Mathf.Clamp(t, 0f, playing.LevelMusic.clip.length);
+        t = Mathf.Clamp(t, 0f, playing.LevelMusic.clip.length - 0.1f);
         playing.LevelMusic.time = t;
         playing.currentTime     = t;  // 如果字段名不同请替换
         progressSlider.value    = t;

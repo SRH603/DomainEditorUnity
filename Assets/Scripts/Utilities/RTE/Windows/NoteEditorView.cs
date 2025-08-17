@@ -69,6 +69,12 @@ namespace NoteEditor.Views
         [SerializeField] private Color holdPreviewColor = new Color(1f, 1f, 1f, 0.35f);
         [SerializeField] private float holdPreviewThickness = 2f;
         
+        // 放在你的 class NoteEditorView 字段里
+        private System.Action _onContentChangedHandler;
+        private System.Action<int, Note, int> _onNoteAddedHandler;
+        private System.Action<int, Note, int> _onNoteRemovedHandler;
+        private System.Action<int, Note, int> _onNoteUpdatedHandler;
+        
         #endregion
 
         #region 生命周期
@@ -80,61 +86,68 @@ namespace NoteEditor.Views
             InitDropdown();
             BuildGridOnce();          // 网格仅生成一次
             RefreshNotes();           // 首次显示当前判定线
-            
+
             if (playing == null) playing = FindFirstObjectByType<OnPlaying>();
 
-            ChartManager.Instance.OnLineChanged += HandleLineChanged;
-            
-            // ② 在 Awake 里创建并订阅
+            var cm = ChartManager.Instance;
+
+            // 线路切换
+            cm.OnLineChanged += HandleLineChanged;
+
+            // BPM 更新
             _onBpmListChangedHandler = () =>
             {
                 BuildGridOnce();
                 RefreshNotes();
             };
-            ChartManager.Instance.OnBpmListChanged += _onBpmListChangedHandler;
-            
-            // Note 列表变了，就重新渲染
-            ChartManager.Instance.OnContentChanged += () => RefreshNotes();
-            
-            // 1) 切换工具回调
-            /*
-            tapToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 0; });
-            dragToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 1; });
-            holdToggle.onValueChanged.AddListener(isOn => { if (isOn) currentTool = 2; });
-            */
-            
-            // 原：if (isOn) currentTool = 0/1/2;
+            cm.OnBpmListChanged += _onBpmListChangedHandler;
+
+            // Content 改动（非匿名，便于解绑）
+            _onContentChangedHandler = RefreshNotes;
+            cm.OnContentChanged += _onContentChangedHandler;
+
+            // 增删改 note（非匿名字段，便于解绑；仅当前线才刷新）
+            _onNoteAddedHandler = (li, n, idx) =>
+            {
+                if (!this || !isActiveAndEnabled) return;
+                if (cm != null && li == cm.currentLineIndex) RefreshNotes();
+            };
+            _onNoteRemovedHandler = _onNoteAddedHandler;
+            _onNoteUpdatedHandler = _onNoteAddedHandler;
+
+            cm.OnNoteAdded   += _onNoteAddedHandler;
+            cm.OnNoteRemoved += _onNoteRemovedHandler;
+            cm.OnNoteUpdated += _onNoteUpdatedHandler;
+
+            // 工具切换（用 OnToolChanged，会顺便清掉引导线）
             tapToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(0); });
             dragToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(1); });
             holdToggle.onValueChanged.AddListener(isOn => { if (isOn) OnToolChanged(2); });
 
             // 默认选中 Tap
             tapToggle.isOn = true;
-            
+
             ToolsInit();
-            
-            // 在 Grid 的 EventTrigger 上再绑定 PointerMove，用来更新 “预览四边形”
+
+            // 绑定 PointerMove（更新引导线）
             var gridGO = grid.gameObject;
             var moveHandler = gridGO.AddComponent<GridPointerMoveHandler>();
             moveHandler.Init(this);
-            
-            // NoteEditorView.Awake() 里，InitDropdown/BuildGridOnce 之后加：
-            var cm = ChartManager.Instance;
-            cm.OnNoteAdded   += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); };
-            cm.OnNoteRemoved += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); };
-            cm.OnNoteUpdated += (li, n, idx) => { if (li == cm.currentLineIndex) RefreshNotes(); }; // 若有的话
         }
 
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            if (ChartManager.Instance != null)
+            
+            var cm = ChartManager.Instance;
+            if (cm != null)
             {
-                // ④ 用同一个 handler 字段去解绑
-                ChartManager.Instance.OnBpmListChanged -= _onBpmListChangedHandler;
-
-                // ⑤ 用方法组解绑
-                ChartManager.Instance.OnLineChanged -= HandleLineChanged;
+                cm.OnLineChanged -= HandleLineChanged;
+                if (_onBpmListChangedHandler != null) cm.OnBpmListChanged -= _onBpmListChangedHandler;
+                if (_onContentChangedHandler   != null) cm.OnContentChanged   -= _onContentChangedHandler;
+                if (_onNoteAddedHandler        != null) cm.OnNoteAdded        -= _onNoteAddedHandler;
+                if (_onNoteRemovedHandler      != null) cm.OnNoteRemoved      -= _onNoteRemovedHandler;
+                if (_onNoteUpdatedHandler      != null) cm.OnNoteUpdated      -= _onNoteUpdatedHandler;
             }
         }
 #endregion
@@ -648,6 +661,8 @@ namespace NoteEditor.Views
         /* ───────────────── Note 刷新 ───────────────── */
         void RefreshNotes()
         {
+            if (!this || noteLayer == null || !gameObject) return;
+            
             // ★ 新增：确保布局完成，Rect 正确
             Canvas.ForceUpdateCanvases();
             LayoutRebuilder.ForceRebuildLayoutImmediate(content);
@@ -694,6 +709,7 @@ namespace NoteEditor.Views
                     default:
                         continue;   // 其他类型忽略
                 }
+                if (rt == null) continue; // 避免继续访问已销毁对象
                 rt.anchoredPosition = new Vector2(x, y);
                 // ★ 新增：现在父物体位置已确定，再挂线就不会二次偏移
                 if (n.type == 2)
@@ -735,6 +751,8 @@ namespace NoteEditor.Views
 
         RectTransform Spawn(List<RectTransform> pool, RectTransform prefab, int idx)
         {
+            if (!this || noteLayer == null || prefab == null) return null;
+            
             if (idx >= pool.Count)
                 pool.Add(Instantiate(prefab, noteLayer));
             var rt = pool[idx];

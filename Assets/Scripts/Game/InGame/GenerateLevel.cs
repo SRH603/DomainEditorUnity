@@ -132,7 +132,7 @@ public class GenerateLevel : MonoBehaviour
     public void Init(ReadChart readChart)
     {
         gameData = readChart.gameData;
-        trackData = readChart.trackData;
+        trackData = ScriptableObject.CreateInstance<TrackData>();
         Generate(readChart);
     }
 
@@ -161,7 +161,7 @@ public class GenerateLevel : MonoBehaviour
             Material mat = renderer.material;
 
             //Texture newtext = gameData.info.illustration;
-            mat.SetTexture("_MainTex", readChart.trackData.illustration);
+            //mat.SetTexture("_MainTex", readChart.trackData.illustration);
         }
         else
         {
