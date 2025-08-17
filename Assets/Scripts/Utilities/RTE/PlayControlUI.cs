@@ -11,6 +11,7 @@ public class PlayControlUI : MonoBehaviour
 
     [Header("Gameplay")]
     [SerializeField] private OnPlaying playing;
+    [SerializeField] private GenerateLevel generate;
 
     private bool isDragging;
     private float bookmark;
@@ -21,7 +22,7 @@ public class PlayControlUI : MonoBehaviour
 
         // Slider 范围
         progressSlider.minValue = 0f;
-        progressSlider.maxValue = playing.LevelMusic.clip.length;
+        progressSlider.maxValue = ChartManager.Instance.levelMusic.length;
         progressSlider.value    = 0f;
 
         // onValueChanged 里只在拖动时同步

@@ -119,7 +119,7 @@ public class DechRuntimeHubUI : MonoBehaviour
 
         // 第一行：新建 / 打开
         GUILayout.BeginHorizontal();
-        DrawButton("新建 .dech（选择保存位置→选择音频）", _button, 44f * s, UI_NewDech, enabled: true);
+        DrawButton("新建 .dech", _button, 44f * s, UI_NewDech, enabled: true);
         GUILayout.Space(10f * s);
         DrawButton("打开 .dech ...", _button, 44f * s, UI_OpenDech, enabled: true);
         GUILayout.EndHorizontal();
@@ -139,7 +139,7 @@ public class DechRuntimeHubUI : MonoBehaviour
 
         // 第三行：开始编辑（仅当 Session 打开时可用，禁用态通过 GUI.color 淡化）
         bool canEdit = DechHub.Instance.Session != null && DechHub.Instance.Session.IsOpen;
-        DrawButton("开始编辑（加载编辑器场景）", _button, 48f * s, () =>
+        DrawButton("进入编辑", _button, 48f * s, () =>
         {
             if (canEdit) UI_StartEditing();
         }, enabled: canEdit);
