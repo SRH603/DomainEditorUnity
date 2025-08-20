@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 55fd9cdec6fc1b64f8407ae045c29f33
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/Common/Visuals/GraphicHoverColor.cs
+  uploadId: 649251

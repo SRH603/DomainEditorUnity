@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f42cb7f8095e2694c81175bff10a0b8b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/Common/Menu/PopupCanvas.cs
+  uploadId: 649251

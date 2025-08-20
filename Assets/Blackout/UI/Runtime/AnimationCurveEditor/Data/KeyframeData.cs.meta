@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 854aaf7295f54a558f50e12138a1db71
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/AnimationCurveEditor/Data/KeyframeData.cs
+  uploadId: 649251

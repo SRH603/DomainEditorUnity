@@ -1,3 +1,4 @@
+// Assets/Scripts/Utilities/RTE/Windows/ChartInfoView.cs
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -7,21 +8,24 @@ namespace ChartInfo.Views
 {
     public class ChartInfoView : View
     {
-        [Header("BPM List 面板容器（可空：自动创建并放在上方）")]
+        [Header("BPM List 面板容器")]
         [SerializeField] private RectTransform bpmHost;
 
-        [Header("Info 面板容器（可空：自动创建并放在下方）")]
+        [Header("Info 面板容器")]
         [SerializeField] private RectTransform infoHost;
 
-        [Header("在 Awake 时移除 MVVM 绑定脚本以避免 NRE")]
+        [Header("是否在 Awake 时移除 MVVM 绑定脚本以避免 NRE")]
         [SerializeField] private bool stripMvvmBindings = true;
+
+        [Header("可选：由本脚本接管上下布局")]
+        [SerializeField] private bool controlLayout = false;
 
         [Header("标题（可选）")]
         [SerializeField] private string bpmTitle  = "BPM List";
         [SerializeField] private string infoTitle = "Info";
 
-        [Header("Info 面板固定高度")]
-        [SerializeField] private float infoFixedHeight = 160f;
+        // Info 面板用于测量高度
+        [SerializeField] private float minInfoHeight = 100f;
 
         private ChartInfoBpmListPanel _bpmPanel;
         private ChartInfoInfoPanel    _infoPanel;
@@ -31,10 +35,13 @@ namespace ChartInfo.Views
             base.Awake();
 
             if (stripMvvmBindings) StripBindingsInSubtree(gameObject);
-            EnsureRootRect();
 
-            if (bpmHost == null) bpmHost = CreateTopHost("BpmHost");
-            if (infoHost == null) infoHost = CreateBottomHost("InfoHost", infoFixedHeight);
+            if (bpmHost == null || infoHost == null)
+            {
+                Debug.LogError("[ChartInfo] 请在 Inspector 上指定 bpmHost / infoHost。");
+                enabled = false;
+                return;
+            }
 
             // 组装 BPM
             _bpmPanel = GetComponent<ChartInfoBpmListPanel>();
@@ -50,75 +57,45 @@ namespace ChartInfo.Views
             if (_infoPanel == null) _infoPanel = gameObject.AddComponent<ChartInfoInfoPanel>();
             _infoPanel.host  = infoHost;
             _infoPanel.title = infoTitle;
-
-            UpdateLayoutInstant();
-            Debug.Log("[ChartInfo] 布局就绪：BPM 上方自适应（自身滚动），Info 固定底部（零缝隙）。");
         }
 
         private void Update()
         {
-            UpdateLayoutInstant();
+            // 只有当你“明确选择让本脚本接管上下布局”时才会去改 RectTransform
+            if (controlLayout)
+            {
+                UpdateTopBottomLayout();
+            }
+            // 否则什么都不做——完全尊重你在外部设置的左右/网格等布局。
         }
 
-        private void UpdateLayoutInstant()
+        /// <summary>
+        /// 可选：脚本接管“上=BPM，下=Info”的布局（只有 controlLayout==true 时才会生效）
+        /// </summary>
+        private void UpdateTopBottomLayout()
         {
-            if (bpmHost == null || infoHost == null) return;
+            if (bpmHost == null || infoHost == null || _infoPanel == null) return;
 
-            var rt = GetComponent<RectTransform>();
-            float viewH = Mathf.Max(0f, rt.rect.height);
+            var viewRT = (RectTransform)transform;
+            float viewH = Mathf.Max(0f, viewRT.rect.height);
 
-            // info 固定贴底
-            var isz = infoHost.sizeDelta; isz.y = infoFixedHeight; infoHost.sizeDelta = isz;
+            // Info 高度 = 测量值
+            float infoH = Mathf.Clamp(minInfoHeight, minInfoHeight, viewH);
+
+            // Info 贴底
             infoHost.anchorMin = new Vector2(0f, 0f);
             infoHost.anchorMax = new Vector2(1f, 0f);
             infoHost.pivot     = new Vector2(0.5f, 0f);
+            infoHost.sizeDelta = new Vector2(0f, infoH);
             infoHost.anchoredPosition = Vector2.zero;
 
-            // bpm 占据顶部到 info 顶部之间的全部高度
-            float bpmH = Mathf.Max(0f, viewH - infoFixedHeight);
-            var bsz = bpmHost.sizeDelta; bsz.y = bpmH; bpmHost.sizeDelta = bsz;
+            // BPM 贴顶，占剩余高度
+            float bpmH = Mathf.Max(0f, viewH - infoH);
             bpmHost.anchorMin = new Vector2(0f, 1f);
             bpmHost.anchorMax = new Vector2(1f, 1f);
             bpmHost.pivot     = new Vector2(0.5f, 1f);
+            bpmHost.sizeDelta = new Vector2(0f, bpmH);
             bpmHost.anchoredPosition = Vector2.zero;
-        }
-
-        private void EnsureRootRect()
-        {
-            var rt = gameObject.GetComponent<RectTransform>();
-            if (rt == null) rt = gameObject.AddComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0, 1);
-            rt.anchorMax = new Vector2(1, 1);
-            rt.pivot     = new Vector2(0.5f, 1f);
-            rt.offsetMin = Vector2.zero;
-            rt.offsetMax = Vector2.zero;
-            rt.anchoredPosition = Vector2.zero;
-        }
-
-        private RectTransform CreateTopHost(string name)
-        {
-            var go = new GameObject(name, typeof(RectTransform));
-            var rt = go.GetComponent<RectTransform>();
-            rt.SetParent(transform, false);
-            rt.anchorMin = new Vector2(0, 1);
-            rt.anchorMax = new Vector2(1, 1);
-            rt.pivot     = new Vector2(0.5f, 1);
-            rt.sizeDelta = new Vector2(0, 100); // 初值，UpdateLayoutInstant 会覆盖
-            rt.anchoredPosition = Vector2.zero;
-            return rt;
-        }
-
-        private RectTransform CreateBottomHost(string name, float height)
-        {
-            var go = new GameObject(name, typeof(RectTransform));
-            var rt = go.GetComponent<RectTransform>();
-            rt.SetParent(transform, false);
-            rt.anchorMin = new Vector2(0, 0);
-            rt.anchorMax = new Vector2(1, 0);
-            rt.pivot     = new Vector2(0.5f, 0);
-            rt.sizeDelta = new Vector2(0, height);
-            rt.anchoredPosition = Vector2.zero;
-            return rt;
         }
 
         /* ========= 移除 MVVM 绑定：防 NRE ========= */

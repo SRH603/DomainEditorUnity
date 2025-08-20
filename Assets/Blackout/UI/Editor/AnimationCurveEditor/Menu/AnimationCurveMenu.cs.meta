@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 1b61268088b148d9a53780bd7c5175e3
+timeCreated: 1703654693
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Editor/AnimationCurveEditor/Menu/AnimationCurveMenu.cs
+  uploadId: 649251

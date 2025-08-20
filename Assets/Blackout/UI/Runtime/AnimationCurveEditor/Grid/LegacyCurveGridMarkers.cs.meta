@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 71d1207f48c44d8cbeca593be047ac19
+timeCreated: 1705193995
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/AnimationCurveEditor/Grid/LegacyCurveGridMarkers.cs
+  uploadId: 649251

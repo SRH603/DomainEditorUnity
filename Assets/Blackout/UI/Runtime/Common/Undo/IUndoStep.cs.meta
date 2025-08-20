@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 629315e7440c403abf868cc5c531b7e9
+timeCreated: 1704251557
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/Common/Undo/IUndoStep.cs
+  uploadId: 649251

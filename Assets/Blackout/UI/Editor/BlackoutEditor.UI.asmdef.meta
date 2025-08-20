@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80078abc93fe488479a5bc375a0fcc58
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Editor/BlackoutEditor.UI.asmdef
+  uploadId: 649251

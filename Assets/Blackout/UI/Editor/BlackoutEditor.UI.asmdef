@@ -1,0 +1,18 @@
+{
+    "name": "BlackoutEditor.UI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:e534b72dd3a1e274e9bf9a9410860164"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

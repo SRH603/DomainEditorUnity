@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f5cf7030e1433c541a889fadb1fdb4ba
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/TMP_AnimationCurveEditor_ExtractMe.unitypackage
+  uploadId: 649251

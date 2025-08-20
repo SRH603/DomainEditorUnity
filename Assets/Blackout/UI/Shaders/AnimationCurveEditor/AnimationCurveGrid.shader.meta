@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6254ab44fdd020e42b227df4fde41863
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Shaders/AnimationCurveEditor/AnimationCurveGrid.shader
+  uploadId: 649251

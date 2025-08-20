@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 9cbd8c77d2ce463b959c576a3cd81d12
+timeCreated: 1704351021
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/AnimationCurveEditor/Menu/TangentMenuButton.cs
+  uploadId: 649251

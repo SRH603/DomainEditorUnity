@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: cb9bcba528b047f5be0ec7306aba2ca9
+timeCreated: 1704521806
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/Common/Pool/IObjectPool.cs
+  uploadId: 649251

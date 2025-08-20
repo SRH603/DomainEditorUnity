@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 4e22959924e54f3aaa49598d5574071a
+timeCreated: 1704242038
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Runtime/Common/Utility/CanvasUtility.cs
+  uploadId: 649251

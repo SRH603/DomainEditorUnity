@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: db87277d8b7c42c4e96684959128eef5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 273958
+  packageName: Runtime Animation Curve Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/Blackout/UI/Examples/RuntimeCurveEditor_ExampleImplementation.cs
+  uploadId: 649251
