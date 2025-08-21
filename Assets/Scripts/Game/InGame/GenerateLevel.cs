@@ -101,7 +101,114 @@ public class GenerateLevel : MonoBehaviour
 
     // —— ③、④ 留空 —— 
     private void HandleNoteUpdated(int lineIndex, Note note, int noteIndex) { /* TODO */ }
-    private void HandleJudgmentLineChanged(int lineIndex)             { /* TODO */ }
+
+    // —— ④ 判定线整体变化：只重建这一条判定线 —— 
+private void HandleJudgmentLineChanged(int lineIndex)
+{
+    if (gameData == null || gameData.content == null || gameData.content.judgmentLines == null)
+        return;
+    if (lineIndex < 0 || lineIndex >= gameData.content.judgmentLines.Length)
+        return;
+
+    // 确保列表容量与判定线数量一致
+    EnsureLineListCapacity(gameData.content.judgmentLines.Length);
+
+    // 1) 销毁旧的该判定线 GameObject
+    var oldData = AllJudgementLines[lineIndex];
+    if (oldData != null && oldData.LineObject != null)
+    {
+        Destroy(oldData.LineObject);
+    }
+    AllJudgementLines[lineIndex] = null; // 占位先清掉
+
+    // 2) 依据 GameData 重新实例化该条判定线并生成其 notes
+    var newData = BuildJudgmentLine(lineIndex);
+    AllJudgementLines[lineIndex] = newData;
+
+    // 3) 重算高亮、数量等（这里只做轻量刷新）
+    RecountNotesNum();
+    NotesHighLighter();
+}
+
+// 只构建一条判定线（和 GenerateJudgmentLines 里的单条逻辑一致）
+private JudgmentLineData BuildJudgmentLine(int lineIndex)
+{
+    var jl = gameData.content.judgmentLines[lineIndex];
+
+    // 初始位姿来自曲线 t=0
+    Vector3 startPos = new Vector3(
+        jl.positionX != null ? jl.positionX.Evaluate(0f) : 0f,
+        jl.positionY != null ? jl.positionY.Evaluate(0f) : 0f,
+        jl.positionZ != null ? jl.positionZ.Evaluate(0f) : 0f
+    );
+    Quaternion startRot = Quaternion.Euler(
+        jl.rotationX != null ? jl.rotationX.Evaluate(0f) : 0f,
+        jl.rotationY != null ? jl.rotationY.Evaluate(0f) : 0f,
+        jl.rotationZ != null ? jl.rotationZ.Evaluate(0f) : 0f
+    );
+
+    // 实例化判定线
+    GameObject lineInstance = Instantiate(linePrefab, startPos, startRot, judgmentLinesParent);
+
+    // 设置材质（保持与你原先一致）
+    MeshRenderer meshRenderer = lineInstance.transform.Find("JudgementLine")?.GetComponent<MeshRenderer>();
+    if (meshRenderer != null)
+    {
+        Material instanceMaterial = new Material(lineMaterial);
+        meshRenderer.sharedMaterial = instanceMaterial;
+    }
+
+    // 构造数据对象并写入曲线引用
+    JudgmentLineData lineData = new JudgmentLineData(lineInstance, jl.flowSpeed);
+    lineData.positionX   = jl.positionX;
+    lineData.positionY   = jl.positionY;
+    lineData.positionZ   = jl.positionZ;
+    lineData.rotationX   = jl.rotationX;
+    lineData.rotationY   = jl.rotationY;
+    lineData.rotationZ   = jl.rotationZ;
+    lineData.transparency= jl.transparency;
+    lineData.speed       = jl.speed;
+
+    // 生成此判定线的全部音符
+    GenerateNotes(jl, lineInstance.transform, lineData);
+
+    // 透明度起始值
+    var rend = FindDeepChild(lineInstance.transform, "JudgementLine")?.GetComponent<Renderer>();
+    if (rend != null && rend.material != null && jl.transparency != null)
+    {
+        var c = rend.material.color;
+        c.a = jl.transparency.Evaluate(0f);
+        rend.material.color = c;
+    }
+
+    return lineData;
+}
+
+// 确保 AllJudgementLines 与判定线数量对齐（不足则补 null）
+private void EnsureLineListCapacity(int needed)
+{
+    if (AllJudgementLines == null) AllJudgementLines = new List<JudgmentLineData>();
+    while (AllJudgementLines.Count < needed)
+        AllJudgementLines.Add(null);
+    // 多余的不动，按索引覆盖即可
+}
+
+// 重新统计 NotesNum（用场景里已实例化的 NoteEntity 数量估算）
+private void RecountNotesNum()
+{
+    int total = 0;
+    foreach (var ld in AllJudgementLines)
+    {
+        if (ld == null) continue;
+        foreach (var go in ld.Notes)
+        {
+            if (go != null && go.GetComponent<NoteEntity>() != null)
+                total++;
+        }
+    }
+    NotesNum = total;
+}
+
     
     /// <summary>
     /// 当 GameData.content 发生任何变更时被回调

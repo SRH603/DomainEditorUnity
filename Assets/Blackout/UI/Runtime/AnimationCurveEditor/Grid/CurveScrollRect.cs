@@ -342,33 +342,36 @@ namespace Blackout.UI
         #region Zoom
         void IScrollHandler.OnScroll(PointerEventData data)
         {
-            if (!IsActive())
-                return;
-            
-            PerformZoom(data.scrollDelta.y, data.position, InputUtility.Ctrl(), InputUtility.Shift());
+            if (!IsActive()) return;
+
+            var cam = data.pressEventCamera ?? data.enterEventCamera 
+                ?? (GetComponentInParent<Canvas>()?.worldCamera);
+            PerformZoom(data.scrollDelta.y, data.position, cam, InputUtility.Ctrl(), InputUtility.Shift());
         }
 
-        private void PerformZoom(float delta, Vector3 mousePosition, bool ctrl, bool shift)
+
+        private void PerformZoom(float delta, Vector2 screenPos, Camera evtCam, bool ctrl, bool shift)
         {
-            Vector2 zoomAround = grid.InverseTransformPoint(mousePosition);
-            if (!grid.rect.Contains(zoomAround))
+            // 把屏幕坐标 → grid 的本地坐标
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(grid, screenPos, evtCam, out var local))
                 return;
 
-            EnsureLayoutHasRebuilt();
-            UpdateBounds();
+            if (!grid.rect.Contains(local))
+                return;
 
+            // 缩放
             Vector3 scale = grid.localScale;
-            
             scale.x = shift ? scale.x : Mathf.Clamp(scale.x + (delta * zoomSensitivity), minimumZoom, maximumZoom);
-            scale.y = ctrl ? scale.y : Mathf.Clamp(scale.y + (delta * zoomSensitivity), minimumZoom, maximumZoom);
+            scale.y = ctrl  ? scale.y : Mathf.Clamp(scale.y + (delta * zoomSensitivity), minimumZoom, maximumZoom);
             scale.z = 1f;
-            
-            grid.localScale = scale;
 
+            grid.localScale = scale;
             SetGridSize();
-            
-            OnScaleChanged.Invoke(scale);
+
+            // ✅ 事件类型为 UnityEvent<Vector2>，这里传二维更稳妥（原代码传 Vector3 会编译不匹配）
+            onScaleChanged.Invoke(new Vector2(scale.x, scale.y));
         }
+
 
         private void SetGridSize()
         {
@@ -441,7 +444,9 @@ namespace Blackout.UI
 
             if (ctrl || shift)
             {
-                PerformZoom(eventData.delta.normalized.x, eventData.position, ctrl, shift);
+                var cam = eventData.pressEventCamera ?? eventData.enterEventCamera 
+                    ?? (GetComponentInParent<Canvas>()?.worldCamera);
+                PerformZoom(eventData.delta.normalized.x, eventData.position, cam, ctrl, shift);
                 return;
             }
             

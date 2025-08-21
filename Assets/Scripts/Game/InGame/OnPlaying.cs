@@ -36,6 +36,7 @@ public class OnPlaying : MonoBehaviour
     {
         ChartManager cm = GetComponent<ChartManager>();
         cm.OnOffsetChanged += HandleOffsetChanged;
+        cm.OnJudgmentLineChanged += HandleJudgmentLineChanged;
     }
     
     void OnDestroy()
@@ -44,6 +45,7 @@ public class OnPlaying : MonoBehaviour
         {
             var cm = ChartManager.Instance;
             cm.OnOffsetChanged -= HandleOffsetChanged;
+            cm.OnJudgmentLineChanged -= HandleJudgmentLineChanged;   // 先空
         }
     }
 
@@ -90,6 +92,11 @@ public class OnPlaying : MonoBehaviour
         LevelMusic.Pause();
         
         //Invoke(nameof(BetaClick), 1.5f);
+    }
+    
+    private void HandleJudgmentLineChanged(int lineIndex)
+    {
+        //allLines[lineIndex] = generateLevel.AllJudgementLines[lineIndex];
     }
 
     void Update()
